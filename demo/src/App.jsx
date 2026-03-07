@@ -8,7 +8,7 @@ function App() {
 }
 
 // EXPORT DEFAULT FUNCTION NAME . 
-export default App
+export default App  
 
 
 // exporrt default function name ==> 
