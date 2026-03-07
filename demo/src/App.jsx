@@ -3,7 +3,7 @@ import TopBar from "./components/Topbar/topbar"
 function App() {
   return (
     <>
-       <TopBar></TopBar>
+      <TopBar />
     </>
   )
 }
