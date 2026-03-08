@@ -1,9 +1,10 @@
 import React from 'react'
-import karan from "..styles/Navbar.module.css"
+import karan from "../styles/NavBar.module.css"
 const NavBar = () => {
   return (
     <div>
-        <ul className='mainContainer'>
+        {/* WHEN WE USE MODULES IT WILL CREATE UNIQUE CLASS NAME  */}
+        <ul className={karan.mainContainer}>   
       <li>home</li>
       <li>about</li>
       <li>contact</li>
