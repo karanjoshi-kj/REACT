@@ -1,7 +1,7 @@
 import React from 'react'
-import { IconName } from "react-icons/fa6";
-import { IoLocationSharp } from "react-icons/io5";
-import { FaPhone } from "react-icons/fa6";
+import { IoLocationSharp , IoMail } from "react-icons/io5";
+import { FaPhone , FaInstagram , FaLinkedin} from "react-icons/fa6";
+import { FaFacebookSquare , FaTwitter} from "react-icons/fa";
 const Topbar2 = () => {
   return (
     <div className='Topbar-eg'>
@@ -11,10 +11,10 @@ const Topbar2 = () => {
         <span><IoMail />abc@gmail.com</span>
       </div>
       <div className='rightpart'>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span><FaFacebookSquare /></span>
+        <span><FaTwitter /></span>
+        <span><FaInstagram /></span>
+        <span><FaLinkedin /></span>
       </div>
     </div>
   )
