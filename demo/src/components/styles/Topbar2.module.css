@@ -1,0 +1,39 @@
+.Topbareg{
+    width: 90%;
+    height: 45px;
+    background-color: #2b8ac6;   /* blue color like screenshot */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    color: white;
+    font-size: 14px;
+}
+
+.leftpart{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.leftpart span{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rightpart{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.rightpart span{
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.rightpart span:hover{
+    transform: scale(1.2);
+}
