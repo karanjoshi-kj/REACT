@@ -7,6 +7,7 @@ const Navbar4 = () => {
       <ul className={`${obj.firstcss} ${obj.secondcss}`}  />
 
         {/* SECOND METHOD TO APPLY MULTIPLE CSS IS JOIN METHOD . */}
+        
       <li className={[obj.licolor , obj.listyle].join("")}>home</li>
 
       <li>About</li>
