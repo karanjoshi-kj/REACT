@@ -3,5 +3,15 @@
 }
 
 .secondcss{
-    color: aqua;
+    background-color: blue;
+    height: 2vmax;
+    width: 1vmax;
+}
+
+.licolor{
+    background-color: antiquewhite;
+}
+
+.listyle{
+    
 }
