@@ -8,10 +8,12 @@
     width: 1vmax;
 }
 
-.licolor{
+.li-color{
     background-color: antiquewhite;
 }
 
 .listyle{
-    
+    color: blueviolet;
+    height: 5rem;
+    width: 5rem;
 }
