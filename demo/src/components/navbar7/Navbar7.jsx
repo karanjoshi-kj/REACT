@@ -16,7 +16,7 @@ const Navbar4 = () => {
     const{HOME , ABOUT , CARRER , SERVICES , CONTACT} = navbardata;
 
 
-    
+
   return (
     <div>
       <ul className={`${obj.firstcss} ${obj.secondcss}`}  />
@@ -27,6 +27,9 @@ const Navbar4 = () => {
       <li>{ABOUT}</li>
       <li>{CONTACT}</li>
       <li>{SERVICES}</li>
+      
+      //! RENDERING THE PLAIN JS IN  THE JSX FILE USING STRING LITERALS .
+      <li>{4+4}</li>   
     </div>
   )
 }
