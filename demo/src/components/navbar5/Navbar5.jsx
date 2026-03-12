@@ -3,6 +3,7 @@ import obj from "../styles/Navbar4.module.css"
 
 
 //! TAKING THE CONTENT IN THE JSON FORMAT . 
+//? HOW TO TAKE DATA FROM THE INTERNAL JSON . 
 
 
 
