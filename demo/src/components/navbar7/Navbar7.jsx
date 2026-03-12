@@ -14,6 +14,9 @@ const Navbar4 = () => {
     //! ARRAY DESTRUCTURING .. 
     //? THIS IS THE AREA OF THE PLAIN JAVASCRIPT FILE . 
     const{HOME , ABOUT , CARRER , SERVICES , CONTACT} = navbardata;
+
+
+    
   return (
     <div>
       <ul className={`${obj.firstcss} ${obj.secondcss}`}  />
