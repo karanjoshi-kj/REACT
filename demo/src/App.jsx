@@ -4,13 +4,14 @@
 
 // import Navbar3 from "./components/navbar4/Navbar3"
 
-import Navbar4 from "./components/navbar4/Navbar4"
+import Navbar6 from "./components/navbar6/Navbar6"
 
 
 function App() {
   return (
     <>
-    <Navbar4 />
+    <Navbar6 />
+    {/* <Navbar5 /> */}
     {/* <Navbar2 />       */}
       {/* <Topbar2 /> */}
       {/* <NavBar /> */}
