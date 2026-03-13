@@ -5,6 +5,8 @@
 // import Navbar3 from "./components/navbar4/Navbar3"
 
 import Navbar7 from "./components/navbar7/Navbar7"
+
+//! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
 import { Backbutton , Backtotopbutton } from "./components/buttons/Button.jsx"
 
 
