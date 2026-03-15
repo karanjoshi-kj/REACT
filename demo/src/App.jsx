@@ -6,6 +6,7 @@
 
 // import Navbar7 from "./components/navbar7/Navbar7"
 // import Buttonlist from "./components/question/Buttonlist"
+import Nav from "./Components/Test/Nav";
 
 // //! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
 // import { Backbutton , Backtotopbutton } from "./components/buttons/Button.jsx"
@@ -15,7 +16,14 @@ function App() {
   return (
     <>
 
-    
+     <Nav name="Karan Joshi" />
+      <Nav name="Shubham" />
+      <Nav name="Rahul" />
+      <Nav name="Charanjeet Sing" />
+      <Nav name="Karan" />
+      {/*PARENT COMPONENT IS CALLING THE CHILD COMPONENT  */}
+
+
     {/* <Buttonlist/> */}
     {/* <Backbutton/>
     <Backtotopbutton/> */}
