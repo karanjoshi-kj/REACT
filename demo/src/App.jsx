@@ -6,7 +6,7 @@
 
 // import Navbar7 from "./components/navbar7/Navbar7"
 // import Buttonlist from "./components/question/Buttonlist"
-import Nav from "./Components/Test/Nav";
+import Nav from "./components/props/Nav";
 
 // //! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
 // import { Backbutton , Backtotopbutton } from "./components/buttons/Button.jsx"

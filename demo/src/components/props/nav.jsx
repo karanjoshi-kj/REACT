@@ -1,6 +1,6 @@
 import React from 'react'
 
-const nav = () => {
+const nav = (props) => {
   return (
     <div>
       <h1>Hello{props.name}</h1>
