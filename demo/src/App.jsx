@@ -5,7 +5,7 @@
 // import Navbar3 from "./components/navbar4/Navbar3"
 
 // import Navbar7 from "./components/navbar7/Navbar7"
-import Buttonlist from "./components/question/Buttonlist"
+// import Buttonlist from "./components/question/Buttonlist"
 
 // //! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
 // import { Backbutton , Backtotopbutton } from "./components/buttons/Button.jsx"
@@ -14,7 +14,9 @@ import Buttonlist from "./components/question/Buttonlist"
 function App() {
   return (
     <>
-    <Buttonlist/>
+
+    
+    {/* <Buttonlist/> */}
     {/* <Backbutton/>
     <Backtotopbutton/> */}
     {/* <Navbar7 /> */}
