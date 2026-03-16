@@ -16,11 +16,16 @@ function App() {
   return (
     <>
 
+    
+
+
+
+{/* 
      <Nav name="Karan Joshi" />
       <Nav name="Shubham" />
       <Nav name="Rahul" />
       <Nav name="Charanjeet Sing" />
-      <Nav name="Karan" />
+      <Nav name="Karan" /> */}
       {/*PARENT COMPONENT IS CALLING THE CHILD COMPONENT  */}
 
 
