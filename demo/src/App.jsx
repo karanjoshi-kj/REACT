@@ -6,6 +6,7 @@
 
 // import Navbar7 from "./components/navbar7/Navbar7"
 // import Buttonlist from "./components/question/Buttonlist"
+import Form from "./components/MULTIPROPS/Form";
 import Nav from "./components/props/Nav";
 
 // //! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
@@ -15,7 +16,7 @@ import Nav from "./components/props/Nav";
 function App() {
   return (
     <>
-    
+    <Form.jsx/>
 
 
 
