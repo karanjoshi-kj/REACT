@@ -20,7 +20,6 @@ function App() {
 
 
 
-
 {/* 
      <Nav name="Karan Joshi" />
       <Nav name="Shubham" />
