@@ -6,8 +6,9 @@
 
 // import Navbar7 from "./components/navbar7/Navbar7"
 // import Buttonlist from "./components/question/Buttonlist"
-import Form from "./components/MULTIPROPS/Form";
-import Nav from "./components/props/Nav";
+// import Form from "./components/MULTIPROPS/Form";
+// import Nav from "./components/props/Nav";
+import Idcard from "./components/STUDENTIDCARD/Idcard";
 
 // //! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
 // import { Backbutton , Backtotopbutton } from "./components/buttons/Button.jsx"
@@ -16,7 +17,7 @@ import Nav from "./components/props/Nav";
 function App() {
   return (
     <>
-    <Form/>
+  <Idcard/>
 
 
 
