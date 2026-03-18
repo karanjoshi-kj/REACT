@@ -16,7 +16,7 @@ import Nav from "./components/props/Nav";
 function App() {
   return (
     <>
-    <Form.jsx/>
+    <Form/>
 
 
 

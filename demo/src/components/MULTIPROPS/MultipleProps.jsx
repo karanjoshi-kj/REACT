@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MultipleProps = ({roll , stname , add , age , stcourse}) => {
+const MultipleProps = ({roll , stname , add , stage , stcourse}) => {
 
   return (
     <div>
