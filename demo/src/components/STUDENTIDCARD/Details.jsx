@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Details = ({image , name , address , salary , profession}) => {
+const Details = ({img, stname , add , sal , prof}) => {
   return (
     <div>
-      <p>Student img : {image}</p>
-      <p>Student stname : {name}</p>
-      <p>Student add : {address}</p>
-      <p>Student sal : {salary}</p>
-      <p>Student prof : {profession}</p>
+      <img src={img} alt='DETAILS NOT FOUND'/>
+      <p>Student name : {stname}</p>
+      <p>Student address : {add}</p>
+      <p>Student salary : {sal}</p>
+      <p>Student profession : {prof}</p>
     </div>
   )
 }
