@@ -14,7 +14,7 @@ const Idcard = () => {
   return (
     <div>
       <Details img={image} stname={name} add={address} sal={salary} prof={profession} />
-      
+
       {/*
        <Details studentid={studentid} />
       
