@@ -1,6 +1,11 @@
 import React from 'react'
 
 const Details = ({img, stname , add , sal , prof}) => {
+
+  //!  THIS IS THE SECOND WAY TO PASS THE COMPLETE DATA AT ONCE , HERE WE DESTRUCTURE THE 
+  //? const Details = ({studentid}) => {
+//? const {img , stname , add , sal , prof} = studentid 
+
   return (
     <div>
       <img src={img} alt='DETAILS NOT FOUND'/>
