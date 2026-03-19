@@ -14,6 +14,13 @@ const Idcard = () => {
   return (
     <div>
       <Details img={image} stname={name} add={address} sal={salary} prof={profession} />
+      
+      {/*
+       <Details studentid={studentid} />
+      
+       THIS IS THE SECOND WAY TO PASS COMPLETE DATA 
+      
+      */}
     </div>
   )
 }
