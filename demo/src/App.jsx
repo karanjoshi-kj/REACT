@@ -8,7 +8,8 @@
 // import Buttonlist from "./components/question/Buttonlist"
 // import Form from "./components/MULTIPROPS/Form";
 // import Nav from "./components/props/Nav";
-import Idcard from "./components/STUDENTIDCARD/Idcard";
+import Form from "./components/MULTIPROPS2/Form";
+// import Idcard from "./components/STUDENTIDCARD/Idcard";
 
 // //! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
 // import { Backbutton , Backtotopbutton } from "./components/buttons/Button.jsx"
@@ -17,7 +18,8 @@ import Idcard from "./components/STUDENTIDCARD/Idcard";
 function App() {
   return (
     <>
-  <Idcard/>
+    <Form/>
+  {/* <Idcard/> */}
 
 
 
