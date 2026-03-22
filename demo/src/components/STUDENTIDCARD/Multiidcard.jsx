@@ -8,7 +8,7 @@ const Multiidcard = () => {
         "name":"charanjeet singh sidhu",
         "address":"haldwani",
         "profession":"teacher",
-      ``  "salary":"5 L"
+        "salary":"5 L"
     }];
     </div>
   )

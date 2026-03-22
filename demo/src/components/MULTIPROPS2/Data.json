@@ -1,0 +1,28 @@
+[{
+"Rollno": 1,
+ "Name":"Karan",
+ "Course":"btech",
+ "Address":"Ranikhet",
+ "Phone": "32423423423"
+},
+{
+ "Rollno": 2,
+ "Name":"raman",
+ "Course":"btech",
+ "Address":"Ranikhet",
+ "Phone": "32423423423"
+},
+{
+ "Rollno": 3,
+ "Name":"chaman",
+ "Course":"ba",
+ "Address":"chorgaliya",
+ "Phone": "32423423423"
+},
+{
+ "Rollno": 3,
+ "Name":"bhawesh",
+ "Course":"bpharma",
+ "Address":"Delhi",
+ "Phone": "32423423423"
+}]
