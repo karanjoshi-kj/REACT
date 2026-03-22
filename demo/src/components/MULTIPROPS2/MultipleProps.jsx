@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MultipleProps = (studentdata) => {
+const MultipleProps = ({studentdata}) => {
     const {Rollno , Name , Address , Course , Phone} = studentdata ;
   return (
     <div>
