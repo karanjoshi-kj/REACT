@@ -2,13 +2,15 @@
 // import NavBar from "./components/Topbar/NavBar"
 // import Topbar2 from "./components/TopBar2/Topbar2"
 
+import Form from "./components/QuestionPractice/Form"
+
 // import Navbar3 from "./components/navbar4/Navbar3"
 
 // import Navbar7 from "./components/navbar7/Navbar7"
 // import Buttonlist from "./components/question/Buttonlist"
 // import Form from "./components/MULTIPROPS/Form";
 // import Nav from "./components/props/Nav";
-import Form from "./components/MULTIPROPS2/Form";
+// import Form from "./components/MULTIPROPS2/Form";
 // import Idcard from "./components/STUDENTIDCARD/Idcard";
 
 // //! DESTRUCTURING OF THE FUNCTIONAL COMPONENTS DURING IT'S CALLING .
@@ -19,6 +21,7 @@ function App() {
   return (
     <>
     <Form/>
+    {/* <Form/> */}
   {/* <Idcard/> */}
 
 
