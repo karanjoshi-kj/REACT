@@ -1,32 +1,51 @@
-import React from 'react'
+import React from "react";
 
 const Form = () => {
+  const formdata = {
+    Name: " ",
+    Email: " ",
+    Age: " ",
+    Gender: " ",
+  };
 
-    const formdata = {
-        Name:" ",
-        Email:" ",
-        Age:" ",
-        Gender:" "
-    };
+  const data = () => {
+    const name = document.getElementById("Name").value;
+    const email = document.getElementById("Email").value;
+    const age = document.getElementById("Age").value;
+    const gender = document.getElementById("Gender").value;
+
+    document.getElementById("output").innerHTML = `
+        <h1>SUBMITTED DATA</h1>
+        name : ${Name} </br>
+        email : ${Email} </br>
+        age : ${Age} </br>
+        gender : ${Gender} </br>
+        
+        `;
+  };
+
   return (
-    <div>
-      <div className='container'>
-        <h2>Form</h2>
+    <div className="container">
+      <h2>Form</h2>
 
-        <input type='text' name='Name' placeholder='ENTER NAME'/><br></br>
-        <input type='email' name='Email' placeholder='ENTER EMAIL'/><br></br>
-        <input type='number' name='Age' placeholder='ENTER AGE'/><br></br>
+      <input type="text" name="Name" placeholder="ENTER NAME" />
+      <br></br>
+      <input type="email" name="Email" placeholder="ENTER EMAIL" />
+      <br></br>
+      <input type="number" name="Age" placeholder="ENTER AGE" />
+      <br></br>
 
-        <select name='Genader'>
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select><br></br>
+      <select name="Gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <br></br>
 
-        <button>Submit</button>
-      </div>
+      <button onClick={data}>Submit</button>
+      <div id="output"></div>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
