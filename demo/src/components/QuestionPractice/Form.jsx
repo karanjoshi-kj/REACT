@@ -8,6 +8,7 @@ const Form = () => {
     Gender: " ",
   };
 
+  
   const data = () => {
     const name = document.getElementById("Name").value;
     const email = document.getElementById("Email").value;
