@@ -20,7 +20,6 @@ const Form = () => {
         email : ${Email} </br>
         age : ${Age} </br>
         gender : ${Gender} </br>
-        
         `;
   };
 
