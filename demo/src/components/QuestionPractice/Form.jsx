@@ -24,7 +24,6 @@ const Form = () => {
         `;
   };
 
-  
 
   return (
     <div className="container">
