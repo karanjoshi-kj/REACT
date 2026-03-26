@@ -11,7 +11,6 @@ const Form = () => {
         console.log(userJSONData)
         // { userJSONData.map((index, student) => (<MutipleProps key={index} studentData={student} />)) }
     };
-
     
     return (
         <div className="container">
