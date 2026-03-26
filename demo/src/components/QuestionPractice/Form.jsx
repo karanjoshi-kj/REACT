@@ -3,10 +3,10 @@ import React from "react";
 
 const Form = () => {
     const data = (e) => {
-        e.preventDefault();  //! preventDefault() screen ko rerender hone se bachta aur hold rakhta hai .
+        e.preventDefault();  //! preventDefault() screen ko rerender hone se bachta aur data ko hold rakhta hai .
         const userData = new FormData(e.target);  //? puree form ka data ko store kar ra hai . 
         const userdataentries = Object.fromEntries(userData.entries());
-        console.log("User Data:", userdataentries); //? printing the data . 
+        console.log("User Data:", userdataentries); //? printing the data , ye pura data de dega prototype bhi de dega . 
         const userJSONData = JSON.stringify(userdataentries);   //? converting the data into json data . 
         console.log(userJSONData)
         // { userJSONData.map((index, student) => (<MutipleProps key={index} studentData={student} />)) }
