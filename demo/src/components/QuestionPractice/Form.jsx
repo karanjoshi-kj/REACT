@@ -3,11 +3,11 @@ import React from "react";
 
 const Form = () => {
     const data = (e) => {
-        e.preventDefault();
-        const userData = new FormData(e.target);
+        e.preventDefault();  //! preventDefault() screen ko rerender hone se bachta aur hold rakhta hai .
+        const userData = new FormData(e.target);  //? puree form ka data ko store kar ra hai . 
         const userdataentries = Object.fromEntries(userData.entries());
-        console.log("User Data:", userdataentries);
-        const userJSONData = JSON.stringify(userdataentries);
+        console.log("User Data:", userdataentries); //? printing the data . 
+        const userJSONData = JSON.stringify(userdataentries);   //? converting the data into json data . 
         console.log(userJSONData)
         // { userJSONData.map((index, student) => (<MutipleProps key={index} studentData={student} />)) }
     };
