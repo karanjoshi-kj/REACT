@@ -25,4 +25,8 @@ STATE : WHAT THE FUNCTION DOING OR WHAT IS THE VALUE OF VARIABLE PROPERTY =>
 THIS STATE OF REACT HOOKS IS SPECIALLY USED TO MAINTAIN THE STATE OF A VARIABLE , FUNCTION , OBJECT , STRING , ARRAY .
 
 SYNTAX : 
-const[state , updated]  = useState(initial value)
+const[state , updated state or setstate]  = useState(initial value)
+
+HERE => 
+1. state -> value at a point of time .
+2. setstate -> function which is updating the value of the state .
