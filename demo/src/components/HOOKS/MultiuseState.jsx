@@ -4,12 +4,13 @@
 
 
 import React , {useState} from 'react'
-const[username , setusername] = useState("");
+
+const MultiuseState = () => {
+    const[username , setusername] = useState("");
 const[displayname , setdisplayname] = useState("");
 function handlechange(){
     setdisplayname(username);
 }
-const MultiuseState = () => {
   return (
     <div>
       <label htmlFor='name'>User Name :</label>
