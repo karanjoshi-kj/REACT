@@ -2,8 +2,9 @@
 // import NavBar from "./components/Topbar/NavBar"
 // import Topbar2 from "./components/TopBar2/Topbar2"
 
-import Usestate from "./components/HOOKS/Usestate"
-import Form from "./components/QuestionPractice/Form"
+import StringsuseState from "./components/HOOKS/StringsuseState"
+// import Usestate from "./components/HOOKS/Usestate"
+// import Form from "./components/QuestionPractice/Form"
 
 // import Navbar3 from "./components/navbar4/Navbar3"
 
@@ -21,7 +22,8 @@ import Form from "./components/QuestionPractice/Form"
 function App() {
   return (
     <>
-    <Usestate/>
+    <StringsuseState/>
+    {/* <Usestate/> */}
     {/* <Form/> */}
     {/* <Form/> */}
   {/* <Idcard/> */}
