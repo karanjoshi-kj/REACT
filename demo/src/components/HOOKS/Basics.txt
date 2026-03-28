@@ -10,3 +10,19 @@ STATE : WHAT THE FUNCTION DOING OR WHAT IS THE VALUE OF VARIABLE PROPERTY =>
  i. image -> color , size
  ii. variable -> vlaue 
  iii. function -> what 
+
+
+ TYPES OF REACT HOOKS => 
+1. useState 
+2. useEffect
+3. useContext
+4. useCallback 
+5. useMemroy
+
+
+
+1. useState ==> 
+THIS STATE OF REACT HOOKS IS SPECIALLY USED TO MAINTAIN THE STATE OF A VARIABLE , FUNCTION , OBJECT , STRING , ARRAY .
+
+SYNTAX : 
+const[state , updated]  = useState(initial value)
