@@ -11,7 +11,6 @@ const FormuseState = () => {
             ...formData,
             [name]: value
         });
-
         
     }
     const handleSubmit = (e) => {
