@@ -8,7 +8,7 @@ const FormuseState = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
-            ...formData,
+            ...formData,   // PURANE DATA KO ESA HEE RAKHEGII AUR NYII BHI RAKHEGGI 
             [name]: value
         });
         
