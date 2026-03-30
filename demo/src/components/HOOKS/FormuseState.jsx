@@ -2,7 +2,7 @@ import React , {useState} from 'react'
 
 const FormuseState = () => {
 
-  const [formData, setFormData] = useState({ StudentName: "", StudentDob: "", Studentcourse: "", Studentemail: "", Studentnumber: "", });
+  const [formData, setFormData] = useState({ StudentName: "", StudentDob: "", Studentcourse: "", Studentemail: "", Studentnumber: ""});
     const [userData, setUserData] = useState(null);
 
     const handleChange = (e) => {
