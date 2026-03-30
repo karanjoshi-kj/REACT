@@ -38,7 +38,7 @@ const FormuseState = () => {
                 </fieldset>
             </form>
 
-            {   (<div><h1>Student Data </h1>
+            {   userData && (<div><h1>Student Data </h1>
                 <p>Student Name: {userData.StudentName}</p>
                 <p>Student DOB: {userData.StudentDob}</p>
                 <p>Student Course {userData.Studentcourse}</p>
