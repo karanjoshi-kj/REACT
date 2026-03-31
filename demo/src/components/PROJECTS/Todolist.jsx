@@ -67,7 +67,7 @@ const Todolist = () => {
           <input
             type="text"
             name="description"
-            placeholder="ENTER DESCRIPTION (OPTIONAL)"
+            placeholder="ENTER DESCRIPTION"
             value={appdata.description}
             onChange={handlechange}
           />
