@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Todolist = () => {
 
-  const [appdata, updatedata] = useState({ task: "" });
+  const [appdata, updatedata] = useState({ task: "" , description: "" });
   const [task, settask] = useState([]);
 
   const handlechange = (e) => {
