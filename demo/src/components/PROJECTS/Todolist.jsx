@@ -56,5 +56,4 @@ const deletetask = (index) => {
   )
 }
 
-
 export default Todolist
