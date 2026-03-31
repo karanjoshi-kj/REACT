@@ -2,7 +2,11 @@ import React, { useState } from "react";
 
 const Todolist = () => {
 
-  const [appdata, updatedata] = useState({ task: "" , description: "" });
+  const [appdata, updatedata] = useState({
+    task: "",
+    description: ""
+  });
+
   const [task, settask] = useState([]);
 
   const handlechange = (e) => {
@@ -19,15 +23,25 @@ const Todolist = () => {
 
     if (appdata.task === "") return;
 
-    settask([...task, appdata.task]);
-    updatedata({ task: "" });
+    const newTask = {
+      task: appdata.task,
+      description: appdata.description || null,
+      datetime: new Date().toLocaleString()
+    };
+
+    settask([...task, newTask]);
+
+    updatedata({
+      task: "",
+      description: ""
+    });
   };
 
-  const deletetask = (index) => {   // index vo hai jo delete karna h 
+  const deletetask = (index) => {
     let newtask = [];
 
     for (let i = 0; i < task.length; i++) {
-      if (i !== index) {   // index ke alawa baaki sab task array m push kar diye . 
+      if (i !== index) {
         newtask.push(task[i]);
       }
     }
@@ -50,6 +64,14 @@ const Todolist = () => {
             onChange={handlechange}
           />
 
+          <input
+            type="text"
+            name="description"
+            placeholder="ENTER DESCRIPTION (OPTIONAL)"
+            value={appdata.description}
+            onChange={handlechange}
+          />
+
           <button type="submit">ADD</button>
 
         </fieldset>
@@ -61,10 +83,22 @@ const Todolist = () => {
         ) : (
           task.map((item, index) => (
             <li key={index}>
-              {item}
+
+              <p><b>Task:</b> {item.task}</p>
+
+              <p>
+                <b>Description:</b>{" "}
+                {item.description === null ? "null" : item.description}
+              </p>
+
+              <p><b>Added:</b> {item.datetime}</p>
+
               <button onClick={() => deletetask(index)}>
                 DELETE
               </button>
+
+              <hr />
+
             </li>
           ))
         )}
