@@ -1,0 +1,34 @@
+{
+    "Questions":[
+        {
+            "id" : 1 ,
+            "question":"main part of CPU ? ",
+            "options":["ALU","RAM","ROM","DISK"],
+            "answer":"ALU"
+        },
+        {
+            "id" : 2,
+            "question":"fastest memory ?",
+            "options":["RAM","ROM","CACHE","DISK"],
+            "answer":"CACHE"
+        },
+        {
+            "id":3,
+            "question":"next instructuion ka address kha store hota hai ?",
+            "options":["PC","IR","MAR","MDR"],
+            "answer":"PC"
+        },
+        {
+            "id":4,
+            "question":"alu kya karta hai ?",
+            "options":["MATH","STORE","INPUT","OUTPUT"],
+            "answer":"MATH"
+        },
+        {
+            "id":5,
+            "question":"non-volatile memory kon si h?",
+            "options":["RAM","ROM","CACHE","REGISTER"],
+            "answer":"ROM"
+        }
+    ]
+}
