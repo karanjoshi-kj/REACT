@@ -12,7 +12,7 @@ const Quiz = () => {
     <div>
       <h1>{data.Questions[index].question}</h1>
       {
-        data.question[index].options.map((opt , i)=>(
+        data.Questions[index].options.map((opt , i)=>(
             <p key={i}>{opt}</p>
         ))
       }
