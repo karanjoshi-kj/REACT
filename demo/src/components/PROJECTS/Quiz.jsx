@@ -13,7 +13,11 @@ const Quiz = () => {
       <h1>{data.Questions[index].question}</h1>
       {
         data.Questions[index].options.map((opt , i)=>(
-            <p key={i}>{opt}</p>
+            // <p key={i}>{opt}</p>
+            <div>
+            <input type='radio' key={i} name='answersbutton' value={opt} /> 
+            <span>{opt}</span>
+            </div>
         ))
       }
       <button onClick={nextques}>NEXT PROBLEM</button>
