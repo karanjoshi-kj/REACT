@@ -29,6 +29,6 @@
             "question":"non-volatile memory kon si h?",
             "options":["RAM","ROM","CACHE","REGISTER"],
             "answer":"ROM"
-        }
+          }
     ]
 }

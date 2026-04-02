@@ -3,6 +3,8 @@ import data from "./Questions.json";
 
 const Quiz = () => {
     const[index , setindex] = useState(0);
+    const[select , setselect] = useState("");
+    const[score , setscore] = useState(0);
     const nextques = () =>{
         if (index < data.Questions.length) {
             setindex(index + 1)
