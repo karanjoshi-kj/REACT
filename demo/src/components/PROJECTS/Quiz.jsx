@@ -10,7 +10,7 @@ const Quiz = () => {
     }
 
     const prevques = () => {
-      if (index > data.Questions.length) {
+      if (index > 0) {
         setindex(index-1)
       }  
     }
