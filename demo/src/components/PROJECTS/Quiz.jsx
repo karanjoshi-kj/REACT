@@ -8,9 +8,11 @@ const Quiz = () => {
             setindex(index + 1)
         }
     }
-    
+
     const prevques = () => {
-      
+      if (index > data.Questions.length) {
+        setindex(index-1)
+      }  
     }
   return (
     <div>
@@ -25,6 +27,7 @@ const Quiz = () => {
         ))
       }
       <button onClick={nextques}>NEXT PROBLEM</button>
+      <button onClick={prevques}>PREVIOUS PROBLEM</button>
       
     </div>
   )
