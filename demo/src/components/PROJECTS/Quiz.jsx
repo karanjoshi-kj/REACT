@@ -14,6 +14,7 @@ const Quiz = () => {
         setindex(index-1)
       }  
     }
+    
   return (
     <div>
       <h1>{data.Questions[index].question}</h1>
