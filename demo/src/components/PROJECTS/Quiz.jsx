@@ -10,11 +10,11 @@ const Quiz = () => {
     }
 
     const prevques = () => {
-      if (index > 0) {
+      if (index > 0) { 
         setindex(index-1)
       }  
     }
-    
+
   return (
     <div>
       <h1>{data.Questions[index].question}</h1>
