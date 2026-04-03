@@ -2,25 +2,31 @@ import React, { useState } from "react";
 import data from "./Questions.json";
 
 const Quiz = () => {
+
   const [index, setindex] = useState(0);
   const [select, setselect] = useState("");
   const [score, setscore] = useState(0);
+
   const nextques = () => {
-    if (setselect === "") {
+
+    if (select === "") {
       alert("PLZZ SELECT AN OPTION");
       return;
     }
 
-    if (setselect === data.Questions[index].answer) {
+    if (select === data.Questions[index].answer) {
       setscore(score + 1);
     }
 
     if (index < data.Questions.length - 1) {
       setindex(index + 1);
       setselect("");
-    } else {
+    } 
+    else {
       alert(
-        `YOUR SCORE : ${score + select === data.Questions[index].answer ? 1 : 0}`,
+        `YOUR SCORE : ${
+          score + (select === data.Questions[index].answer ? 1 : 0)
+        }`
       );
     }
   };
@@ -33,16 +39,27 @@ const Quiz = () => {
 
   return (
     <div>
-      <h1>{data.Questions[index].question}</h1>
+
+      <h2>{data.Questions[index].question}</h2>
+
       {data.Questions[index].options.map((opt, i) => (
-        // <p key={i}>{opt}</p>
-        <div>
-          <input type="radio" key={i} name="answersbutton" value={opt} />
+        <div key={i}>
+          <input
+            type="radio"
+            name={`option-${index}`}
+            value={opt}
+            checked={select === opt}
+            onChange={() => setselect(opt)}
+          />
           <span>{opt}</span>
         </div>
       ))}
-      <button onClick={nextques}>NEXT PROBLEM</button>
-      <button onClick={prevques}>PREVIOUS PROBLEM</button>
+
+      <br/>
+
+      <button onClick={prevques}>PREVIOUS</button>
+      <button onClick={nextques}>NEXT</button>
+
     </div>
   );
 };
