@@ -38,16 +38,16 @@ const Quiz = () => {
     }
   };
 
-  const timer = setTimeout(() => {
-    nextques();
-  }, 5000);
+  // const timer = setTimeout(() => {
+  //   nextques();
+  // }, 5000);
 
-  
 
   return (
     <div>
 
       <h2>{data.Questions[index].question}</h2>
+
 
       {data.Questions[index].options.map((opt, i) => (
         <div key={i}>
