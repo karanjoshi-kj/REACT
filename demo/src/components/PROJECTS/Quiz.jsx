@@ -7,7 +7,6 @@ const Quiz = () => {
     const[score , setscore] = useState(0);
     const nextques = () =>{
 
-
       
         if (index < data.Questions.length) {
             setindex(index + 1)
