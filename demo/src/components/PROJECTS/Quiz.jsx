@@ -38,6 +38,12 @@ const Quiz = () => {
     }
   };
 
+  const timer = setTimeout(() => {
+    nextques();
+  }, 5000);
+
+  
+
   return (
     <div>
 
