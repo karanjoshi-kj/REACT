@@ -26,10 +26,11 @@ const Quiz = () => {
       alert(
         `YOUR SCORE : ${
           score + (select === data.Questions[index].answer ? 1 : 0)
-        }`
+        } / ${data.Questions.length}`
       );
     }
-  };
+
+  };  
 
   const prevques = () => {
     if (index > 0) {
