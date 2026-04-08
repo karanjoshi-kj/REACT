@@ -6,7 +6,7 @@ const Quiz = () => {
   const [index, setindex] = useState(0);
   const [select, setselect] = useState("");
   const [score, setscore] = useState(0);
-  const [result , setresult] = useState([]);
+  const [answers, setanswers] = useState([]);
 
   const nextques = () => {
 
@@ -15,19 +15,28 @@ const Quiz = () => {
       return;
     }
 
-    if (select === data.Questions[index].answer) {
+    let correct = select === data.Questions[index].answer;
+
+    if (correct) {
       setscore(score + 1);
     }
+
+    // store result
+    const newAnswers = [...answers];
+    newAnswers[index] = correct;
+    setanswers(newAnswers);
 
     if (index < data.Questions.length - 1) {
       setindex(index + 1);
       setselect("");
     } 
     else {
+
+      const correctCount = correct ? score + 1 : score;
+      const wrongCount = data.Questions.length - correctCount;
+
       alert(
-        `YOUR SCORE : ${
-          score + (select === data.Questions[index].answer ? 1 : 0)
-        } / ${data.Questions.length}`
+        `CORRECT : ${correctCount}\nWRONG : ${wrongCount}\nTOTAL : ${data.Questions.length}`
       );
     }
 
@@ -39,15 +48,15 @@ const Quiz = () => {
     }
   };
 
-  // const timer = setTimeout(() => {
-  //   nextques();
-  // }, 5000);
-
-
   return (
     <div>
 
-      <h2>{data.Questions[index].question}</h2>
+      <h2>
+        {data.Questions[index].question}
+
+        {answers[index] === true && " ✔️"}
+        {answers[index] === false && " ❌"}
+      </h2>
 
 
       {data.Questions[index].options.map((opt, i) => (
