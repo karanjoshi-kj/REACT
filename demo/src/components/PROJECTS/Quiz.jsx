@@ -6,6 +6,7 @@ const Quiz = () => {
   const [index, setindex] = useState(0);
   const [select, setselect] = useState("");
   const [score, setscore] = useState(0);
+  const [result , setresult] = useState([]);
 
   const nextques = () => {
 
