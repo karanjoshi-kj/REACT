@@ -1,4 +1,4 @@
-import React , {useState , Useeffect} from 'react'
+import React , {useState , Useeffect, useEffect} from 'react'
 
 const Useeffect = () => {
     const[counter , setcounter] = useState(0);
@@ -7,6 +7,9 @@ const Useeffect = () => {
     function helloprint(){
         console.log("print hello");
     }
+    useEffect(()=>{
+        helloprint();
+    })
   return (
     <div>
       
