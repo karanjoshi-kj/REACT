@@ -58,7 +58,7 @@ const Quiz = () => {
     <div>
 
       <h2>{data.Questions[index].question}</h2>
-
+cd demo
 
       {data.Questions[index].options.map((opt, i) => (
         <div key={i}>
