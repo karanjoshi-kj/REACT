@@ -11,12 +11,6 @@
 
 
 
-
-
-
-
-
-
 import React , {useState , Useeffect, useEffect} from 'react'
 
 const Useeffect = () => {
