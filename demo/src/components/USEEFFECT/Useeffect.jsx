@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState , Useeffect} from 'react'
 
 const Useeffect = () => {
   return (
