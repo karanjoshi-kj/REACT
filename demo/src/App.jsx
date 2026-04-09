@@ -2,7 +2,8 @@
 // import NavBar from "./components/Topbar/NavBar"
 // import Topbar2 from "./components/TopBar2/Topbar2"
 
-import Quiz from "./components/PROJECTS/Quiz"
+// import Quiz from "./components/PROJECTS/Quiz"
+import Useeffect from "./components/USEEFFECT/Useeffect"
 // import Todolist from "./components/PROJECTS/todolist"
 
 // import FormuseState from "./components/HOOKS/FormuseState"
@@ -27,7 +28,8 @@ import Quiz from "./components/PROJECTS/Quiz"
 function App() {
   return (
     <>
-    <Quiz/>
+    <Useeffect/>
+    {/* <Quiz/> */}
     {/* <Todolist/> */}
     {/* <FormuseState/> */}
     {/* <MultiuseState/> */}
