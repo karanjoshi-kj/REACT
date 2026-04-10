@@ -24,7 +24,7 @@ const UseEffectDemo = () => {
         helloPrint();
     }, [])
 
-    // helloPrint(); //independent in nature
+    // helloPrint();  independent in nature
     return (
         <div>
             {/* Hello */}
