@@ -9,27 +9,38 @@
 //? }, dependencies)
 
 
+import React, { useEffect, useState } from 'react'
 
-import React , {useState , Useeffect, useEffect} from 'react'
+const UseEffectDemo = () => {
+    const [counter, setCounter] = useState(0);
+    const [timer, setTimer] = useState(0);
 
-const Useeffect = () => {
-    const[counter , setcounter] = useState(0);
-    const[timer , settimer] = useState(0);
 
-    function helloprint(){
-        console.log("print hello");
+
+    function helloPrint() {
+        console.log(" Print Hello");
     }
-    useEffect(()=>{
-        helloprint();  // NOT INDEPENDENT IN NATURE DUE TO USEEFFECT 
-    } , [])
+    useEffect(() => {
+        helloPrint();
+    }, [])
 
-    helloprint();   //THIS IS INDEPENDENT IN NATURE
-  return (
-    <div>
-      <button onClick={() => setcounter(counter+1)}>COUNTER {counter}</button>
-      <button onClick={() => settimer(timer+1)}>TIMER {timer}</button>
-    </div>
-  )
+    // helloPrint(); //independent in nature
+    return (
+        <div>
+            {/* Hello */}
+            <button onClick={() => setCounter(counter + 1)}>Counter {counter}</button>
+            <button onClick={() => setTimer(timer + 3)}>Timer{timer}</button>
+        </div >
+    )
 }
 
-export default Useeffect
+export default UseEffectDemo;
+
+
+// useState: data to ko store with update values
+// useEffect : mainly used to resolve the side effects in the code with various parameters
+
+
+// useEffect(() => {
+
+// }, dependencies)
