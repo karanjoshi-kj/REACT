@@ -7,7 +7,7 @@ const Useeffect1 = () => {
   const [timing , setTiming] = useState(questiontiming);
 
   useEffect(()=>{
-    setTiming(questiontiming);
+    setTiming(questiontiming); //it will update the value of timer to 10 whenever called
     const interval = setInterval(() => {
       setTiming((timing) => {
         if (timing === 0) {
