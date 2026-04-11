@@ -3,10 +3,13 @@ import { useEffect } from 'react';
 
 const Useeffect1 = () => {
   const questiontiming = 5
-  const globaltimer = 30
+  const globaltime = 30
   const [counter , setCounter] = useState(1);
   const [timing , setTiming] = useState(questiontiming);
+  const [globaltimer , setglobaltimer] = useState(globaltime);
+  const [stop , setstop] = useState(false);
 
+  
   useEffect(()=>{
     setTiming(questiontiming); //it will update the value of timer to 10 whenever called
     const interval = setInterval(() => {
