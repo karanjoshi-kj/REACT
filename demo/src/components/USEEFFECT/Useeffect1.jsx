@@ -1,11 +1,25 @@
 import React , {useState , Useeffect} from 'react'
+import { useEffect } from 'react';
 
 const Useeffect1 = () => {
   const questiontiming = 5
-  const [counter , setcountet] = useState(1);
+  const [counter , setCounter] = useState(1);
   const [timing , setTiming] = useState(questiontiming);
 
-  
+  useEffect(()=>{
+    setTiming(questiontiming);
+    const interval = setInterval(() => {
+      setTiming((timing) => {
+        if (timing === 0) {
+          setCounter(counter + 1)
+          return 0 ;
+        }
+        return timing - 1 ;
+      });
+    }, 1000);
+    
+    return () => clearInterval(interval);
+  },[counter]);
 
   return (
     <div>
