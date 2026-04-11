@@ -9,7 +9,24 @@ const Useeffect1 = () => {
   const [globaltimer , setglobaltimer] = useState(globaltime);
   const [stop , setstop] = useState(false);
 
-  
+  useEffect(()=>{
+    if(stop) 
+      return ; 
+
+    const globalinterval = setInterval(()=>{
+      setglobaltimer((time)=>{
+        if (time === 0) {
+          setstop(true);
+          alert("TIME IS UP");
+          return 0 ;
+        }
+        return time - 1 ;
+      })
+    } , 1000)
+
+    return () => clearInterval(globalinterval)
+  } , [stop]);
+
   useEffect(()=>{
     setTiming(questiontiming); //it will update the value of timer to 10 whenever called
     const interval = setInterval(() => {
