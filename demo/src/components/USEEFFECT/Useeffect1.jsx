@@ -7,25 +7,8 @@ const Useeffect1 = () => {
   const [counter , setCounter] = useState(1);
   const [timing , setTiming] = useState(questiontiming);
   const [globaltimer , setglobaltimer] = useState(globaltime);
-  const [stop , setstop] = useState(false);
 
-  useEffect(()=>{
-    if(stop) 
-      return ; 
 
-    const globalinterval = setInterval(()=>{
-      setglobaltimer((time)=>{
-        if (time === 0) {
-          setstop(true);
-          alert("TIME IS UP");
-          return 0 ;
-        }
-        return time - 1 ;
-      })
-    } , 1000)
-
-    return () => clearInterval(globalinterval)
-  } , [stop]);
 
   useEffect(()=>{
     setTiming(questiontiming); //it will update the value of timer to 10 whenever called
@@ -38,10 +21,26 @@ const Useeffect1 = () => {
         return timing - 1 ;
       });
     }, 1000);
-
     // TO CLEAR THE VALUE OF THE USESETATE => 
     return () => clearInterval(interval);
   },[counter]);
+
+
+// GLOBAL TIMER
+    useEffect(()=>{
+      const globalInterval = setInterval(()=>{
+        setglobaltimer((time)=>{
+          if (time === 0) {
+            clearInterval(globalInterval)
+            alert("TIME IS UP");
+            return 0 ;
+          }
+          return time - 1 ;
+        })
+      } , 1000)
+      return () => clearInterval(globalInterval);
+    } , [])
+
 
   const nextbutton = () => {
     setCounter(() => counter + 1);
@@ -50,6 +49,7 @@ const Useeffect1 = () => {
     <div>
       <h1>Counter : {counter}</h1>
       <h2>Time Left {timing} Seconds</h2>
+      <h2>Total Time Left {globaltimer} Seconds</h2>
       <button onClick={nextbutton}>NEXT</button>
     </div>
   )
