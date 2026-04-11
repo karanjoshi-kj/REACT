@@ -22,9 +22,14 @@ const Useeffect1 = () => {
     return () => clearInterval(interval);
   },[counter]);
 
+  const nextbutton = () => {
+    setCounter(() => counter + 1);
+  };
   return (
     <div>
-      
+      <h1>Counter : {counter}</h1>
+      <h2>Time Left {timing} Seconds</h2>
+      <button onClick={nextbutton}>NEXT</button>
     </div>
   )
 }
@@ -34,22 +39,7 @@ export default Useeffect1
 // import React, { useEffect, useState } from 'react'
 
 // const UseEffectDemo = () => {
-//   
-//     useEffect(() => {
-//         setTiming(questiontimings); //it will update the value of timer to 10 whenever called
-//         const interval = setInterval(() => {
-//             setTiming((timing) => {
-//                 if (timing === 0) {
-//                     setCounter(counter + 1)
-//                     return 0;
-//                 }
-//                 return timing - 1;
-//             });
-//         }, 1000);
-//         return () => clearInterval(interval);
-//     }, [counter]);
-
-
+// 
 //     const nextbutton = () => {
 //         setCounter(() => counter + 1);
 //     };
