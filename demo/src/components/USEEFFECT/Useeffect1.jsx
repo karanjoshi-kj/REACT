@@ -17,7 +17,8 @@ const Useeffect1 = () => {
         return timing - 1 ;
       });
     }, 1000);
-    
+
+    // TO CLEAR THE VALUE OF THE USESETATE => 
     return () => clearInterval(interval);
   },[counter]);
 
