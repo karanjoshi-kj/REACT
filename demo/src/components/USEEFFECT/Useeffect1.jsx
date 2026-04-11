@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 const Useeffect1 = () => {
   const questiontiming = 5
+  const globaltimer = 30
   const [counter , setCounter] = useState(1);
   const [timing , setTiming] = useState(questiontiming);
 
