@@ -2,9 +2,9 @@
 // import NavBar from "./components/Topbar/NavBar"
 // import Topbar2 from "./components/TopBar2/Topbar2"
 
-// import Quiz from "./components/PROJECTS/Quiz"
+import Quiz from "./components/PROJECTS/Quiz"
 // import Statedependency from "./components/USEEFFECT/Statedependency"
-import Useeffect1 from "./components/USEEFFECT/Useeffect1"
+// import Useeffect1 from "./components/USEEFFECT/Useeffect1"
 // import Useeffect from "./components/USEEFFECT/Useeffect"
 // import Todolist from "./components/PROJECTS/todolist"
 
@@ -30,10 +30,10 @@ import Useeffect1 from "./components/USEEFFECT/Useeffect1"
 function App() {
   return (
     <>
-    <Useeffect1/>
+    {/* <Useeffect1/> */}
     {/* <Statedependency/> */}
     {/* <Useeffect/> */}
-    {/* <Quiz/> */}
+    <Quiz/>
     {/* <Todolist/> */}
     {/* <FormuseState/> */}
     {/* <MultiuseState/> */}
