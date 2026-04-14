@@ -13,6 +13,11 @@ const Randomnumber = () => {
       <h1>LATEST NUMBER : {number}</h1>
       <button onClick={generatenum}>GENERATE NUMBER</button>
       <h2>HISTORY</h2>
+      <ul>
+        {history.map((num , index) => (
+            <li key={index}>{num}</li>
+        ))}
+      </ul>
     </div>
   )
 }
