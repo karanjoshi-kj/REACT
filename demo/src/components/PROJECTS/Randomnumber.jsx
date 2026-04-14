@@ -5,7 +5,7 @@ const Randomnumber = () => {
     const [history , sethistory] = useState([]);
 
     const generatenum = () =>{
-        const randomnum = Math.floor(Math.random() * 1000) + 1 ;
+        const randomnum = Math.floor(Math.random() * 100) + 1 ;
         setnumber(randomnum);
     };
   return (
