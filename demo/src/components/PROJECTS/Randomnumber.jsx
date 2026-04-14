@@ -10,7 +10,7 @@ const Randomnumber = () => {
     };
   return (
     <div>
-        <h1>LATEST NUMBER : {number}</h1>
+      <h1>LATEST NUMBER : {number}</h1>
       <button onClick={generatenum}>GENERATE NUMBER</button>
       <h2>HISTORY</h2>
     </div>
