@@ -9,9 +9,9 @@ const Randomnumber = () => {
          setnumber(randomnum);
     };
     useEffect(() => {
-        if (number !== null) {  // BECAUSE INITALLY THE VALUE IS GIVEN AS NULL 
-            sethistory((prev) =>
-            [number , ...prev])
+        if (number !== null) {  //? BECAUSE INITALLY THE VALUE IS GIVEN AS NULL .
+            sethistory((prev) =>   //?  HERE (prev) IS NOTHING BUT THE PURANI VALUE OF THE HISTORY . 
+            [number , ...prev])  //?  YHA PAR NEW NUMBER AUR SATH M PREVIOUS VALUES KO DESTRUCTRE KAR DIYA H 
         }
     } , [number]); // [number] : JAB BHI NUMBER CHANGE HOGA TBB USEEFFECT CHALEGA . 
   return (
