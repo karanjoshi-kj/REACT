@@ -8,6 +8,12 @@ const Randomnumber = () => {
         const randomnum = Math.floor(Math.random() * 100) + 1 ;
          setnumber(randomnum);
     };
+    useEffect(() => {
+        if (number !== null) {
+            sethistory((prev) =>
+            [number , ...prev])
+        }
+    } , [number]); // [number] : JAB BHI NUMBER CHANGE HOGA TBB USEEFFECT CHALEGA . 
   return (
     <div>
       <h1>LATEST NUMBER : {number}</h1>
@@ -19,7 +25,7 @@ const Randomnumber = () => {
         ))}
       </ul>
 
-      {/* NOTE : MANE USESTATE M NUMBERS KO ARRAY KE FORM M STORE KARWAYA H FRR USME MAP FUNCTION LAGYA H  JO HAR ELEMNET PAR LOOP CHALATA HAI  FRR 2 ARGUMENT PASS KAR DIYA H (num , index)  */}
+      {/* NOTE : MANE USESTATE M NUMBERS KO ARRAY KE FORM M STORE KARWAYA H FRR USME MAP FUNCTION LAGYA H  JO HAR ELEMNET PAR LOOP CHALATA HAI  FRR 2 ARGUMENT PASS KAR DIYA H (num , index)  num -> actual number , index -> position (0 , 1 , 2)*/}
     </div>
   )
 }
