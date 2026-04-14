@@ -24,7 +24,6 @@ const Randomnumber = () => {
             <li key={index}>{num}</li>
         ))}
       </ul>
-
       {/* NOTE : MANE USESTATE M NUMBERS KO ARRAY KE FORM M STORE KARWAYA H FRR USME MAP FUNCTION LAGYA H  JO HAR ELEMNET PAR LOOP CHALATA HAI  FRR 2 ARGUMENT PASS KAR DIYA H (num , index)  num -> actual number , index -> position (0 , 1 , 2)*/}
     </div>
   )
