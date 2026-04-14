@@ -6,11 +6,13 @@ const Randomnumber = () => {
 
     const generatenum = () =>{
         const randomnum = Math.floor(Math.random() * 100) + 1 ;
-        setnumber(randomnum);
+         setnumber(randomnum);
     };
   return (
     <div>
+        <h1>LATEST NUMBER : {number}</h1>
       <button onClick={generatenum}>GENERATE NUMBER</button>
+      <h2>HISTORY</h2>
     </div>
   )
 }
