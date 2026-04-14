@@ -9,7 +9,7 @@ const Randomnumber = () => {
          setnumber(randomnum);
     };
     useEffect(() => {
-        if (number !== null) {
+        if (number !== null) {  // BECAUSE INITALLY THE VALUE IS GIVEN AS NULL 
             sethistory((prev) =>
             [number , ...prev])
         }
