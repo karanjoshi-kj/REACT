@@ -4,6 +4,7 @@ const TempratureMeasurmemt = () => {
     const[temp , settemp] = useState("");
     const[msg , setmsg] = useState("");
     const[wish , setwish] = useState("");
+    const[time , settime] = useState("");
 
     useEffect(() => {
         if (temp > 30) {
@@ -15,6 +16,10 @@ const TempratureMeasurmemt = () => {
         else{
             setmsg("NORMAL");
         }
+
+        const abc = new Date();
+        const currenttime = abc.toLocaleString();
+        settime(currenttime);
 
         const hour = new Date().getHours();
         if (hour < 12) {
