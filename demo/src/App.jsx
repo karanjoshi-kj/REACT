@@ -3,7 +3,8 @@
 // import Topbar2 from "./components/TopBar2/Topbar2"
 
 // import Quiz from "./components/PROJECTS/Quiz"
-import Randomnumber from "./components/PROJECTS/Randomnumber"
+// import Randomnumber from "./components/PROJECTS/Randomnumber"
+import TempratureMeasurmemt from "./components/PROJECTS/TempratureMeasurmemt"
 // import Statedependency from "./components/USEEFFECT/Statedependency"
 // import Useeffect1 from "./components/USEEFFECT/Useeffect1"
 // import Useeffect from "./components/USEEFFECT/Useeffect"
@@ -30,8 +31,8 @@ import Randomnumber from "./components/PROJECTS/Randomnumber"
 
 function App() {
   return (
-    <>
-    <Randomnumber/>
+    <><TempratureMeasurmemt/>
+    {/* <Randomnumber/> */}
     {/* <Useeffect1/> */}
     {/* <Statedependency/> */}
     {/* <Useeffect/> */}
