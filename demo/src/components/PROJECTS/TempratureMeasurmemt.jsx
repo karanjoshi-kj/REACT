@@ -4,7 +4,14 @@ const TempratureMeasurmemt = () => {
     const[temp , settemp] = useState("");
     const[msg , setmsg] = useState("");
     const[wish , setwish] = useState("");
-    const[time , settime] = useState("");
+    const[time , settime] = useState(new Date());
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            settime(new Date());
+        }, 1000);
+        return () => clearInterval(timer);
+    } ,[]); 
 
     useEffect(() => {
         if (temp > 30) {
