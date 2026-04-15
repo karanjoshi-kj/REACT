@@ -7,7 +7,6 @@ function TempratureMeasurmemt() {
   const [greet, setGreet] = useState("");
   const [time, setTime] = useState(new Date());
 
-  // Clock update every second
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date());   // machine ka current time
