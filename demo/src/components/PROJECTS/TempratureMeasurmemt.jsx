@@ -9,7 +9,7 @@ function TempratureMeasurmemt() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTime(new Date());   // machine ka current time
+      setTime(new Date()); 
     }, 1000);
 
     return () => clearInterval(timer);
