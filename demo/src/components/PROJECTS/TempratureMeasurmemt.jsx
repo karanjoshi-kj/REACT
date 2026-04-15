@@ -15,7 +15,6 @@ function TempratureMeasurmemt() {
     return () => clearInterval(timer);
   }, []);
 
-  // Temperature + Greeting logic
   useEffect(() => {
 
     
