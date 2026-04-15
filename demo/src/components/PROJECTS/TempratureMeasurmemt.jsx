@@ -1,51 +1,65 @@
-import React , {useState , useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
-const TempratureMeasurmemt = () => {
-    const[temp , settemp] = useState("");
-    const[msg , setmsg] = useState("");
-    const[wish , setwish] = useState("");
-    const[time , settime] = useState(new Date());
+function TempratureMeasurmemt() {
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            settime(new Date());
-        }, 1000);
-        return () => clearInterval(timer);
-    } ,[]); 
+  const [temp, setTemp] = useState("");
+  const [message, setMessage] = useState("");
+  const [greet, setGreet] = useState("");
+  const [time, setTime] = useState(new Date());
 
-    useEffect(() => {
-        if (temp > 30) {
-            setmsg("HOT");
-        }
-        else if(temp < 10){
-            setmsg("COLD");
-        }
-        else{
-            setmsg("NORMAL");
-        }
+  // Clock update every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date());   // machine ka current time
+    }, 1000);
 
-        const abc = new Date();
-        const currenttime = abc.toLocaleString();
-        settime(currenttime);
+    return () => clearInterval(timer);
+  }, []);
 
-        const hour = new Date().getHours();
-        if (hour < 12) {
-            setwish("GOOD MORNING");
-        }
-        else if(hour < 17){
-            setwish("GOOD AFTERNOON");
-        }
-        else{
-            setwish("GOOD EVENING");
-        }
-    } , [temp])
+  // Temperature + Greeting logic
+  useEffect(() => {
+
+    
+      if (temp > 30) {
+        setMessage("Hot");
+      }
+      else if (temp < 10) {
+        setMessage("Cold");
+      }
+      else {
+        setMessage("Normal");
+      }
+
+    const hour = new Date().getHours();
+
+    if (hour < 12) {
+      setGreet("Good Morning");
+    }
+    else if (hour < 17) {
+      setGreet("Good Afternoon");
+    }
+    else {
+      setGreet("Good Evening");
+    }
+
+  }, [temp]);
+
   return (
-    <div>
-      <h2>{wish}</h2>
-      <input type='number' placeholder='ENTER TEMPRATURE' value={temp} onChange={(e) => settemp(e.target.value)} />
-      <h3>{msg}</h3>
-    </div>
-  )
+<div>
+      <h2>{greet}</h2>
+
+      <h3>Current Time: {time.toLocaleTimeString()}</h3>
+
+      <input
+        type="number"
+        placeholder="Enter Temperature"
+        value={temp}
+        onChange={(e) => setTemp(e.target.value)}
+      />
+
+      <h2>{message}</h2>
+</div>
+  );
 }
 
-export default TempratureMeasurmemt
+export default TempratureMeasurmemt;
