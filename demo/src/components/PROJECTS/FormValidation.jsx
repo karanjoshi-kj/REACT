@@ -1,44 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 const FormValidation = () => {
   const[name , setname] = useState("");
   const[email , setemail] = useState("");
   const[password , setpassword] = useState("");
-  const [error, seterror] = useState("");
-
-  useEffect(() => {
-    if (name === "") {
-      seterror("NAME IS REQUIRED");
-    } 
-    else if (email === "") {
-      seterror("EMAIL IS REQUIRED");
-    }
-     else if (!email.includes("@")) {
-      seterror("RE-ENTER THE EMAIL");
-    }
-     else if (password === "") {
-      seterror("ENTER THE PASSWORD");
-    }
-     else if (password.length < 6) {
-      seterror("PASSWORD SHOULD BE GREATER THAN 6 DIGITS");
-    }
-     else {
-      seterror("");
-    }
-  }, [name , email , password]);
 
   const submit = (e) => {
-    e.preventDefault() ;
-
-    if (error === "") {
-        alert("FORM SUBMITTED");
+    e.preventDefault();
+    if (name === "") {
+      alert("NAME IS REQUIRED");
+      return ;
+    } 
+    if (email === "") {
+      alert("EMAIL IS REQUIRED");
+      return ;
     }
-    else{
-        alert(error);
+    if (!email.includes("@")) {
+      alert("RE-ENTER THE EMAIL");
+      return ;
     }
-  }
+     if (password === "") {
+      alert("ENTER THE PASSWORD");
+      return ;
+    }
+     else if (password.length < 6) {
+      alert("PASSWORD SHOULD BE GREATER THAN 6 DIGITS");
+      return ;
+    }
+    alert("FORM SUBMITTED");
+  };
 
-  return <div>
+
+  return(
+   <div>
     <form onSubmit={submit}>
 
         <label>Name</label>
@@ -68,7 +62,8 @@ const FormValidation = () => {
         <button type="submit">Submit</button>
 
       </form>
-  </div>;
+  </div>
+  );
 };
 
 export default FormValidation;
