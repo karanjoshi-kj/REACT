@@ -4,7 +4,8 @@
 
 // import Quiz from "./components/PROJECTS/Quiz"
 // import Randomnumber from "./components/PROJECTS/Randomnumber"
-import TempratureMeasurmemt from "./components/PROJECTS/TempratureMeasurmemt"
+import FormValidation from "./components/PROJECTS/FormValidation"
+// import TempratureMeasurmemt from "./components/PROJECTS/TempratureMeasurmemt"
 // import Statedependency from "./components/USEEFFECT/Statedependency"
 // import Useeffect1 from "./components/USEEFFECT/Useeffect1"
 // import Useeffect from "./components/USEEFFECT/Useeffect"
@@ -31,7 +32,8 @@ import TempratureMeasurmemt from "./components/PROJECTS/TempratureMeasurmemt"
 
 function App() {
   return (
-    <><TempratureMeasurmemt/>
+    <FormValidation/>
+    // <><TempratureMeasurmemt/>
     {/* <Randomnumber/> */}
     {/* <Useeffect1/> */}
     {/* <Statedependency/> */}
