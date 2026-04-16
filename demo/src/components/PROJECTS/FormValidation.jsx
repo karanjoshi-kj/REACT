@@ -1,50 +1,74 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from "react";
 
 const FormValidation = () => {
+  const [form, setform] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
-    const [form , setform] = useState({
-        name : "",
-        email : "",
-        password : ""
-    });
+  const [error, seterror] = useState("");
 
-   const updation = () => {
+  useEffect(() => {
     if (form.name === "") {
-        alert("NAME IS REQUIRED")
+      seterror("NAME IS REQUIRED");
+    } 
+    else if (form.email === "") {
+      seterror("EMAIL IS REQUIRED");
     }
-
-    if (form.email === "") {
-        alert("EMAIL IS REQUIRED");
+     else if (!form.email.includes("@")) {
+      seterror("RE-ENTER THE EMAIL");
     }
-    else if (!form.email.includes("@")) {
-        alert("RE-ENTER THE EMAIL");
+     else if (form.password === "") {
+      seterror("ENTER THE PASSWORD");
     }
-
-    if (form.password === "") {
-        alert("ENTER THE PASSWORD");
+     else if (form.password.length < 6) {
+      seterror("PASSWORD SHOULD BE GREATER THAN 6 DIGITS");
     }
-    else if (form.password.length < 6) {
-        alert("PASSWORD SHOULD BE GREATER THEN SIX DIGITS");
+     else {
+      seterror("");
     }
-   }
-  return (
-    <div>
-<form>
-    <label>Name</label>
-    <input type='text' name='name' /> <br></br>
+  }, [form]);
 
-    <label>Email</label>
-    <input type='email' name='email' /> <br></br>
+  return <div>
+    <form>
 
-    <label>Password</label>
-    <input type='password' name='password' /><br></br>
-   
-   <button type='submit'>SUBMIT</button>
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={update}
+        />
 
-   <updation/>
-</form>
-    </div>
-  )
-}
+        <br /><br />
 
-export default FormValidation
+        <label>Email</label>
+        <input
+          type="text"
+          name="email"
+          value={form.email}
+          onChange={update}
+        />
+
+        <br /><br />
+
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={update}
+        />
+
+        <br /><br />
+
+        <p style={{color:"red"}}>{error}</p>
+
+        <button type="submit">Submit</button>
+
+      </form>
+  </div>;
+};
+
+export default FormValidation;
