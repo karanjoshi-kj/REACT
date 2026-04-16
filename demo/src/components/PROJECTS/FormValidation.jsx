@@ -23,7 +23,7 @@ const FormValidation = () => {
       alert("ENTER THE PASSWORD");
       return ;
     }
-     else if (password.length < 6) {
+     if (password.length < 6) {
       alert("PASSWORD SHOULD BE GREATER THAN 6 DIGITS");
       return ;
     }
