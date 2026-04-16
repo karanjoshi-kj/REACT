@@ -4,23 +4,22 @@ const FormValidation = () => {
   const[name , setname] = useState("");
   const[email , setemail] = useState("");
   const[password , setpassword] = useState("");
-
   const [error, seterror] = useState("");
 
   useEffect(() => {
-    if (form.name === "") {
+    if (name === "") {
       seterror("NAME IS REQUIRED");
     } 
-    else if (form.email === "") {
+    else if (email === "") {
       seterror("EMAIL IS REQUIRED");
     }
-     else if (!form.email.includes("@")) {
+     else if (!email.includes("@")) {
       seterror("RE-ENTER THE EMAIL");
     }
-     else if (form.password === "") {
+     else if (password === "") {
       seterror("ENTER THE PASSWORD");
     }
-     else if (form.password.length < 6) {
+     else if (password.length < 6) {
       seterror("PASSWORD SHOULD BE GREATER THAN 6 DIGITS");
     }
      else {
@@ -65,7 +64,6 @@ const FormValidation = () => {
         />
         <br /><br />
 
-        <p style={{color:"red"}}>{error}</p>
 
         <button type="submit">Submit</button>
 
