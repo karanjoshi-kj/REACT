@@ -34,41 +34,40 @@ function App() {
   return (
     <FormValidation/>
     // <><TempratureMeasurmemt/>
-    {/* <Randomnumber/> */}
-    {/* <Useeffect1/> */}
-    {/* <Statedependency/> */}
-    {/* <Useeffect/> */}
-    {/* <Quiz/> */}
-    {/* <Todolist/> */}
-    {/* <FormuseState/> */}
-    {/* <MultiuseState/> */}
-    {/* <StringsuseState/> */}
-    {/* <Usestate/> */}
-    {/* <Form/> */}
-    {/* <Form/> */}
-  {/* <Idcard/> */}
+    // {/* <Useeffect1/> */}
+  //   {/* <Statedependency/> */}
+  //   {/* <Useeffect/> */}
+  //   {/* <Quiz/> */}
+  //   {/* <Todolist/> */}
+  //   {/* <FormuseState/> */}
+  //   {/* <MultiuseState/> */}
+  //   {/* <StringsuseState/> */}
+  //   {/* <Usestate/> */}
+  //   {/* <Form/> */}
+  //   {/* <Form/> */}
+  // {/* <Idcard/> */}
 
 
 
-{/* 
-     <Nav name="Karan Joshi" />
-      <Nav name="Shubham" />
-      <Nav name="Rahul" />
-      <Nav name="Charanjeet Sing" />
-      <Nav name="Karan" /> */}
-      {/*PARENT COMPONENT IS CALLING THE CHILD COMPONENT  */}
+// {/* 
+//      <Nav name="Karan Joshi" />
+//       <Nav name="Shubham" />
+//       <Nav name="Rahul" />
+//       <Nav name="Charanjeet Sing" />
+//       <Nav name="Karan" /> */}
+//       {/*PARENT COMPONENT IS CALLING THE CHILD COMPONENT  */}
 
 
-    {/* <Buttonlist/> */}
-    {/* <Backbutton/>
-    <Backtotopbutton/> */}
-    {/* <Navbar7 /> */}
-    {/* <Navbar6 /> */}
-    {/* <Navbar5 /> */}
-    {/* <Navbar2 />       */}
-      {/* <Topbar2 /> */}
-      {/* <NavBar /> */}
-    </>
+//     {/* <Buttonlist/> */}
+//     {/* <Backbutton/>
+//     <Backtotopbutton/> */}
+//     {/* <Navbar7 /> */}
+//     {/* <Navbar6 /> */}
+//     {/* <Navbar5 /> */}
+//     {/* <Navbar2 />       */}
+//       {/* <Topbar2 /> */}
+//       {/* <NavBar /> */}
+//     </>
   )
 }
 

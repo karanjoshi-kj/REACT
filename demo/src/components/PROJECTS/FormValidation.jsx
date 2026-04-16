@@ -11,8 +11,8 @@ const FormValidation = () => {
     <input type='email' name='email' />
     <label>Password</label>
     <input type='password' name='password' />
-    <label>Name</label>
-    <input type='text' name='name' />
+   
+   <button type='submit'>SUBMIT</button>
 </form>
     </div>
   )
