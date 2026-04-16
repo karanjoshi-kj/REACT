@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const FormValidation = () => {
+
+    const [form , setform] = useState({
+        name : "",
+        email : "",
+        password : ""
+    });
   return (
     <div>
 <form>
