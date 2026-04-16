@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const FormValidation = () => {
-  const [form, setform] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const[name , setname] = useState("");
+  const[email , setemail] = useState("");
+  const[password , setpassword] = useState("");
 
   const [error, seterror] = useState("");
 
@@ -28,17 +26,26 @@ const FormValidation = () => {
      else {
       seterror("");
     }
-  }, [form]);
+  }, [name , email , password]);
+
+  const submit = (e) => {
+    e.preventDefault() ;
+
+    if (error === "") {
+        alert("FORM SUBMITTED");
+    }
+    else{
+        alert(error);
+    }
+  }
 
   return <div>
-    <form>
+    <form onSubmit={submit}>
 
         <label>Name</label>
         <input
           type="text"
-          name="name"
-          value={form.name}
-          onChange={update}
+          onChange={(e) => setname(e.target.value)}
         />
 
         <br /><br />
@@ -46,21 +53,16 @@ const FormValidation = () => {
         <label>Email</label>
         <input
           type="text"
-          name="email"
-          value={form.email}
-          onChange={update}
+          onChange={(e) => setemail(e.target.value)}
         />
 
         <br /><br />
 
         <label>Password</label>
         <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={update}
+          type="text"
+          onChange={(e) => setname(e.target.value)}
         />
-
         <br /><br />
 
         <p style={{color:"red"}}>{error}</p>
