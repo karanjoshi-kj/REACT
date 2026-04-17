@@ -30,7 +30,6 @@ const FormValidation = () => {
     alert("FORM SUBMITTED");
   };
 
-
   return(
    <div>
     <form onSubmit={submit}>
