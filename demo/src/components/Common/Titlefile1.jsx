@@ -1,12 +1,11 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
-const Titlefile1 = ({ Titlecopy}) => {
+export const Titlefile1 = ({ Titlecopy}) => {
   return (
-    <div>
-      <helmet>
+      <Helmet>
         <title>{Titlecopy}</title>
-      </helmet>
-    </div>
+      </Helmet>
   )
 }
 
