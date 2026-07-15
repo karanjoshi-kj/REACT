@@ -4,6 +4,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async'
 import HelmetComponent from './components/Helmets/HelmetComponent'
 import About from './components/Helmets/About'
 import Services from './components/Helmets/Services'
+import Vision from './components/Helmets/Vision'
 // import Contact from './components/Helmets/Contact'
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Link to="/">Home<HelmetComponent /></ Link><br/>            
           {/* <Link to="/contact">Contact</Link><br/>             */}
           <Link to="/about">About</Link><br/>            
+          <Link to="/about/vision">Vision</Link><br/>            
           <Link to="/services">Services</Link><br/>            
           <Link to="https://nlp.nexterp.in/nlp/nlp/v1/home/collaboration-dashboard">About | ON WEBSITE </Link><br/>
           <a href="https://nlp.nexterp.in/nlp/nlp/v1/home/collaboration-dashboard" target="_blank" rel="noopener noreferrer">External Link  |ERP  </a>
@@ -26,6 +28,7 @@ const App = () => {
           <Route path="/" element={<HelmetComponent />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/about" element={<About />} />
+          <Route path="/about/vision" element={<Vision />} />
           <Route path="/services" element={<Services />} />
           {/* <Route path="*" element={<Error404 />} /> */}
         </Routes>
