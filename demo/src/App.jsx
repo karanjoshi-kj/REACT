@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import HelmetComponent from './components/Helmets/HelmetComponent'
 import Contact from './components/Helmets/Contact'
+
 const App = () => {
   return (
        <HelmetProvider>
