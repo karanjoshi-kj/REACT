@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 const Meta = (data) => {
-    const{description, title , keyword} = data
+    const{description, title , keyword} = data;
   return (
     <Helmet>
       <title>{title}</title>
