@@ -2,9 +2,10 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import HelmetComponent from './components/Helmets/HelmetComponent'
+import Favicon from './components/Helmets/Favicon'
 // import About from './components/Helmets/About'
 // import Services from './components/Helmets/Services'
-import Usemeta from './components/Helmets/Usemeta'
+// import Usemeta from './components/Helmets/Usemeta'
 // import Vision from './components/Helmets/Vision'
 // import Contact from './components/Helmets/Contact'
 
@@ -17,7 +18,8 @@ const App = () => {
           <meta name="description" content="Coaching application" />
         </Helmet>
         <nav>
-          <Link to="/usemeta">Meta</Link><br/>
+          <Link to="/favicon">Favicon</Link><br/>
+          {/* <Link to="/usemeta">Meta</Link><br/> */}
           {/* <Link to="/">Home<HelmetComponent /></ Link><br/> */}
           {/* <Link to="/contact">Contact</Link><br/>             */}
           {/* <Link to="/about">About</Link><br/>             */}
@@ -33,7 +35,8 @@ const App = () => {
           {/* <Route path="/about/vision" element={<Vision />} /> */}
           {/* <Route path="/services" element={<Services />} /> */}
           {/* <Route path="*" element={<Error404 />} /> */}
-          <Route path="/usemeta" element={<Usemeta />} />
+          {/* <Route path="/usemeta" element={<Usemeta />} /> */}
+          <Route path="/favicon" element={<Favicon title="My App" description="My app description" keyword="my, app, keywords" favicon="https://cdn-icons-png.flaticon.com/512/1041/1041888.png" />} />
         </Routes>
       </Router>
     </HelmetProvider>
