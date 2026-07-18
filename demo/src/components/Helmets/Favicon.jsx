@@ -9,7 +9,6 @@ const Favicon = (data) => {
             <title>{title}</title>
             <meta name="description" content={description} />
             <meta name="keyword" content={keyword} />
-            {/* Ekdum simple static link jisme favicon prop se aa raha hai */}
             <link rel="icon" type="image/x-icon" href={favicon} />
         </Helmet>
     )

@@ -19,11 +19,9 @@ const Meta = (data) => {
                 <title>{title}</title>
                 <meta name="description" content={description} />
                 <meta name="keyword" content={keyword} />
-                {/* Isme humne id="my-favicon" de diya hai taaki isko target kar sakein */}
                 <link id="my-favicon" rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" />
             </Helmet>
             
-            {/* Iske neeche page ka baaki content load hoga */}
             {data.children}
         </div>
     )
