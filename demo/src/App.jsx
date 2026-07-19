@@ -1,10 +1,12 @@
 import React from 'react'
-import Mapfun from './components/mapfunction/Mapfun';
+// import Mapfun from './components/mapfunction/Mapfun';
+import Keyattri from './components/mapfunction/Keyattri';
 
 const App = () => {
   return (
     <div>
-      <Mapfun />
+      {/* <Mapfun /> */}
+      <Keyattri />
     </div>
   )
 }

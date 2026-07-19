@@ -11,18 +11,18 @@ const Keyattri = () => {
             "name":'Bhawesh'
         },
         {
-            "id":1,
+            "id":3,
             "name":'Ram'
         }
-    ];
+    ]
   return (
     <div>
       <h2>STUDENT NAMES</h2>
-      {studentnames.map((parameter)=>{
-        <p key={parameter.id}>{parameter.id}{parameter.name}</p>
-      })}
+      {studentnames.map((parameter)=>(
+        <p key={parameter.id}> {parameter.id} {parameter.name}</p>
+      ))}
     </div>
   )
 }
 
-export default Keyattri
+export default Keyattri ;
