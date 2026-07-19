@@ -12,10 +12,14 @@ const Mapfun = () => {
     } */}
 
 
-    {
+    {/* {
         studentnames.map((name)=>{
-            
+            return <p>{name}</p>;    //? THIS WILL PRINT THE OUTPUT IN THE SCREEN 
         })
+    } */}
+
+    {
+        studentnames.map((name)=>(<p>{name}</p>))    //? THIS IS SINGLE LINER & WITHOUT RETURN STATEMENT .....
     }
 
     </div>
