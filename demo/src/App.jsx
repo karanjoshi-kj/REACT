@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'; // <-- BrowserR
 import Aboutus from './components/pages/Aboutus';
 import Services from './components/Common/Pagenotfound';
 import Contact from './components/Common/Underconstruction';
+
 const App = () => {
   return (
     <BrowserRouter> {/* <-- Yahan start kiya */}
