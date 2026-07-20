@@ -33,7 +33,16 @@ const QuestionPratice = () => {
                 <th>course</th>
             </tr>
         </thead>
-        
+
+        {/* <body> */}
+            {students.map((student , index)=>(
+                <tr key={index}>
+                    <td>{student.rollno}</td>
+                    <td>{student.name}</td>
+                    <td>{student.course}</td>
+                </tr>
+            ))}
+        {/* </body> */}
       </table>
     </div>
   )
