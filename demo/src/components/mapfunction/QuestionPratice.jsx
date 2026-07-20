@@ -1,6 +1,12 @@
 import React from 'react'
 
 const QuestionPratice = () => {
+
+    const upperheadings = [
+        "ROLLNO.",
+        "NAME",
+        "COURSE"
+    ];
     const students = [
         {
             rollno : 1 ,
@@ -28,9 +34,9 @@ const QuestionPratice = () => {
       <table border="1" cellPadding="10">
         <thead>
             <tr>
-                <th>rollno</th>
-                <th>name</th>
-                <th>course</th>
+                {upperheadings.map((heading , index)=>(
+                    <th key={index}>{heading}</th>
+                ))}
             </tr>
         </thead>
 
