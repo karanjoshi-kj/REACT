@@ -2,13 +2,10 @@ import React from 'react'
 
 const QuestionPratice = () => {
 
-    const upperheadings = [
-        "ROLLNO.",
-        "NAME",
-        "COURSE"
-    ];
-    const students = [
-        {
+    
+    const students = {
+        heads : ["ROLL" , "NAME" , "COURSE"],
+        values : [{
             rollno : 1 ,
             name : 'karan',
             course : 'b.tech'
@@ -24,24 +21,29 @@ const QuestionPratice = () => {
             course : 'bca'
         },
         {
+            rollno : 100,
+            name : 'harshit',
+            course : 'bca'
+        },
+        {
             rollno : 4 ,
             name : 'mohit',
             course : 'mbbs'
-        },
-    ];
+        }]
+};
   return (
     <div>
       <table border="1" cellPadding="10">
         <thead>
             <tr>
-                {upperheadings.map((heading , index)=>(
+                {students.heads.map((heading , index)=>(
                     <th key={index}>{heading}</th>
                 ))}
             </tr>
         </thead>
 
         {/* <body> */}
-            {students.map((student , index)=>(
+            {students.values.map((student , index)=>(
                 <tr key={index}>
                     <td>{student.rollno}</td>
                     <td>{student.name}</td>
