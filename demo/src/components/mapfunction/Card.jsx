@@ -4,18 +4,19 @@ const Card = () => {
     const project = [
         {
         image : "https://res.cloudinary.com/dafwtuvrd/image/upload/v1766646173/d9e34983-e718-4f50-9fb4-398feb05a545_nu3mtd.jpg",
-        tag : "",
-        tagline : "",
-        description : "",
-        developer : "",
+        tag : "NEFSH",
+        tagline : "KJSD",
+        description : "SOFTWARE ENGINNER",
+        developer : "FF",
         livelink : "",
         githublink : ""
     },
 ];
+//MAP FUNCTION RETURNS A SINGLE VALUE , SO WE SHOULD WRAP IT IN A PARENT DIV .
   return (
     <div className="container">
         {project.map((abc)=>(
-            <div>
+            <div>    
             <img src={abc.image} alt={abc.tagline} />
             <span className="tag">{abc.tag}</span>
              <h2>{abc.tagline}</h2>
