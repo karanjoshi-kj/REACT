@@ -7,10 +7,11 @@ import Card from './components/mapfunction/Card';
 const App = () => {
   return (
     <div>
+      <Card />
       {/* <Mapfun /> */}
       {/* <Keyattri /> */}
       {/* <QuestionPratice /> */}
-      <Card />
+      {/* <Card /> */}
     </div>
   )
 }

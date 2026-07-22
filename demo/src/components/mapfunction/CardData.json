@@ -1,0 +1,27 @@
+[{
+       "id":1,
+        "image": "https://res.cloudinary.com/dafwtuvrd/image/upload/v1766259319/IMG20251113153120_ascbkz.jpg",
+        "tagline": "KARAN JOSHI",
+        "description": "SOFTWARE ENGINEER",
+      "developer": "KARAN",
+      "livelink": "https://karanjoshi-ten.vercel.app/",
+      "githublink": "https://github.com/karanjoshi-kj"
+    },
+    {
+        "id":2,
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop",
+        "tagline": "E-COMMERCE APP",
+        "description": "FULL STACK WEB STORE",
+        "developer": "KARAN",
+        "livelink": "https://example.com",
+        "githublink": "https://github.com/karanjoshi-kj"
+    },
+    {
+        "id":3,
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop",
+      "tagline": "TASK MANAGER",
+      "description": "PRODUCTIVITY TOOL",
+      "developer": "KARAN",
+      "livelink": "",
+      "githublink": "https://github.com/karanjoshi-kj"
+    }]
