@@ -5,7 +5,6 @@ const Card = () => {
   const project = [
     {
       image: "https://res.cloudinary.com/dafwtuvrd/image/upload/v1766259319/IMG20251113153120_ascbkz.jpg",
-    //   tag: "NEFSH",
       tagline: "KARAN JOSHI",
       description: "SOFTWARE ENGINEER",
       developer: "KARAN",
