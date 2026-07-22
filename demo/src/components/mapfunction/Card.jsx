@@ -2,6 +2,7 @@ import React from 'react';
 import './Card.css';
 
 const Card = () => {
+  // Array me jitne objects daaloge, utne cards ban jayenge
   const project = [
     {
       image: "https://res.cloudinary.com/dafwtuvrd/image/upload/v1766259319/IMG20251113153120_ascbkz.jpg",
@@ -11,6 +12,22 @@ const Card = () => {
       livelink: "https://karanjoshi-ten.vercel.app/",
       githublink: "https://github.com/karanjoshi-kj"
     },
+    {
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop",
+      tagline: "E-COMMERCE APP",
+      description: "FULL STACK WEB STORE",
+      developer: "KARAN",
+      livelink: "https://example.com",
+      githublink: "https://github.com/karanjoshi-kj"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop",
+      tagline: "TASK MANAGER",
+      description: "PRODUCTIVITY TOOL",
+      developer: "KARAN",
+      livelink: "",
+      githublink: "https://github.com/karanjoshi-kj"
+    }
   ];
 
   return (
@@ -19,7 +36,7 @@ const Card = () => {
         <div key={index} className="project-card">
           <div className="card-image-wrapper">
             <img src={abc.image} alt={abc.tagline} className="card-image" />
-            <span className="tag">{abc.tag}</span>
+            {abc.tag && <span className="tag">{abc.tag}</span>}
           </div>
 
           <div className="card-content">
