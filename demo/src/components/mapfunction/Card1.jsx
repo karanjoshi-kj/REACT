@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card1 = ({abc}) => {
+ export function Card1({abc}){
   return (
       <div key={abc.id} className="project-card">
           <div className="card-image-wrapper">
@@ -41,4 +41,4 @@ const Card1 = ({abc}) => {
   )
 }
 
-export default Card1
+// export default Card1
