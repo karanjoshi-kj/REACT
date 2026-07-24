@@ -3,12 +3,13 @@ import React from 'react'
 // import Keyattri from './components/mapfunction/Keyattri';
 // import QuestionPratice from './components/mapfunction/QuestionPratice';
 // import Card from './components/mapfunction/Card';
-import Filter from './components/FILTERS/Filter';
+// import Filter from './components/FILTERS/Filter';
+import Filter1 from './components/FILTERS/Filter1';
 
 const App = () => {
   return (
     <div>
-      <Filter />
+      <Filter1 />
       {/* <Card /> */}
       {/* <Mapfun /> */}
       {/* <Keyattri /> */}
