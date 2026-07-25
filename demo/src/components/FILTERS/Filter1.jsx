@@ -1,5 +1,4 @@
 import React from 'react'
-import { ImInsertTemplate } from 'react-icons/im';
 
 const Filter1 = () => {
   
