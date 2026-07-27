@@ -34,8 +34,8 @@ const Filter1 = () => {
     return (
     <div>
       <h1>FILTER'S IN JS</h1>
-      {res.map((item , index) => (
-        <p key={index}>NAME : {item.name}  |   MARKS : {item.marks}</p>
+      {res.map((item) => (
+        <p key={item.id}>NAME : {item.name}  |   MARKS : {item.marks}</p>
       ))}
     </div>
   )
