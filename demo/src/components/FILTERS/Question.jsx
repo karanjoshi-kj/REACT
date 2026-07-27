@@ -1,5 +1,5 @@
 import React  , {useState} from 'react'
-
+import Inputbar from "./Inputbar"; 
 const Question = () => {
     const products = [
         {
@@ -44,6 +44,8 @@ const filteredproduct = products.filter((product)=> {
   return (
     <div>
       <h1>PRODUCT UNDER 15K :</h1>
+
+<Inputbar pricefilter = {pricefilter} setpricefilter={setpricefilter} />
 
       {filteredproduct.map((product)=>(
         <div key={product.id}>
