@@ -4,8 +4,8 @@ const Question = () => {
     const products = [
         {
         id : 1 ,
-        name : "Laptop",
-        Price : "45000",
+        name : "shampoo",
+        Price : "450",
         category : "ELECTRONICS"
     },
     {
@@ -26,12 +26,6 @@ const Question = () => {
         Price : "45000",
         category : "CLOTHES"
     },
-    {
-        id : 1 ,
-        name : "Shampoo",
-        Price : "45000",
-        category : "Beauty"
-    },
 ];
 
 const [pricefilter , setpricefilter] = useState("");
@@ -39,7 +33,7 @@ const filteredproduct = products.filter((product)=> {
     if (pricefilter === "") {
         return true ;
     }
-    return product.Price <= pricefilter ;
+    return product.Price <= Number(pricefilter) ;
 }); 
   return (
     <div>
