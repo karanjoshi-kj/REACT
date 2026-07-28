@@ -1,17 +1,28 @@
-import React from 'react'
+import React from "react";
 
-const Inputbar = ({pricefilter , setpricefilter}) => {
+const Inputbar = ({
+  minPrice,
+  setMinPrice,
+  maxPrice,
+  setMaxPrice,
+}) => {
   return (
     <div>
-      <input 
-      type="number"
-      placeholder="Enter The Price"
-      value={pricefilter}
-      onChange={(e) => setpricefilter(e.target.value)}
-      
+      <input
+        type="number"
+        placeholder="Minimum Price"
+        value={minPrice}
+        onChange={(e) => setMinPrice(e.target.value)}
+      />
+
+      <input
+        type="number"
+        placeholder="Maximum Price"
+        value={maxPrice}
+        onChange={(e) => setMaxPrice(e.target.value)}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Inputbar
+export default Inputbar;
