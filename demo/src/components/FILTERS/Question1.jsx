@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Input1 from "./Input1"
-
 const Question1 = () => {
      const products = [
     {
