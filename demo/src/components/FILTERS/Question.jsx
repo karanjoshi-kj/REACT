@@ -59,7 +59,6 @@ const Question = () => {
           <h3>{product.name}</h3>
           <p>Price : ₹{product.Price}</p>
           <p>Category : {product.category}</p>
-          <hr />
         </div>
       ))}
     </div>
