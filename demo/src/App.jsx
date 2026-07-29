@@ -5,13 +5,15 @@ import React from 'react'
 // import Card from './components/mapfunction/Card';
 // import Filter from './components/FILTERS/Filter';
 // import Filter1 from './components/FILTERS/Filter1';
-import Question1 from './components/FILTERS/Question1';
+// import Question1 from './components/FILTERS/Question1';
+import Dropdown from './components/FILTERS/Dropdown';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
   return (
     <div>
-      <Question1 />
+      <Dropdown />
+      {/* <Question1 /> */}
       {/* <Questio1n /> */}
       {/* <Filter1 /> */}
       {/* <Filtercard /> */}
