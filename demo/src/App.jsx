@@ -6,13 +6,15 @@ import React from 'react'
 // import Filter from './components/FILTERS/Filter';
 // import Filter1 from './components/FILTERS/Filter1';
 // import Question1 from './components/FILTERS/Question1';
-import Dropdown from './components/FILTERS/Dropdown';
+// import Dropdown from './components/FILTERS/Dropdown';
+import Combined from './components/FILTERS/Combined';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
   return (
     <div>
-      <Dropdown />
+      <Combined />
+      {/* <Dropdown /> */}
       {/* <Question1 /> */}
       {/* <Questio1n /> */}
       {/* <Filter1 /> */}
