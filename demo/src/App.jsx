@@ -7,13 +7,15 @@ import React from 'react'
 // import Filter1 from './components/FILTERS/Filter1';
 // import Question1 from './components/FILTERS/Question1';
 // import Dropdown from './components/FILTERS/Dropdown';
-import Combined from './components/FILTERS/Combined';
+// import Combined from './components/FILTERS/Combined';
+import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
   return (
     <div>
-      <Combined />
+      <Pagenation2 />
+      {/* <Combined /> */}
       {/* <Dropdown /> */}
       {/* <Question1 /> */}
       {/* <Questio1n /> */}
