@@ -10,13 +10,14 @@ import React from 'react'
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
-import Pagenation2 from './components/PAGENATION/Pagenation2';
+// import Pagenation2 from './components/PAGENATION/Pagenation2';
+import Pagenationcomplete from './components/PAGENATION/Pagenationcomplete';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
   return (
     <div>
-      <Pagenation2/>
+      <Pagenationcomplete/>
       {/* <Arraycls/> */}
       {/* <Pagenation2 /> */}
       {/* <Combined /> */}
