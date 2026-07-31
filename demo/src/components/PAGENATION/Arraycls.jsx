@@ -1,0 +1,35 @@
+import React from 'react'
+
+const products = [
+    { "id": 1, "name": "Wireless Bluetooth Earbuds", "category": "Electronics", "price": 1499, "rating": 4.5, "stock": 120 },
+  { "id": 2, "name": "Smartwatch with Heart Rate Monitor", "category": "Electronics", "price": 2999, "rating": 4.3, "stock": 85 },
+  { "id": 3, "name": "Gaming Mouse RGB", "category": "Electronics", "price": 899, "rating": 4.6, "stock": 200 },
+  { "id": 4, "name": "Mechanical Keyboard", "category": "Electronics", "price": 2499, "rating": 4.7, "stock": 45 },
+  { "id": 5, "name": "HD Webcam 1080p", "category": "Electronics", "price": 1899, "rating": 4.2, "stock": 60 },
+  { "id": 6, "name": "Portable Bluetooth Speaker", "category": "Electronics", "price": 1299, "rating": 4.4, "stock": 150 },
+  { "id": 7, "name": "Noise Cancelling Headphones", "category": "Electronics", "price": 4999, "rating": 4.8, "stock": 30 },
+  { "id": 8, "name": "USB-C Fast Charger 65W", "category": "Electronics", "price": 1199, "rating": 4.5, "stock": 300 },
+  { "id": 9, "name": "Power Bank 20000mAh", "category": "Electronics", "price": 1599, "rating": 4.3, "stock": 180 },
+  { "id": 10, "name": "External Hard Drive 1TB", "category": "Electronics", "price": 4299, "rating": 4.6, "stock": 90 },
+  { "id": 11, "name": "Smartphone Stand Holder", "category": "Electronics", "price": 299, "rating": 4.1, "stock": 500 },
+  { "id": 12, "name": "Wireless Charging Pad", "category": "Electronics", "price": 899, "rating": 4.0, "stock": 110 },
+  { "id": 13, "name": "4K Action Camera", "category": "Electronics", "price": 6999, "rating": 4.3, "stock": 25 },
+  { "id": 14, "name": "Wi-Fi Router Dual Band", "category": "Electronics", "price": 2199, "rating": 4.5, "stock": 70 },
+  { "id": 15, "name": "Ring Light with Tripod", "category": "Electronics", "price": 1299, "rating": 4.2, "stock": 140 },
+  { "id": 16, "name": "Graphic Drawing Tablet", "category": "Electronics", "price": 3499, "rating": 4.6, "stock": 40 },
+  { "id": 17, "name": "Laptop Cooling Pad", "category": "Electronics", "price": 999, "rating": 4.1, "stock": 160 },
+  { "id": 18, "name": "Type-C Hub 6-in-1", "category": "Electronics", "price": 1799, "rating": 4.4, "stock": 95 },
+  { "id": 19, "name": "VR Headset", "category": "Electronics", "price": 2999, "rating": 3.9, "stock": 20 },
+  { "id": 20, "name": "Smart Fitness Band", "category": "Electronics", "price": 1999, "rating": 4.2, "stock": 210 },
+]
+const Arraycls = () => {
+    const totalpages = 10;
+    const a = Array.from({length:totalpages} , (value , index)=>{console.log(value,index)})
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default Arraycls
