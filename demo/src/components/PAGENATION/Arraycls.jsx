@@ -25,6 +25,7 @@ const products = [
 const Arraycls = () => {
     const totalpages = 10;
     const a = Array.from({length:totalpages} , (value , index)=>{console.log(value,index)})
+    const ab = Array.from({length:totalpages} , (_, index)=>{console.log(index)})
   return (
     <div>
       
