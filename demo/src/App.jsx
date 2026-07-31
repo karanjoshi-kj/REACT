@@ -9,13 +9,15 @@ import React from 'react'
 // import Dropdown from './components/FILTERS/Dropdown';
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
-import Arraycls from './components/PAGENATION/Arraycls';
+// import Arraycls from './components/PAGENATION/Arraycls';
+import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
   return (
     <div>
-      <Arraycls/>
+      <Pagenation2/>
+      {/* <Arraycls/> */}
       {/* <Pagenation2 /> */}
       {/* <Combined /> */}
       {/* <Dropdown /> */}
