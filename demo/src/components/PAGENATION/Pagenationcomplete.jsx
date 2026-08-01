@@ -122,7 +122,14 @@ const Pagenationcomplete = () => {
                 </div>
             ))}
             
-            <div>
+            <div className="btn-parent">
+                <button 
+                    disabled={currentPage === 1} 
+                    onClick={() => setCurrentPage(currentPage - 1)}
+                >
+                    Previous
+                </button>
+
                 {Array.from({ length: totalpages }, (_, pageNumber) => (
                     <button 
                         key={pageNumber} 
@@ -131,6 +138,13 @@ const Pagenationcomplete = () => {
                         {pageNumber + 1}
                     </button>
                 ))}
+
+                <button 
+                    disabled={currentPage === totalpages} 
+                    onClick={() => setCurrentPage(currentPage + 1)}
+                >
+                    Next
+                </button>
             </div>
         </div>
     );
