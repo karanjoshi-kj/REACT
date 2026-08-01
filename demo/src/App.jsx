@@ -11,13 +11,15 @@ import React from 'react'
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
-import Pagenationcomplete from './components/PAGENATION/Pagenationcomplete';
+// import Pagenationcomplete from './components/PAGENATION/Pagenationcomplete';
+import Importpagenation from './components/PAGENATION/Importpagenation';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
   return (
     <div>
-      <Pagenationcomplete/>
+      <Importpagenation />
+      {/* <Pagenationcomplete/> */}
       {/* <Arraycls/> */}
       {/* <Pagenation2 /> */}
       {/* <Combined /> */}
