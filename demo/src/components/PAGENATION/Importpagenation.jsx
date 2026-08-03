@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Pagedata from "./Pagedata.json";
 import FilterSection from "./FilterSection";
 
-const Importpagenation = () => {
+  const Importpagenation = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemPerPage = 5;
 
