@@ -1,4 +1,5 @@
 import React from 'react'
+import Productdikha from './components/PRODUCTCARD/Productdikha';
 // import Mapfun from './components/mapfunction/Mapfun';
 // import Keyattri from './components/mapfunction/Keyattri';
 // import QuestionPratice from './components/mapfunction/QuestionPratice';
@@ -12,13 +13,14 @@ import React from 'react'
 // import Arraycls from './components/PAGENATION/Arraycls';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Pagenationcomplete from './components/PAGENATION/Pagenationcomplete';
-import Importpagenation from './components/PAGENATION/Importpagenation';
+// import Importpagenation from './components/PAGENATION/Importpagenation';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
   return (
     <div>
-      <Importpagenation />
+      <Productdikha />
+      {/* <Importpagenation /> */}
       {/* <Pagenationcomplete/> */}
       {/* <Arraycls/> */}
       {/* <Pagenation2 /> */}
