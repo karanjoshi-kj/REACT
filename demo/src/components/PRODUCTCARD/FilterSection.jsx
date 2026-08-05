@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import "./FilterSection.css";
 
 const FilterSection = ({ Pagedata, setFilteredData, setCurrentPage }) => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-
 
   const filtered = Pagedata.filter((product) => {
     const namematch = product.name.toLowerCase().includes(search.toLowerCase());

@@ -1,5 +1,5 @@
 import React from 'react'
-import Productdikha from './components/PRODUCTCARD/Productdikha';
+import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
 // import Mapfun from './components/mapfunction/Mapfun';
 // import Keyattri from './components/mapfunction/Keyattri';
 // import QuestionPratice from './components/mapfunction/QuestionPratice';
@@ -19,7 +19,7 @@ import Productdikha from './components/PRODUCTCARD/Productdikha';
 const App = () => {
   return (
     <div>
-      <Productdikha />
+      <ProductDashboard/>
       {/* <Importpagenation /> */}
       {/* <Pagenationcomplete/> */}
       {/* <Arraycls/> */}

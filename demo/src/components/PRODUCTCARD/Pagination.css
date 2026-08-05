@@ -1,0 +1,35 @@
+.btn-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 25px;
+}
+
+.btn-parent button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-parent button:hover:not(:disabled) {
+  background-color: #e2e8f0;
+}
+
+.btn-parent button:disabled {
+  background-color: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+  border-color: #cbd5e1;
+}
+
+.btn-parent button.active-page {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  font-weight: bold;
+}

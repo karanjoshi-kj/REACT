@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./Pagination.css";
 
 const Pagination = ({ filteredData, currentPage, setCurrentPage, itemPerPage, setCurrentItems }) => {
   const totalpages = Math.ceil(filteredData.length / itemPerPage);
