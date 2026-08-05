@@ -4,6 +4,7 @@ const Form = () => {
     const [name , setname] = useState("");
     const [email , setemail] = useState("");
     const [password , setpassword] = useState("");
+    const [gender , setgender] = useState("");
 
     const handlesubmit = (e) => {
         e.preventDefault();
@@ -11,6 +12,7 @@ const Form = () => {
         console.log("NAME :" , name);
         console.log("EMAIL : " , email);
         console.log("PASSWORD :" , password);
+        console.log("GENDER :" , gender);
     }
   return (
     <div>
@@ -28,6 +30,10 @@ const Form = () => {
         <input type="password" placeholder="ENTER YOUR PASSWORD" value={password} onChange={(e) => setpassword(e.target.value)}/> <br/>
         
 
+        <label>GENDER :</label>
+        <br/>
+        <input type="radio" name="gender" value="MALE" onChange={(e) => setgender(e.target.value)} checked="MALE"/>Male
+        <input type="radio" name="gender" value="FEMALE" onChange={(e) => setgender(e.target.value)}/>Female
         <button type="submit">SUBMIT</button>
       </form>
     </div>
