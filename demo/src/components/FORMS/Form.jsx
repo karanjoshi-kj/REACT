@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 const Form = () => {
     const [name , setname] = useState("");
     const [email , setemail] = useState("");
