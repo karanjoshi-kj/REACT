@@ -1,5 +1,6 @@
 import React from 'react'
-import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
+// import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
+import Form from './components/FORMS/Form';
 // import Mapfun from './components/mapfunction/Mapfun';
 // import Keyattri from './components/mapfunction/Keyattri';
 // import QuestionPratice from './components/mapfunction/QuestionPratice';
@@ -19,7 +20,8 @@ import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
 const App = () => {
   return (
     <div>
-      <ProductDashboard/>
+      <Form/>
+      {/* <ProductDashboard/> */}
       {/* <Importpagenation /> */}
       {/* <Pagenationcomplete/> */}
       {/* <Arraycls/> */}
