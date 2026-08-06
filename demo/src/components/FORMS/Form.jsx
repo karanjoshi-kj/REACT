@@ -4,6 +4,7 @@ const Form = () => {
     const [email , setemail] = useState("");
     const [password , setpassword] = useState("");
     const [gender , setgender] = useState("");
+    const [ischecked , setischecked] = useState(true);
 
     const handlesubmit = (e) => {
         e.preventDefault();
@@ -12,6 +13,7 @@ const Form = () => {
         console.log("EMAIL : " , email);
         console.log("PASSWORD :" , password);
         console.log("GENDER :" , gender);
+        console.log("CHECKING" , ischecked)
     }
   return (
     <div>
@@ -33,6 +35,10 @@ const Form = () => {
         <br/>
         <input type="radio" name="gender" value="MALE" onChange={(e) => setgender(e.target.value)} checked="MALE"/>Male
         <input type="radio" name="gender" value="FEMALE" onChange={(e) => setgender(e.target.value)}/>Female
+        <br/>
+
+         <input type="checkbox" checked={ischecked} onChange={(e) => setischecked(e.target.checked)}/>TESTING BUTTON
+         <h1>{ischecked ? "selected" : "unselected"}</h1>;
         <button type="submit">SUBMIT</button>
       </form>
     </div>
