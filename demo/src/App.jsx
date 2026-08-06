@@ -1,6 +1,7 @@
 import React from 'react'
 // import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
-import Form from './components/FORMS/Form';
+// import Form from './components/FORMS/Form';
+import Checkbox1 from './components/FORMS/Checkbox1';
 // import Checkbox from './components/FORMS/Checkbox';
 // import Mapfun from './components/mapfunction/Mapfun';
 // import Keyattri from './components/mapfunction/Keyattri';
@@ -21,8 +22,9 @@ import Form from './components/FORMS/Form';
 const App = () => {
   return (
     <div>
+      <Checkbox1/>
       {/* <Checkbox/> */}
-      <Form/>
+      {/* <Form/> */}
       {/* <ProductDashboard/> */}
       {/* <Importpagenation /> */}
       {/* <Pagenationcomplete/> */}
