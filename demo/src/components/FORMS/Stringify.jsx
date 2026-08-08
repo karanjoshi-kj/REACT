@@ -14,10 +14,20 @@ const Stringify = () => {
         
         // console.log("Subject:", name, " | Selected:", checked);
 
+        const count = Object.values(selectedSub).filter(value => value === true).length;
+        if(count === 3 && checked){
+          alert("3 HEE SUBJECT LEGA");
+          return;
+        }
         isselectedSub({
           ...selectedSub,
           [name]: checked,
         });
+
+
+        if(count === 2 && checked){
+          alert("ONLY 3 SUBJECT SELECTION");
+        }
     }
 
   return (
