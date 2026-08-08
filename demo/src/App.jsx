@@ -1,7 +1,8 @@
 import React from 'react'
 // import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
 // import Form from './components/FORMS/Form';
-import Checkbox1 from './components/FORMS/Checkbox1';
+// import Checkbox1 from './components/FORMS/Checkbox1';
+import Stringify from './components/FORMS/Stringify';
 // import Checkbox from './components/FORMS/Checkbox';
 // import Mapfun from './components/mapfunction/Mapfun';
 // import Keyattri from './components/mapfunction/Keyattri';
@@ -22,7 +23,8 @@ import Checkbox1 from './components/FORMS/Checkbox1';
 const App = () => {
   return (
     <div>
-      <Checkbox1/>
+      <Stringify/>
+      {/* <Checkbox1/> */}
       {/* <Checkbox/> */}
       {/* <Form/> */}
       {/* <ProductDashboard/> */}
