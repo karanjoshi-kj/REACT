@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 
 const Stringify = () => {
+
+  const subjects = ["C" , "CPP" , "JAVA" , "CN" , "DBMS" , "TOC"];
     const [selectedSub, isselectedSub] = useState({
         "C": false,
         "CPP": false,
         "CN": false,
         "DBMS": false,
         "JAVA": false,
+        "TOC": false,
     });
     
     const handleChange = (e) => {
@@ -34,15 +37,13 @@ const Stringify = () => {
     <div>
       <h1>SELECT SUBJECTS</h1>
       
-      <input type="checkbox" name="C" checked={selectedSub.C} onChange={handleChange} /> C
-      <br/>
-      <input type="checkbox" name="CPP" checked={selectedSub.CPP} onChange={handleChange} /> CPP
-      <br/>
-      <input type="checkbox" name="CN" checked={selectedSub.CN} onChange={handleChange} /> CN
-      <br/>
-      <input type="checkbox" name="DBMS" checked={selectedSub.DBMS} onChange={handleChange} /> DBMS
-      <br/>
-      <input type="checkbox" name="JAVA" checked={selectedSub.JAVA} onChange={handleChange} /> JAVA
+      {subjects.map((Subject , index)=>(
+        <div key={index}>
+          <input type="checkbox" name={subjects[index]} checked={selectedSub[subjects[index]]} onChange={handleChange}/>
+          {subjects[index]}
+          <br/>
+        </div>
+      ))}
 
 
       <pre>{JSON.stringify(selectedSub , null , 2)}</pre>
@@ -51,3 +52,4 @@ const Stringify = () => {
 }
 
 export default Stringify
+
