@@ -35,7 +35,7 @@ const Stringify = () => {
       <input type="checkbox" name="JAVA" checked={selectedSub.JAVA} onChange={handleChange} /> JAVA
 
 
-      <pre>{JSON.stringify(isselectedSub , null , 2)}</pre>
+      <pre>{JSON.stringify(selectedSub , null , 2)}</pre>
     </div>
   )
 }
