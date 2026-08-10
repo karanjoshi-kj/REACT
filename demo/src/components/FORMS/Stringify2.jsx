@@ -51,7 +51,13 @@ const handleselectall = (e) => {
   return (
     <div>
       <h1>SELECT SUBJECTS</h1>
-      <input type="checkbox" checked={Object.values(selectedSub)}/> SELECT ALL 
+
+
+      //!                 **************     IMPORTANT NOTE :      ***********************
+      //?  EVERY IS A METHOD IN JS , KI ARRAY KE SARE ELEMENTS CONDITIONS KO SATISFY KAR RE H YA NAHI 
+      //? NOTE : FILTER () === MATCHING ELEMENTS NIKALTA HAI  BUT EVERY() === CHECK KARTA HAI KI SARE MATCHING ELEMENTS H YA NAHI 
+
+      <input type="checkbox" checked={Object.values(selectedSub).every(value => value === true)} onChange={handleselectall}/> SELECT ALL 
       <br/>
       
       {subjects.map((Subject , index)=>(
