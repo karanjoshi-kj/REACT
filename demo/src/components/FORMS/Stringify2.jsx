@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Stringify = () => {
+const Stringify2 = () => {
 
   const subjects = ["C" , "CPP" , "JAVA" , "CN" , "DBMS" , "TOC" , "AI"];
     const [selectedSub, isselectedSub] = useState([]);
@@ -25,10 +25,34 @@ const Stringify = () => {
           alert("ONLY 3 SUBJECT SELECTION");
         }
     }
+const handleselectall = (e) => {
+    const checked = e.target.checked ;
+    if(checked){
+        isselectedSub({
+            C:true,
+            CPP:true,
+            CN:true,
+            DBMS:true,
+            JAVA:true
+        });
+    }
+    else{
+        isselectedSub({
+            C:false,
+            CPP:false,
+            CN:false,
+            DBMS:false,
+            JAVA:false
+
+        });
+    }
+}
 
   return (
     <div>
       <h1>SELECT SUBJECTS</h1>
+      <input type="checkbox" checked={Object.values(selectedSub)}/> SELECT ALL 
+      <br/>
       
       {subjects.map((Subject , index)=>(
         <div key={index}>
@@ -44,5 +68,5 @@ const Stringify = () => {
   )
 }
 
-export default Stringify
+export default Stringify2
 
