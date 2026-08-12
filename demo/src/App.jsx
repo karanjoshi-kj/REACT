@@ -1,5 +1,6 @@
 import React from 'react'
-import Dropdown1 from './components/FORMS/Dropdown1';
+import Country from './components/StateCountry/Country';
+// import Dropdown1 from './components/FORMS/Dropdown1';
 // import Dropdown1 from './components/FORMS/Dropdown1';
 // import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
 // import Form from './components/FORMS/Form';
@@ -26,7 +27,8 @@ import Dropdown1 from './components/FORMS/Dropdown1';
 const App = () => {
   return (
     <div>
-      <Dropdown1/>
+      <Country/>
+      {/* <Dropdown1/> */}
       {/* <Dropdown1/> */}
       {/* <Test/> */}
       {/* <Stringify2/> */}

@@ -1,0 +1,18 @@
+{
+    "India":{
+        "Uttarkhand" : ["ALMORA" , "CHAMOLI"],
+        "Uttar-Pradesh":["GORAKHPUR","NOIDA"]
+    },
+    "USA":{
+        "California" : ["AA" , "BB"],
+        "London":["CC","DD"]
+    },
+    "Canada":{
+        "PCM" : ["ABC" , "DEF"],
+        "ZBC":["XYZ","MNO"]
+    },
+    "China":{
+        "Whuhang" : ["A" , "B"],
+        "LJNSD":["C","D"]
+    }
+}
