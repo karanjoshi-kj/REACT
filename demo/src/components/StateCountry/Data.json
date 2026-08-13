@@ -1,7 +1,8 @@
 {
     "India":{
         "Uttarkhand" : ["ALMORA" , "CHAMOLI"],
-        "Uttar-Pradesh":["GORAKHPUR","NOIDA"]
+        "Uttar-Pradesh":["GORAKHPUR","NOIDA"],
+        "Goa":[]
     },
     "USA":{
         "California" : ["AA" , "BB"],

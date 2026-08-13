@@ -5,9 +5,7 @@ import data from "./Data.json";
 const Country = () => {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
- 
-  
-  // const [district, setDistrict] = useState("");
+  const [district, setDistrict] = useState("");
   return (
     <div>
       <h3>Country</h3>
@@ -34,18 +32,15 @@ const Country = () => {
       <select disabled={!country} value={state}
           onChange={(e) => {
             setState(e.target.value);
-          }} >
-
-        <option value="">Select State</option>
-
-
+          }
+          } >
+        <option>Select State</option>
         {                  //undefined 
           Object.keys(data[country]||{}).map((stateName)=>(
               <option key={stateName} value={stateName}>
             {stateName}
           </option>
           ))}
-        
       </select>
 
 
@@ -53,11 +48,23 @@ const Country = () => {
 
 
       <h3>District</h3>
-      <select disabled={!state}>
+      <select disabled={!state} value={district}
+          onChange={(e) => {
+            setDistrict(e.target.value);
+          }}>
         <option value="">Select District</option>
+        {                 //undefined 
+          (data[country]?.[state]||[]).map((districtName)=>(
+              <option key={districtName} value={districtName}>
+            {districtName}
+          </option>
+          ))} 
       </select>
+
+
       <h1>{country}</h1>
       <h2>{state}</h2>
+      <h2>{district}</h2>
     </div>
   );
 };
