@@ -1,5 +1,5 @@
 import React from 'react'
-import Country from './components/StateCountry/Country';
+import Country from './components/CHECKBOXES/Country';
 // import Dropdown1 from './components/FORMS/Dropdown1';
 // import Dropdown1 from './components/FORMS/Dropdown1';
 // import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
