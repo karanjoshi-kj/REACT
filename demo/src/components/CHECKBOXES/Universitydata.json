@@ -1,0 +1,44 @@
+{
+    "UTTRAKHAND TECHNICAL UNIVERSITY" : {
+        "Bias" : {
+            "B.tech":["cse" , "ece" , "civil"],
+            "Bca":["cse" , "ece" , "ai/ml"],
+            "Management":["BBA","BCOM"]
+        },
+        "DBMS CLG" : {
+            "B.tech":["cse" , "ece" , "mechanical"],
+            "Management":["BBA","BCOM"],
+            "Bca":["cse" , "ece" , "ai/ml"]
+        },
+        "TULAS CLG" : {
+            "B.tech":["cse" , "ece" , "civil"],
+            "Bca":["cse" , "ece" , "ai/ml"],
+            "Management":["BBA","BCOM"]
+        }
+    } ,
+
+    "GEHU" : {
+        "GEHU HLD" : {
+            "B.tech":["cse" , "ece" , "civil"],
+            "Bca":["cse" , "ece" , "ai/ml"],
+            "Management":["BBA","BCOM"]
+        },
+        "GEHU BHIMTAL" : {
+            "B.tech":["cse" , "ece" , "mechanical"],
+            "Management":["BBA","BCOM"],
+            "Bca":["cse" , "ece" , "ai/ml"]
+        },
+        "GEHU DEHRADUN" : {
+            "B.tech":["cse" , "ece" , "civil"],
+            "Bca":["cse" , "ece" , "ai/ml"],
+            "Management":["BBA","BCOM"]
+        }
+    } ,
+
+    "AMRAPALI" : {
+        "Amrapali clg" : {
+            "B.tech":["cse" , "ece" , "civil"],
+            "Bca":["cse" , "ece" , "ai/ml"]
+        }
+    }
+}
