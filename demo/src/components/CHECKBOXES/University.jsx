@@ -29,12 +29,19 @@ const University = () => {
        <h1>COURSE NAME</h1>
       <select disabled={!clgname} value={coursename} onChange={(e)=>{setcoursename(e.target.value);}}>
         <option value="">SELECT COURSE</option>
-        {Object.keys(universitydata[universityname]?.[clgname] || {}.map((coursename)=>(
+        {Object.keys(universitydata[universityname]?.[clgname] || {}).map((coursename)=>(
           <option key={coursename} value={coursename}>{coursename}</option>
-        )))}
+        ))}
       </select>
 
 
+     <h1>BRANCH NAME</h1>
+     <select disabled={!coursename} value={branchname} onChange={(e)=>{setbranchname(e.target.value);}}>
+      <option value="">SELECT BRANCH</option>
+      {(universitydata[universityname]?.[clgname]?.[coursename] || []).map((branchname)=>(
+        <option key={branchname} value={branchname}>{branchname}</option>
+      ))}
+     </select>
 
 
 
@@ -43,6 +50,7 @@ const University = () => {
       <h1>{universityname}</h1>
       <h1>{clgname}</h1>
       <h1>{coursename}</h1>
+      <h1>{branchname}</h1>
     </div>
   )
 }
