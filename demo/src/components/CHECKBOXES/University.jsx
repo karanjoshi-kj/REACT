@@ -46,7 +46,6 @@ const University = () => {
 
 
 
-
       <h1>{universityname}</h1>
       <h1>{clgname}</h1>
       <h1>{coursename}</h1>
