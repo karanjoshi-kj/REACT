@@ -26,11 +26,23 @@ const University = () => {
       </select>
 
 
+       <h1>COURSE NAME</h1>
+      <select disabled={!clgname} value={coursename} onChange={(e)=>{setcoursename(e.target.value);}}>
+        <option value="">SELECT COURSE</option>
+        {Object.keys(universitydata[universityname]?.[clgname] || {}.map((coursename)=>(
+          <option key={coursename} value={coursename}>{coursename}</option>
+        )))}
+      </select>
+
+
+
+
 
 
 
       <h1>{universityname}</h1>
       <h1>{clgname}</h1>
+      <h1>{coursename}</h1>
     </div>
   )
 }
