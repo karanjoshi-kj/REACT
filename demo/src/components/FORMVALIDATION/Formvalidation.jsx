@@ -18,38 +18,19 @@ const Formvalidation = () => {
 
         setformdata({
             ...formdata , 
-            name : value ,
+            [name] : value ,
         });
     };
     
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const nameregex =  /^[a-zA-Z ]*$/ ;
+    
 
-    if(!formdata.firstname){
-        seterror("FIRST NAME IS REQUIRED");
-        return ;
-    }
-    if(!nameregex.test(formdata.firstname)){
-        seterror("FIRST NAME CAN ONLY CONTAIN THE ALPHABETS , NO VALUES OR SPECIAL CHARATER");
-        return;
-    }
-
-    formdata.middlename ? (!formdata.middlename && !nameregex.test(formdata.middlename)) : "" ;
-
-    if(!formdata.lastname){
-        seterror("LAST NAME IS REQUIRED");
-        return ;
-    }
-    if(!nameregex.test(formdata.lastname)){
-        seterror("LAST NAME CAN ONLY CONTAIN THE ALPHABETS , NO VALUES OR SPECIAL CHARATER");
-        return;
-    }
-
+const handleSubmit = (e) => {
+    e.preventDefault();
 }
   return (
     <div>
       <h1>STUDENT REGISTRATION FORM</h1>
+      <form onSubmit={handleSubmit}>
       <label>first name</label>
       <input 
     type="text"
@@ -76,7 +57,10 @@ const Formvalidation = () => {
     onChange={handleChange}
     placeholder="ENTER LAST NAME"
       />
-
+</form>
+<pre>
+    {JSON.stringify(formdata , null , 2)}
+</pre>
     </div>
   )
 }
