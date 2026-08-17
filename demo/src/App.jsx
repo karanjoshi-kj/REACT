@@ -1,6 +1,7 @@
 import React from 'react'
 // import Country from './components/CHECKBOXES/Country';
-import University from './components/CHECKBOXES/University';
+// import University from './components/CHECKBOXES/University';
+import Formvalidation from './components/FORMVALIDATION/Formvalidation';
 // import Dropdown1 from './components/FORMS/Dropdown1';
 // import Dropdown1 from './components/FORMS/Dropdown1';
 // import ProductDashboard from './components/PRODUCTCARD/ProductDashboard';
@@ -28,7 +29,8 @@ import University from './components/CHECKBOXES/University';
 const App = () => {
   return (
     <div>
-      <University/>
+      <Formvalidation/>
+      {/* <University/> */}
       {/* <Country/> */}
       {/* <Dropdown1/> */}
       {/* <Dropdown1/> */}
