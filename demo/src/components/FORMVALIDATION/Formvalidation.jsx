@@ -11,7 +11,7 @@ const Formvalidation = () => {
         mothername:"",
         dob:"",
     });
-    const[error , seterror] = useState("");
+    
 
     const handleChange = (e) => {
         const{name , value} = e.target ;
