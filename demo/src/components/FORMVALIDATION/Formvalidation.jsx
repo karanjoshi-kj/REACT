@@ -11,8 +11,9 @@ const Formvalidation = () => {
         mothername:"",
         dob:"",
     });
+    const[error , seterror] = useState("");
+    const [sumbitbtn, setsubmitbtn] = useState("");
     
-
     const handleChange = (e) => {
         const{name , value} = e.target ;
 
@@ -26,6 +27,26 @@ const Formvalidation = () => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
+
+    const nameregex =  /^[A-Za-z]+$/ ;
+
+    if(!formdata.firstname){
+      seterror("FIRST NAME IS MANDATORY");
+    }
+    if(!nameregex.test(formadata.firstname)){
+      seterror("FIRST NAME CAN ONLY CONTAIN ALPHABETS");
+    }
+    
+    if(formdata.middlename && !nameregex.test(formdata.middlename)){
+      seterror("FIRST NAME CAN ONLY CONTAIN ALPHABETS");
+    }
+
+    if(!formdata.lasttname){
+      seterror("LAST NAME IS MANDATORY");
+    }
+    if(!nameregex.test(formadata.lastname)){
+      seterror("LAST NAME CAN ONLY CONTAIN ALPHABETS");
+    }
 }
   return (
     <div>
