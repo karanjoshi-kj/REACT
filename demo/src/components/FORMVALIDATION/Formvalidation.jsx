@@ -1,87 +1,73 @@
 import React, { useState } from 'react'
 
-const Formvalidation = () => {
-    const[formdata , setformdata] = useState({
-        firstname : "",
-        middlename : "",
-        lastname : "",
-        fathertitle : "MR.",
-        fathername:"",
-        mothertitle : "MRs.",
-        mothername:"",
-        dob:"",
+  const Formvalidation = () => {
+  const [formData, setFormdata] = useState({
+    firstName: "",
+    middleName: "",
+   lastName: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (!/^[A-Za-z]*$/.test(value)) {
+      alert(`${name.toUpperCase()} should only contain characters`);
+      return;
+    }
+
+    setFormdata({
+      ...formData,
+      [name]: value,
     });
-    const[error , seterror] = useState("");
-    const [sumbitbtn, setsubmitbtn] = useState("");
-    
-    const handleChange = (e) => {
-        const{name , value} = e.target ;
+  };
 
-        setformdata({
-            ...formdata , 
-            [name] : value ,
-        });
-    };
-    
-    
-
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const nameregex =  /^[A-Za-z]+$/ ;
-
-    if(!formdata.firstname){
-      seterror("FIRST NAME IS MANDATORY");
-    }
-    if(!nameregex.test(formadata.firstname)){
-      seterror("FIRST NAME CAN ONLY CONTAIN ALPHABETS");
-    }
-    
-    if(formdata.middlename && !nameregex.test(formdata.middlename)){
-      seterror("FIRST NAME CAN ONLY CONTAIN ALPHABETS");
+    if (!formData.firstName || !formData.lastName) {
+      alert("All fields in form is Mandatory");
+      return;
     }
 
-    if(!formdata.lasttname){
-      seterror("LAST NAME IS MANDATORY");
-    }
-    if(!nameregex.test(formadata.lastname)){
-      seterror("LAST NAME CAN ONLY CONTAIN ALPHABETS");
-    }
-}
+    alert(`Form Submitted Successfully`);
+  };
   return (
-    <div>
-      <h1>STUDENT REGISTRATION FORM</h1>
+     <div>
       <form onSubmit={handleSubmit}>
-      <label>first name</label>
-      <input 
-    type="text"
-    name="firstname"
-    value={formdata.firstname}
-    onChange={handleChange}
-    placeholder="ENTER FIRST NAME"
-      />
+        <label htmlFor="firstName">First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+          placeholder="Enter Your First Name"
+        />
+        <label htmlFor="middleName">Middle Name</label>
+        <input
+          type="text"
+          name="middleName"
+          id="middleName"
+          value={formData.middleName}
+          onChange={handleChange}
+          placeholder="Enter Your Middle Name"
+        />
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+          placeholder="Enter Your Last Name"
+        />
 
-      <label>Middle name</label>
-      <input 
-    type="text"
-    name="middlename"
-    value={formdata.middlename}
-    onChange={handleChange}
-    placeholder="ENTER MIDDLE NAME"
-      />
+        <button type="submit">Submit</button>
 
-      <label>last name</label>
-      <input 
-    type="text"
-    name="lastname"
-    value={formdata.lastname}
-    onChange={handleChange}
-    placeholder="ENTER LAST NAME"
-      />
-</form>
-<pre>
-    {JSON.stringify(formdata , null , 2)}
-</pre>
+        <pre>
+          {formData.firstName+" "+( formData.middleName?formData.middleName:" ")+" "+formData.lastName}
+        </pre>
+      </form>
     </div>
   )
 }
