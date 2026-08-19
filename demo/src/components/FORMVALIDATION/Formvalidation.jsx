@@ -6,10 +6,16 @@ const Formvalidation = () => {
     middleName: "",
     lastName: "",
     phone: "",
+
+    fathername : "",
+    fatherphone : "",
+
+    mothername :"",
+    mothername : "",
   });
 
-  const phonehandleChange = (f) => {
-    const { name, value } = f.target;
+  const phonehandleChange = (e) => {
+    const { name, value } = e.target;
 
     
     if (!/^[0-9]*$/.test(value)) {
@@ -95,7 +101,6 @@ const Formvalidation = () => {
         <input
           type="text"
           name="lastName"
-          id="lastName"
           value={formData.lastName}
           onChange={handleChange}
           placeholder="Enter Your Last Name"
@@ -105,16 +110,60 @@ const Formvalidation = () => {
         <input
           type="text"
           name="phone"
-          id="phone"
           placeholder="ENTER THE PHONE NUMBER"
           value={formData.phone}
           onChange={phonehandleChange}
         />
 
+
+
+        <h3>FATHER'S DETAILS</h3>
+        <label htmlFor="fathername">FATHER NAME</label>
+        <input
+        type="text"
+        name="fathername"
+        value={formData.fathername}
+        onChange={handleChange}
+        placeholder="ENTER FULL NAME"
+        />
+
+        <label htmlFor="fatherphone">FATHER PHONE NUMBER</label>
+        <input 
+        type="text"
+        name="fatherphone"
+        id="fatherphone"
+        value={formData.fatherphone}
+        onChange={phonehandleChange}
+        placeholder="ENTER THE PHONE NUMBER"
+        />
+
+        <h3>MOTHER'S DETAILS</h3>
+        <label htmlFor="mothername">MOTHER NAME</label>
+        <input
+        type="text"
+        name="mothername"
+        id="motherphone"
+        value={formData.mothername}
+        onChange={handleChange}
+        placeholder="ENTER FULL NAME"
+        />
+
+        <label htmlFor="motherphone">MOTHER PHONE NUMBER</label>
+        <input 
+        type="text"
+        name="motherphone"
+        id="motherphone"
+        value={formData.motherphone}
+        onChange={phonehandleChange}
+        placeholder="ENTER THE PHONE NUMBER"
+        />
+
         <button type="submit">Submit</button>
 
         <pre>
-          {formData.firstName + " " +(formData.middleName ? formData.middleName : " ") +" " + formData.lastName +" " + formData.phone}
+          {formData.firstName + " " +(formData.middleName ? formData.middleName : " ") +" " + formData.lastName +" " + formData.phone}<br/>
+          {formData.fathername + " " +(formData.fatherphone)}<br/>
+          {formData.mothername + " " +(formData.motherphone)}
         </pre>
 
       </form>
