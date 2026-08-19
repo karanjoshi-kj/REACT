@@ -29,6 +29,13 @@ import React, { useState } from 'react'
       return;
     }
 
+    if(formData.firstName.length < 3){
+      alert(`FIRST NAME MUST CONTAIN 3 CHARACTERS`)
+    }
+    if(formData.lastName.length < 3){
+      alert(`LAST NAME MUST CONTAIN 3 CHARACTERS`)
+    }
+
     alert(`Form Submitted Successfully`);
   };
   return (
