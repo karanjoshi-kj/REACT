@@ -11,13 +11,12 @@ const Formvalidation = () => {
   const phonehandleChange = (f) => {
     const { name, value } = f.target;
 
-    // Sirf numbers allow honge
+    
     if (!/^[0-9]*$/.test(value)) {
       alert(`${name.toUpperCase()} should only contain numbers`);
       return;
     }
 
-    // 10 digits se zyada allow nahi honge
     if (value.length > 10) {
       alert("PHONE should contain exactly 10 digits");
       return;
