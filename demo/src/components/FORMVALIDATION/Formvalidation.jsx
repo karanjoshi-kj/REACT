@@ -49,18 +49,16 @@ const Formvalidation = () => {
     });
     // PRESENT DATE AND DOB
     if(name === "dob") 
-    calculateage(formData.dob);
+    calculateage(value);
   };
 
   const calculateage = (dob) => {
     const currentdate = new Date();
-    console.log(currentdate);
+    const dobdate = new Date(dob);
+    console.log(dobdate);
     
   
-    // const age = currentdate.getFullYear()-dob.getFullYear();
-    // // console.log(presentyear);
-    // console.log(age)
-    
+    const age = currentdate.getFullYear()-dobdate.getFullYear();
   }
 
   const handleSubmit = (e) => {
