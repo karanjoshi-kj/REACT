@@ -6,6 +6,7 @@ const Formvalidation = () => {
     middleName: "",
     lastName: "",
     phone: "",
+    dob: "",
 
     fathername : "",
     fatherphone : "",
@@ -37,7 +38,7 @@ const Formvalidation = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (!/^[A-Za-z]*$/.test(value)) {
+    if (name != "dob" && !/^[A-Za-z]*$/.test(value)) {
       alert(`${name.toUpperCase()} should only contain characters`);
       return;
     }
@@ -46,7 +47,21 @@ const Formvalidation = () => {
       ...formData,
       [name]: value,
     });
+    // PRESENT DATE AND DOB
+    if(name === "dob") 
+    calculateage(formData.dob);
   };
+
+  const calculateage = (dob) => {
+    const currentdate = new Date();
+    console.log(currentdate);
+    
+  
+    // const age = currentdate.getFullYear()-dob.getFullYear();
+    // // console.log(presentyear);
+    // console.log(age)
+    
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -76,7 +91,8 @@ const Formvalidation = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-
+       
+        <h3>USER'S DETAILS</h3>
         <label htmlFor="firstName">FIRST NAME</label>
         <input
           type="text"
@@ -115,6 +131,13 @@ const Formvalidation = () => {
           onChange={phonehandleChange}
         />
 
+        <label htmlFor="dob">DATE OF BIRTH</label>
+        <input 
+        type="date"
+        name="dob"
+        value={formData.dob}
+        onChange={handleChange}
+        />
 
 
         <h3>FATHER'S DETAILS</h3>
