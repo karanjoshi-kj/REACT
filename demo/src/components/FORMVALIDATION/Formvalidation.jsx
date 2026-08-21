@@ -55,10 +55,15 @@ const Formvalidation = () => {
   const calculateage = (dob) => {
     const currentdate = new Date();
     const dobdate = new Date(dob);
+
+    let age = currentdate.getFullYear()-dobdate.getFullYear();
+    let month = currentdate.getMonth()-dobdate.getMonth();
+    console.log(age);
+    console.log(month);
+
     console.log(dobdate);
     
   
-    const age = currentdate.getFullYear()-dobdate.getFullYear();
   }
 
   const handleSubmit = (e) => {
