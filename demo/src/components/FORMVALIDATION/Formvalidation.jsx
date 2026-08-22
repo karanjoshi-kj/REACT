@@ -46,25 +46,23 @@ const Formvalidation = () => {
     setFormdata({
       ...formData,
       [name]: value,
-    });
-    // PRESENT DATE AND DOB
-    if(name === "dob") 
-    calculateage(value);
+    });    
   };
 
   const calculateage = (dob) => {
-    const currentdate = new Date();
-    const dobdate = new Date(dob);
+    if(!dob){
+      return "";
+    }
+    const currentDate = new Date();
+    const dobDate = new Date(dob);
 
-    let age = currentdate.getFullYear()-dobdate.getFullYear();
-    let month = currentdate.getMonth()-dobdate.getMonth();
-    console.log(age);
-    console.log(month);
+    let age = currentDate.getFullYear()-dobDate.getFullYear();
+    const month = currentDate.getMonth()-dobDate.getMonth();
 
-    console.log(dobdate);
     
-  
   }
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
