@@ -1,99 +1,132 @@
 import React, { useState } from 'react'
 
 const Formvalidation = () => {
+
   const [formData, setFormdata] = useState({
     firstName: "",
     middleName: "",
     lastName: "",
     phone: "",
     dob: "",
+    age: "",
 
-    fathername : "",
-    fatherphone : "",
+    fathername: "",
+    fatherphone: "",
 
-    mothername :"",
-    mothername : "",
-  });
+    mothername: "",
+    motherphone: "",
+  })
+
 
   const phonehandleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
 
-    
     if (!/^[0-9]*$/.test(value)) {
-      alert(`${name.toUpperCase()} should only contain numbers`);
-      return;
+      alert(`${name.toUpperCase()} should only contain numbers`)
+      return
     }
 
     if (value.length > 10) {
-      alert("PHONE should contain exactly 10 digits");
-      return;
+      alert("PHONE should contain exactly 10 digits")
+      return
     }
 
     setFormdata({
       ...formData,
       [name]: value,
-    });
+    })
   }
+
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
 
-    if (name != "dob" && !/^[A-Za-z]*$/.test(value)) {
-      alert(`${name.toUpperCase()} should only contain characters`);
-      return;
+    if (name !== "dob" && !/^[A-Za-z ]*$/.test(value)) {
+      alert(`${name.toUpperCase()} should only contain characters`)
+      return
+    }
+
+    if (name === "dob") {
+
+      const age = calculateage(value)
+
+      setFormdata({
+        ...formData,
+        dob: value,
+        age: age
+      })
+
+      return
     }
 
     setFormdata({
       ...formData,
       [name]: value,
-    });    
-  };
-
-  const calculateage = (dob) => {
-    if(!dob){
-      return "";
-    }
-    const currentDate = new Date();
-    const dobDate = new Date(dob);
-
-    let age = currentDate.getFullYear()-dobDate.getFullYear();
-    const month = currentDate.getMonth()-dobDate.getMonth();
-
-    
+    })
   }
 
-  
+
+  const calculateage = (dob) => {
+
+    if (!dob) {
+      return ""
+    }
+
+    const currentDate = new Date()
+    const dobDate = new Date(dob)
+
+    let age =
+      currentDate.getFullYear() - dobDate.getFullYear()
+
+    const month =
+      currentDate.getMonth() - dobDate.getMonth()
+
+    const day =
+      currentDate.getDate() - dobDate.getDate()
+
+
+    // Agar birthday abhi nahi aaya hai
+    if (month < 0 || (month === 0 && day < 0)) {
+      age--
+    }
+
+    return age
+  }
+
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (
       !formData.firstName ||
       !formData.lastName ||
       formData.phone.length !== 10
     ) {
-      alert("All fields in form is Mandatory");
-      return;
+      alert("All fields in form is Mandatory")
+      return
     }
 
     if (formData.firstName.length < 3) {
-      alert(`FIRST NAME MUST CONTAIN 3 CHARACTERS`);
-      return;
+      alert(`FIRST NAME MUST CONTAIN 3 CHARACTERS`)
+      return
     }
 
     if (formData.lastName.length < 3) {
-      alert(`LAST NAME MUST CONTAIN 3 CHARACTERS`);
-      return;
+      alert(`LAST NAME MUST CONTAIN 3 CHARACTERS`)
+      return
     }
 
-    alert(`Form Submitted Successfully`);
-  };
+    alert(`Form Submitted Successfully`)
+  }
+
 
   return (
     <div>
+
       <form onSubmit={handleSubmit}>
-       
+
         <h3>USER'S DETAILS</h3>
+
         <label htmlFor="firstName">FIRST NAME</label>
         <input
           type="text"
@@ -103,6 +136,7 @@ const Formvalidation = () => {
           onChange={handleChange}
           placeholder="Enter Your First Name"
         />
+
 
         <label htmlFor="middleName">MIDDLE NAME</label>
         <input
@@ -114,14 +148,17 @@ const Formvalidation = () => {
           placeholder="Enter Your Middle Name"
         />
 
+
         <label htmlFor="lastName">LAST NAME</label>
         <input
           type="text"
           name="lastName"
+          id="lastName"
           value={formData.lastName}
           onChange={handleChange}
           placeholder="Enter Your Last Name"
         />
+
 
         <label htmlFor="phone">PHONE NUMBER</label>
         <input
@@ -132,65 +169,93 @@ const Formvalidation = () => {
           onChange={phonehandleChange}
         />
 
+
         <label htmlFor="dob">DATE OF BIRTH</label>
-        <input 
-        type="date"
-        name="dob"
-        value={formData.dob}
-        onChange={handleChange}
+        <input
+          type="date"
+          name="dob"
+          value={formData.dob}
+          onChange={handleChange}
         />
+
+
+        {/* AGE */}
+        <h3>AGE : {formData.age}</h3>
 
 
         <h3>FATHER'S DETAILS</h3>
+
         <label htmlFor="fathername">FATHER NAME</label>
         <input
-        type="text"
-        name="fathername"
-        value={formData.fathername}
-        onChange={handleChange}
-        placeholder="ENTER FULL NAME"
+          type="text"
+          name="fathername"
+          value={formData.fathername}
+          onChange={handleChange}
+          placeholder="ENTER FULL NAME"
         />
+
 
         <label htmlFor="fatherphone">FATHER PHONE NUMBER</label>
-        <input 
-        type="text"
-        name="fatherphone"
-        id="fatherphone"
-        value={formData.fatherphone}
-        onChange={phonehandleChange}
-        placeholder="ENTER THE PHONE NUMBER"
+        <input
+          type="text"
+          name="fatherphone"
+          id="fatherphone"
+          value={formData.fatherphone}
+          onChange={phonehandleChange}
+          placeholder="ENTER THE PHONE NUMBER"
         />
+
 
         <h3>MOTHER'S DETAILS</h3>
+
         <label htmlFor="mothername">MOTHER NAME</label>
         <input
-        type="text"
-        name="mothername"
-        id="motherphone"
-        value={formData.mothername}
-        onChange={handleChange}
-        placeholder="ENTER FULL NAME"
+          type="text"
+          name="mothername"
+          id="mothername"
+          value={formData.mothername}
+          onChange={handleChange}
+          placeholder="ENTER FULL NAME"
         />
 
+
         <label htmlFor="motherphone">MOTHER PHONE NUMBER</label>
-        <input 
-        type="text"
-        name="motherphone"
-        id="motherphone"
-        value={formData.motherphone}
-        onChange={phonehandleChange}
-        placeholder="ENTER THE PHONE NUMBER"
+        <input
+          type="text"
+          name="motherphone"
+          id="motherphone"
+          value={formData.motherphone}
+          onChange={phonehandleChange}
+          placeholder="ENTER THE PHONE NUMBER"
         />
+
 
         <button type="submit">Submit</button>
 
+
         <pre>
-          {formData.firstName + " " +(formData.middleName ? formData.middleName : " ") +" " + formData.lastName +" " + formData.phone}<br/>
-          {formData.fathername + " " +(formData.fatherphone)}<br/>
-          {formData.mothername + " " +(formData.motherphone)}
+          {formData.firstName + " " +
+            (formData.middleName ? formData.middleName : " ") +
+            " " +
+            formData.lastName +
+            " " +
+            formData.phone}
+          <br />
+
+          DOB : {formData.dob}
+          <br />
+
+          AGE : {formData.age}
+          <br />
+
+          {formData.fathername + " " + formData.fatherphone}
+          <br />
+
+          {formData.mothername + " " + formData.motherphone}
         </pre>
 
       </form>
+
     </div>
   )
 }
