@@ -75,21 +75,33 @@ const Formvalidation = () => {
     const currentDate = new Date()
     const dobDate = new Date(dob)
 
-    let age =
+    let years =
       currentDate.getFullYear() - dobDate.getFullYear()
 
-    const month =
+    let months =
       currentDate.getMonth() - dobDate.getMonth()
 
-    const day =
+    let days =
       currentDate.getDate() - dobDate.getDate()
 
+      if(days < 0){
+        months--   //! AGAR DAYS NEGATIVE HOGE TO EK BORROW MONTS M SE LUGA ..
 
-    if (month < 0 || (month === 0 && day < 0)) {
-      age--
+
+        //? BORROWED MONTH KE TOTAL DAYS , DAYS M ADD KARNE HAI ..
+        const previousmonth = new Date(
+          currentDate.getFullYear(),
+          currentDate.getMonth(),
+          0
+        );
+        days += previousmonth.getDate();
+      }
+
+    if (months < 0) {
+      years-- ;
+      months += 12 ;    //! 1 YEAR M 12 MONTHS H TO USSE ADD KARNA PADEGA ..
     }
-
-    return age
+    return `${years} years ${months} monts and ${days} days`
   }
 
 
