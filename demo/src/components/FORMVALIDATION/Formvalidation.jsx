@@ -15,8 +15,17 @@ const Formvalidation = () => {
 
     mothername: "",
     motherphone: "",
+
+    password: ""
   })
 
+  const password = formData.password ;
+  const passwordRules = {
+    length : password.length >= 8 ,
+    captial : /[A-Z]/.test(password),
+    small : /[a-z]/.test(password),
+    special : /[!@#$%^&*]/.test(password),
+  };
 
   const phonehandleChange = (e) => {
     const { name, value } = e.target
@@ -240,6 +249,14 @@ const Formvalidation = () => {
           placeholder="ENTER THE PHONE NUMBER"
         />
 
+
+        <label>PASSWORD</label>
+        <input 
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        />
 
         <button type="submit">Submit</button>
 
