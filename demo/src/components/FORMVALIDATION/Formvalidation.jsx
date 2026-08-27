@@ -101,7 +101,7 @@ const Formvalidation = () => {
       years-- ;
       months += 12 ;    //! 1 YEAR M 12 MONTHS H TO USSE ADD KARNA PADEGA ..
     }
-    return `${years} years ${months} monts and ${days} days`
+    return `${years} years ${months} months and ${days} days`
   }
 
 
