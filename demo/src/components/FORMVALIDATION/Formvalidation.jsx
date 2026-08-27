@@ -85,7 +85,6 @@ const Formvalidation = () => {
       currentDate.getDate() - dobDate.getDate()
 
 
-    // Agar birthday abhi nahi aaya hai
     if (month < 0 || (month === 0 && day < 0)) {
       age--
     }
