@@ -24,6 +24,7 @@ const Formvalidation = () => {
     length : password.length >= 8 ,
     captial : /[A-Z]/.test(password),
     small : /[a-z]/.test(password),
+    digit : /[0-9]/.test(password),
     special : /[!@#$%^&*]/.test(password),
   };
 
@@ -270,6 +271,8 @@ const Formvalidation = () => {
           placeholder="ENTER THE PHONE NUMBER"
         />
 
+
+<br/>
 
         <label>PASSWORD</label>
         <input 
