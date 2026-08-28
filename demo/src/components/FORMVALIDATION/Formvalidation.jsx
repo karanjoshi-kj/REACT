@@ -50,12 +50,12 @@ const Formvalidation = () => {
   const handleChange = (e) => {
     const { name, value } = e.target
 
-    if (name !== "dob" && !/^[A-Za-z ]*$/.test(value)) {
+    if (name !== "dob" && name !== "password" && !/^[A-Za-z ]*$/.test(value)) {
       alert(`${name.toUpperCase()} should only contain characters`)
       return
     }
 
-    if (name === "dob") {
+    if (name === "dob" ) {
 
       const age = calculateage(value)
 
