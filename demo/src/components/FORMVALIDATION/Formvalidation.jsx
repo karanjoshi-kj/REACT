@@ -16,7 +16,8 @@ const Formvalidation = () => {
     mothername: "",
     motherphone: "",
 
-    password: ""
+    password: "",
+    confirmpassword: ""
   })
 
   const password = formData.password ;
@@ -27,6 +28,13 @@ const Formvalidation = () => {
     digit : /[0-9]/.test(password),
     special : /[!@#$%^&*]/.test(password),
   };
+
+  const passwordvalid = 
+  passwordRules.length &&
+  passwordRules.captial &&
+  passwordRules.small &&
+  passwordRules.digit &&
+  passwordRules.special
 
   const phonehandleChange = (e) => {
     const { name, value } = e.target
@@ -51,7 +59,7 @@ const Formvalidation = () => {
   const handleChange = (e) => {
     const { name, value } = e.target
 
-    if (name !== "dob" && name !== "password" && !/^[A-Za-z ]*$/.test(value)) {
+    if (name !== "dob" && name !== "password" && name != "confirmpassword" && !/^[A-Za-z ]*$/.test(value)) {
       alert(`${name.toUpperCase()} should only contain characters`)
       return
     }
@@ -137,25 +145,14 @@ const Formvalidation = () => {
       return
     }
 
-    if(!passwordRules.length){
-      alert("PASSWORD MUST CONTAIN 8 CHARATERS")
+    if (!passwordvalid){
+      alert("PLZZ FULLFILL ALL PASSWORD CONDITIONS")
       return 
     }
-    if(!passwordRules.captial){
-      alert("PASSWORD MUST CONTAIN ATLEAST ONE CAPITAL CHARATER")
-      return 
-    }
-    if(!passwordRules.small){
-      alert("PASSWORD MUST CONTAIN ATLEAST ONE SMALL CHARATER")
-      return 
-    }
-    if(!passwordRules.number){
-      alert("PASSWORD MUST CONTAIN ATLEAST ONE DIGIT")
-      return 
-    }
-    if(!passwordRules.special){
-      alert("PASSWORD MUST CONTAIN ATLEAST ONE SPECIAL CHARACTER")
-      return 
+
+    if (formData.password != formData.confirmpassword){
+      alert("PASSWROD AND CONFIRM PASSWORD SHOULD BE SAME")
+      return
     }
 
     alert(`Form Submitted Successfully`)
@@ -304,6 +301,16 @@ const Formvalidation = () => {
             {passwordRules.special ? "✅" : "❌"}
             {" "} ONE SPECIAL CHARACTER
           </p>
+
+
+          <label htmlFor="confirmpassword">CONFIRM PASSWORD</label>
+          <input 
+          type="password"
+          name="confirmpassword"
+          value={formData.confirmpassword}
+          onChange={handleChange}
+          placeholder="CONFIRM THE PASSWORD"
+          />
           
         </div>
         <button type="submit">Submit</button>
