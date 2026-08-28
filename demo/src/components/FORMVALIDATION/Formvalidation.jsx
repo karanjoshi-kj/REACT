@@ -136,6 +136,27 @@ const Formvalidation = () => {
       return
     }
 
+    if(!passwordRules.length){
+      alert("PASSWORD MUST CONTAIN 8 CHARATERS")
+      return 
+    }
+    if(!passwordRules.captial){
+      alert("PASSWORD MUST CONTAIN ATLEAST ONE CAPITAL CHARATER")
+      return 
+    }
+    if(!passwordRules.small){
+      alert("PASSWORD MUST CONTAIN ATLEAST ONE SMALL CHARATER")
+      return 
+    }
+    if(!passwordRules.number){
+      alert("PASSWORD MUST CONTAIN ATLEAST ONE DIGIT")
+      return 
+    }
+    if(!passwordRules.special){
+      alert("PASSWORD MUST CONTAIN ATLEAST ONE SPECIAL CHARACTER")
+      return 
+    }
+
     alert(`Form Submitted Successfully`)
   }
 
@@ -256,8 +277,32 @@ const Formvalidation = () => {
         name="password"
         value={formData.password}
         onChange={handleChange}
+        placeholder="ENTER THE PASSWORD"
         />
 
+        <div>
+          <p>
+            {passwordRules.length ? "✅" : "❌"}
+            {" "} MINIMUM 8 CHRATERS
+          </p>
+          <p>
+            {passwordRules.captial ? "✅" : "❌"}
+            {" "} ONE CAPITAL CHARACTER 
+          </p>
+          <p>
+            {passwordRules.small ? "✅" : "❌"}
+            {" "} ONE SMALL CHRATER
+          </p>
+          <p>
+            {passwordRules.digit ? "✅" : "❌"}
+            {" "} MINIMUM 1 DIGIT
+          </p>
+          <p>
+            {passwordRules.special ? "✅" : "❌"}
+            {" "} ONE SPECIAL CHARACTER
+          </p>
+          
+        </div>
         <button type="submit">Submit</button>
 
 
