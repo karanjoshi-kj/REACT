@@ -302,7 +302,6 @@ const Formvalidation = () => {
             {" "} ONE SPECIAL CHARACTER
           </p>
 
-
           <label htmlFor="confirmpassword">CONFIRM PASSWORD</label>
           <input 
           type="password"
