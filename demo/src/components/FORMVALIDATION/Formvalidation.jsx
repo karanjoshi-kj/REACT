@@ -17,26 +17,34 @@ const Formvalidation = () => {
     motherphone: "",
 
     password: "",
-    confirmpassword: ""
+    confirmPassword: ""
   })
 
-  const password = formData.password ;
-  const passwordRules = {
-    length : password.length >= 8 ,
-    captial : /[A-Z]/.test(password),
-    small : /[a-z]/.test(password),
-    digit : /[0-9]/.test(password),
-    special : /[!@#$%^&*]/.test(password),
-  };
 
-  const passwordvalid = 
-  passwordRules.length &&
-  passwordRules.captial &&
-  passwordRules.small &&
-  passwordRules.digit &&
-  passwordRules.special
+
+  const password = formData.password
+
+  const passwordRules = {
+    length: password.length >= 8,
+    capital: /[A-Z]/.test(password),
+    small: /[a-z]/.test(password),
+    number: /[0-9]/.test(password),
+    special: /[!@#$%^&*]/.test(password),
+  }
+
+
+
+  const passwordValid =
+    passwordRules.length &&
+    passwordRules.capital &&
+    passwordRules.small &&
+    passwordRules.number &&
+    passwordRules.special
+
+
 
   const phonehandleChange = (e) => {
+
     const { name, value } = e.target
 
     if (!/^[0-9]*$/.test(value)) {
@@ -56,15 +64,26 @@ const Formvalidation = () => {
   }
 
 
+
   const handleChange = (e) => {
+
     const { name, value } = e.target
 
-    if (name !== "dob" && name !== "password" && name != "confirmpassword" && !/^[A-Za-z ]*$/.test(value)) {
+
+
+    if (
+      name !== "dob" &&
+      name !== "password" &&
+      name !== "confirmPassword" &&
+      !/^[A-Za-z ]*$/.test(value)
+    ) {
       alert(`${name.toUpperCase()} should only contain characters`)
       return
     }
 
-    if (name === "dob" ) {
+
+
+    if (name === "dob") {
 
       const age = calculateage(value)
 
@@ -77,11 +96,13 @@ const Formvalidation = () => {
       return
     }
 
+
     setFormdata({
       ...formData,
       [name]: value,
     })
   }
+
 
 
   const calculateage = (dob) => {
@@ -102,29 +123,40 @@ const Formvalidation = () => {
     let days =
       currentDate.getDate() - dobDate.getDate()
 
-      if(days < 0){
-        months--   //! AGAR DAYS NEGATIVE HOGE TO EK BORROW MONTS M SE LUGA ..
 
 
-        //? BORROWED MONTH KE TOTAL DAYS , DAYS M ADD KARNE HAI ..
-        const previousmonth = new Date(
-          currentDate.getFullYear(),
-          currentDate.getMonth(),
-          0
-        );
-        days += previousmonth.getDate();
-      }
+    if (days < 0) {
+
+      months--
+
+      const previousmonth = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        0
+      )
+
+      days += previousmonth.getDate()
+    }
+
+
 
     if (months < 0) {
-      years-- ;
-      months += 12 ;    //! 1 YEAR M 12 MONTHS H TO USSE ADD KARNA PADEGA ..
+
+      years--
+      months += 12
     }
+
+
     return `${years} years ${months} months and ${days} days`
   }
 
 
+
   const handleSubmit = (e) => {
+
     e.preventDefault()
+
+
 
     if (
       !formData.firstName ||
@@ -135,28 +167,43 @@ const Formvalidation = () => {
       return
     }
 
+
+
     if (formData.firstName.length < 3) {
-      alert(`FIRST NAME MUST CONTAIN 3 CHARACTERS`)
+
+      alert("FIRST NAME MUST CONTAIN 3 CHARACTERS")
       return
     }
+
+
+    
 
     if (formData.lastName.length < 3) {
-      alert(`LAST NAME MUST CONTAIN 3 CHARACTERS`)
+
+      alert("LAST NAME MUST CONTAIN 3 CHARACTERS")
       return
     }
 
-    if (!passwordvalid){
-      alert("PLZZ FULLFILL ALL PASSWORD CONDITIONS")
-      return 
-    }
 
-    if (formData.password != formData.confirmpassword){
-      alert("PASSWROD AND CONFIRM PASSWORD SHOULD BE SAME")
+
+    if (!passwordValid) {
+
+      alert("Please fulfill all password conditions")
       return
     }
 
-    alert(`Form Submitted Successfully`)
+
+
+    if (formData.password !== formData.confirmPassword) {
+
+      alert("Password and Confirm Password should be same")
+      return
+    }
+
+
+    alert("Form Submitted Successfully")
   }
+
 
 
   return (
@@ -166,7 +213,12 @@ const Formvalidation = () => {
 
         <h3>USER'S DETAILS</h3>
 
-        <label htmlFor="firstName">FIRST NAME</label>
+
+
+        <label htmlFor="firstName">
+          FIRST NAME
+        </label>
+
         <input
           type="text"
           name="firstName"
@@ -177,7 +229,11 @@ const Formvalidation = () => {
         />
 
 
-        <label htmlFor="middleName">MIDDLE NAME</label>
+
+        <label htmlFor="middleName">
+          MIDDLE NAME
+        </label>
+
         <input
           type="text"
           name="middleName"
@@ -188,7 +244,11 @@ const Formvalidation = () => {
         />
 
 
-        <label htmlFor="lastName">LAST NAME</label>
+
+        <label htmlFor="lastName">
+          LAST NAME
+        </label>
+
         <input
           type="text"
           name="lastName"
@@ -199,42 +259,65 @@ const Formvalidation = () => {
         />
 
 
-        <label htmlFor="phone">PHONE NUMBER</label>
+
+        <label htmlFor="phone">
+          PHONE NUMBER
+        </label>
+
         <input
           type="text"
           name="phone"
+          id="phone"
           placeholder="ENTER THE PHONE NUMBER"
           value={formData.phone}
           onChange={phonehandleChange}
         />
 
 
-        <label htmlFor="dob">DATE OF BIRTH</label>
+
+        <label htmlFor="dob">
+          DATE OF BIRTH
+        </label>
+
         <input
           type="date"
           name="dob"
+          id="dob"
           value={formData.dob}
           onChange={handleChange}
         />
 
 
-        {/* AGE */}
-        <h3>AGE : {formData.age}</h3>
+
+        <h3>
+          AGE : {formData.age}
+        </h3>
 
 
-        <h3>FATHER'S DETAILS</h3>
 
-        <label htmlFor="fathername">FATHER NAME</label>
+        <h3>
+          FATHER'S DETAILS
+        </h3>
+
+
+        <label htmlFor="fathername">
+          FATHER NAME
+        </label>
+
         <input
           type="text"
           name="fathername"
+          id="fathername"
           value={formData.fathername}
           onChange={handleChange}
           placeholder="ENTER FULL NAME"
         />
 
 
-        <label htmlFor="fatherphone">FATHER PHONE NUMBER</label>
+        <label htmlFor="fatherphone">
+          FATHER PHONE NUMBER
+        </label>
+
         <input
           type="text"
           name="fatherphone"
@@ -245,9 +328,16 @@ const Formvalidation = () => {
         />
 
 
-        <h3>MOTHER'S DETAILS</h3>
 
-        <label htmlFor="mothername">MOTHER NAME</label>
+        <h3>
+          MOTHER'S DETAILS
+        </h3>
+
+
+        <label htmlFor="mothername">
+          MOTHER NAME
+        </label>
+
         <input
           type="text"
           name="mothername"
@@ -258,7 +348,10 @@ const Formvalidation = () => {
         />
 
 
-        <label htmlFor="motherphone">MOTHER PHONE NUMBER</label>
+        <label htmlFor="motherphone">
+          MOTHER PHONE NUMBER
+        </label>
+
         <input
           type="text"
           name="motherphone"
@@ -269,71 +362,122 @@ const Formvalidation = () => {
         />
 
 
-<br/>
 
-        <label>PASSWORD</label>
-        <input 
-        type="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-        placeholder="ENTER THE PASSWORD"
+        <label htmlFor="password">
+          PASSWORD
+        </label>
+
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value={formData.password}
+          onChange={handleChange}
+          placeholder="Enter Password"
         />
 
-        <div>
+
+
+        {!passwordValid && (
+
+          <div>
+
+            <p>
+              {passwordRules.length ? "✅" : "❌"}
+              {" "}Minimum 8 characters
+            </p>
+
+            <p>
+              {passwordRules.capital ? "✅" : "❌"}
+              {" "}One capital letter
+            </p>
+
+            <p>
+              {passwordRules.small ? "✅" : "❌"}
+              {" "}One small letter
+            </p>
+
+            <p>
+              {passwordRules.number ? "✅" : "❌"}
+              {" "}One number
+            </p>
+
+            <p>
+              {passwordRules.special ? "✅" : "❌"}
+              {" "}One special character
+            </p>
+
+          </div>
+        )}
+
+
+
+        <label htmlFor="confirmPassword">
+          CONFIRM PASSWORD
+        </label>
+
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          placeholder="Confirm Password"
+        />
+
+
+
+        {formData.confirmPassword && (
+
           <p>
-            {passwordRules.length ? "✅" : "❌"}
-            {" "} MINIMUM 8 CHRATERS
-          </p>
-          <p>
-            {passwordRules.captial ? "✅" : "❌"}
-            {" "} ONE CAPITAL CHARACTER 
-          </p>
-          <p>
-            {passwordRules.small ? "✅" : "❌"}
-            {" "} ONE SMALL CHRATER
-          </p>
-          <p>
-            {passwordRules.digit ? "✅" : "❌"}
-            {" "} MINIMUM 1 DIGIT
-          </p>
-          <p>
-            {passwordRules.special ? "✅" : "❌"}
-            {" "} ONE SPECIAL CHARACTER
+
+            {formData.password === formData.confirmPassword
+              ? "✅ Password Matched"
+              : "❌ Password Does Not Match"}
+
           </p>
 
-          <label htmlFor="confirmpassword">CONFIRM PASSWORD</label>
-          <input 
-          type="password"
-          name="confirmpassword"
-          value={formData.confirmpassword}
-          onChange={handleChange}
-          placeholder="CONFIRM THE PASSWORD"
-          />
-          
-        </div>
-        <button type="submit">Submit</button>
+        )}
+
+
+
+        <button type="submit">
+          Submit
+        </button>
+
 
 
         <pre>
+
           {formData.firstName + " " +
-            (formData.middleName ? formData.middleName : " ") +
+            (formData.middleName
+              ? formData.middleName
+              : " ") +
             " " +
             formData.lastName +
             " " +
             formData.phone}
+
           <br />
 
           DOB : {formData.dob}
+
           <br />
 
           AGE : {formData.age}
+
           <br />
 
-          {formData.fathername + " " + formData.fatherphone}
+          {formData.fathername +
+            " " +
+            formData.fatherphone}
+
           <br />
 
-          {formData.mothername + " " + formData.motherphone}
+          {formData.mothername +
+            " " +
+            formData.motherphone}
+
         </pre>
 
       </form>
