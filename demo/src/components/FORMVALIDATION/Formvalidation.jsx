@@ -21,6 +21,7 @@ const Formvalidation = () => {
   })
 
 
+  // ================= PASSWORD VALIDATION =================
 
   const password = formData.password
 
@@ -33,6 +34,7 @@ const Formvalidation = () => {
   }
 
 
+  // Saari password conditions complete hain ya nahi
 
   const passwordValid =
     passwordRules.length &&
@@ -42,6 +44,7 @@ const Formvalidation = () => {
     passwordRules.special
 
 
+  // ================= PHONE CHANGE =================
 
   const phonehandleChange = (e) => {
 
@@ -64,12 +67,14 @@ const Formvalidation = () => {
   }
 
 
+  // ================= NORMAL INPUT CHANGE =================
 
   const handleChange = (e) => {
 
     const { name, value } = e.target
 
 
+    // Password aur Confirm Password ko normal validation se alag rakha
 
     if (
       name !== "dob" &&
@@ -82,6 +87,7 @@ const Formvalidation = () => {
     }
 
 
+    // ================= DOB =================
 
     if (name === "dob") {
 
@@ -104,6 +110,7 @@ const Formvalidation = () => {
   }
 
 
+  // ================= CALCULATE AGE =================
 
   const calculateage = (dob) => {
 
@@ -124,6 +131,7 @@ const Formvalidation = () => {
       currentDate.getDate() - dobDate.getDate()
 
 
+    // Days negative
 
     if (days < 0) {
 
@@ -139,6 +147,7 @@ const Formvalidation = () => {
     }
 
 
+    // Months negative
 
     if (months < 0) {
 
@@ -151,12 +160,14 @@ const Formvalidation = () => {
   }
 
 
+  // ================= SUBMIT =================
 
   const handleSubmit = (e) => {
 
     e.preventDefault()
 
 
+    // Required fields
 
     if (
       !formData.firstName ||
@@ -168,6 +179,7 @@ const Formvalidation = () => {
     }
 
 
+    // First name
 
     if (formData.firstName.length < 3) {
 
@@ -176,7 +188,7 @@ const Formvalidation = () => {
     }
 
 
-    
+    // Last name
 
     if (formData.lastName.length < 3) {
 
@@ -185,6 +197,7 @@ const Formvalidation = () => {
     }
 
 
+    // Password validation
 
     if (!passwordValid) {
 
@@ -193,6 +206,7 @@ const Formvalidation = () => {
     }
 
 
+    // Confirm password validation
 
     if (formData.password !== formData.confirmPassword) {
 
@@ -205,7 +219,6 @@ const Formvalidation = () => {
   }
 
 
-
   return (
     <div>
 
@@ -214,6 +227,7 @@ const Formvalidation = () => {
         <h3>USER'S DETAILS</h3>
 
 
+        {/* FIRST NAME */}
 
         <label htmlFor="firstName">
           FIRST NAME
@@ -229,6 +243,7 @@ const Formvalidation = () => {
         />
 
 
+        {/* MIDDLE NAME */}
 
         <label htmlFor="middleName">
           MIDDLE NAME
@@ -244,6 +259,7 @@ const Formvalidation = () => {
         />
 
 
+        {/* LAST NAME */}
 
         <label htmlFor="lastName">
           LAST NAME
@@ -259,6 +275,7 @@ const Formvalidation = () => {
         />
 
 
+        {/* PHONE */}
 
         <label htmlFor="phone">
           PHONE NUMBER
@@ -274,6 +291,7 @@ const Formvalidation = () => {
         />
 
 
+        {/* DOB */}
 
         <label htmlFor="dob">
           DATE OF BIRTH
@@ -288,12 +306,14 @@ const Formvalidation = () => {
         />
 
 
+        {/* AGE */}
 
         <h3>
           AGE : {formData.age}
         </h3>
 
 
+        {/* ================= FATHER ================= */}
 
         <h3>
           FATHER'S DETAILS
@@ -328,6 +348,7 @@ const Formvalidation = () => {
         />
 
 
+        {/* ================= MOTHER ================= */}
 
         <h3>
           MOTHER'S DETAILS
@@ -362,6 +383,7 @@ const Formvalidation = () => {
         />
 
 
+        {/* ================= PASSWORD ================= */}
 
         <label htmlFor="password">
           PASSWORD
@@ -377,6 +399,7 @@ const Formvalidation = () => {
         />
 
 
+        {/* PASSWORD CONDITIONS */}
 
         {!passwordValid && (
 
@@ -411,6 +434,7 @@ const Formvalidation = () => {
         )}
 
 
+        {/* ================= CONFIRM PASSWORD ================= */}
 
         <label htmlFor="confirmPassword">
           CONFIRM PASSWORD
@@ -426,26 +450,33 @@ const Formvalidation = () => {
         />
 
 
+        {/* PASSWORD MATCH */}
 
         {formData.confirmPassword && (
 
           <p>
-
             {formData.password === formData.confirmPassword
               ? "✅ Password Matched"
               : "❌ Password Does Not Match"}
-
           </p>
 
         )}
 
 
+        {/* ================= SUBMIT BUTTON ================= */}
 
-        <button type="submit">
+        <button
+          type="submit"
+          disabled={
+            !passwordValid ||
+            formData.password !== formData.confirmPassword
+          }
+        >
           Submit
         </button>
 
 
+        {/* ================= OUTPUT ================= */}
 
         <pre>
 
