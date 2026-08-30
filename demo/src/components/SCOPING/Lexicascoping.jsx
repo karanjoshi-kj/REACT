@@ -5,4 +5,5 @@ function x(){
     }
     inner();
 }
+
 x();
