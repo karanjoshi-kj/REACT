@@ -11,3 +11,8 @@ console.log("GLOBAL FUNCTION");
 let res = x();  //! X KO CALL KIYA H  
 // res();
 console.log("FUNCTION IS CALLED");
+
+
+
+
+
