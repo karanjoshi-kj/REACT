@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Formvalidation.css'
 
 const Formvalidation = () => {
 
@@ -216,6 +217,8 @@ const Formvalidation = () => {
 
 
     alert("Form Submitted Successfully")
+
+    console.log("USER DETAIL'S" , formData)
   }
 
 
