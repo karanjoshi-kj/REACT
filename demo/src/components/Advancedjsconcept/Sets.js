@@ -3,10 +3,19 @@ let a = new Set([10,20,30,40,40,10])
 console.log(a);
 
 //! SET OPERATIONS 
-//? 1.  ADDING AN ELEMENT IN THE LAST OF THE SET
+//? 1.  ADDING AN ELEMENT IN THE LAST OF THE SET .
 
 a.add(500);
 console.log(a);
 
 a.add(20);  //TODO  ONLY APPENDS THE UNIQUE ELEMENT , NO DUPLICATE 
 console.log(a);
+
+
+
+
+//? 2.   TO CHECK IF VALUE EXIST OR NOT .
+//TODO  RETURNS TRUE IF THE VALUE EXIST AND FALSE IF THE VALUE DOES'NT EXIST .
+
+console.log(a.has(30));   //? RETURNS TRUE
+console.log(a.has(300));   //? RETURNS FALSE
