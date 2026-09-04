@@ -1,4 +1,12 @@
 let a = new Set([10,20,30,40,40,10])
-let num = new set(a)
+//? ONLY PRINT THE UNIQUE VALUES IN THE OBJECT FORMAT .
+console.log(a);
 
+//! SET OPERATIONS 
+//? 1.  ADDING AN ELEMENT IN THE LAST OF THE SET
+
+a.add(500);
+console.log(a);
+
+a.add(20);  //TODO  ONLY APPENDS THE UNIQUE ELEMENT , NO DUPLICATE 
 console.log(a);
