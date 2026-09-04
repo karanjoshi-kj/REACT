@@ -18,4 +18,4 @@ console.log(a);
 //TODO  RETURNS TRUE IF THE VALUE EXIST AND FALSE IF THE VALUE DOES'NT EXIST .
 
 console.log(a.has(30));   //? RETURNS TRUE
-console.log(a.has(300));   //? RETURNS FALSE
+console.log(a.has(300));   //? RETURNS FALSE  
