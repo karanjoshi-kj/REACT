@@ -19,3 +19,15 @@ console.log(a);
 
 console.log(a.has(30));   //? RETURNS TRUE
 console.log(a.has(300));   //? RETURNS FALSE  
+
+//?  3. TO DELETE AN ELEMENT 
+a.delete(10);
+console.log(a);
+
+
+
+//? 4. TO CHECK SIZE 
+console.log(a.size);   //! REMOVE THE DUPLICATES
+
+
+//? 5. 
