@@ -30,4 +30,20 @@ console.log(a);
 console.log(a.size);   //! REMOVE THE DUPLICATES
 
 
-//? 5. 
+//? 5. TO CLEAR THE COMPLETE SET
+// console.log(a.clear);
+
+
+//? 6. LOOPING
+a.forEach((i)=>{
+    console.log(i);
+})
+
+//?  KEY CONCEPT ==> IN JS SETS EACH VAUE IS ITSELF KEY AND VALUE .
+
+let num = new Set([10,20,30,40,50,60]);
+let res = num.keys();
+console.log(res);
+
+let val = num.values();
+console.log(val);
