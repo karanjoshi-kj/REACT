@@ -31,7 +31,7 @@ console.log(a.size);   //! REMOVE THE DUPLICATES
 
 
 //? 5. TO CLEAR THE COMPLETE SET
-// console.log(a.clear);
+console.log(a.clear);
 
 
 //? 6. LOOPING
