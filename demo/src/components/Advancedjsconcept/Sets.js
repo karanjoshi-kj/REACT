@@ -47,3 +47,19 @@ console.log(res);
 
 let val = num.values();
 console.log(val);
+
+
+
+//? TO REMOVE DUPLICATE ELEMENTTS FROM AN ARRAY USING SET METHOD 
+let a1=[1,1,2,42,5,3,25,1,3,53,63,1,1,3,2,2,6,67,7]
+let newset=new Set(a1);
+console.log(newset)
+
+//? CONVERT SET INTO ARRAY
+//! Array.from  METHOD IS USED
+a1=Array.from(newset) 
+
+
+//?  IT CAN ALO BE DONE WITHOUT SET METHOD , BY USING SPREAD OPERATOR [...]
+let a2=[...newset]
+console.log(a2);
