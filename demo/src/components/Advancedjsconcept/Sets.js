@@ -63,3 +63,13 @@ a1=Array.from(newset)
 //?  IT CAN ALO BE DONE WITHOUT SET METHOD , BY USING SPREAD OPERATOR [...]
 let a2=[...newset]
 console.log(a2);
+
+
+
+//? SET UNION 
+
+let x = ([10,20,30,40])
+let y = ([100,200,300,400])
+
+let setunion = [...x , ...y];
+console.log(setunion);
