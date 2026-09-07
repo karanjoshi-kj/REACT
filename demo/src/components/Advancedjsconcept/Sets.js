@@ -68,11 +68,11 @@ console.log(a2);
 
 //? SET UNION 
 
-let x = ([10,20,30,40])
-let y = ([100,200,300,40])
+let x = new Set([10,20,30,40])
+let y = new Set([100,200,30,40])
 
-let setunion = [...x , ...y];
-console.log(setunion);
+// let setunion = [...x , ...y];
+// console.log(setunion);
 
 //? SET INTERSECTION
 
@@ -81,3 +81,6 @@ let setintersion = new Set(
 );
 console.log(setintersion);
 
+
+
+let setdiffrence = new 
