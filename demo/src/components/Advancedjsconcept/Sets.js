@@ -69,7 +69,15 @@ console.log(a2);
 //? SET UNION 
 
 let x = ([10,20,30,40])
-let y = ([100,200,300,400])
+let y = ([100,200,300,40])
 
 let setunion = [...x , ...y];
 console.log(setunion);
+
+//? SET INTERSECTION
+
+let setintersion = new Set(
+    [...x].filter(val => y.has(val))
+);
+console.log(setintersion);
+
