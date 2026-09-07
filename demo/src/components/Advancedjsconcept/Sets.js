@@ -68,19 +68,23 @@ console.log(a2);
 
 //? SET UNION 
 
-let x = new Set([10,20,30,40])
-let y = new Set([100,200,30,40])
+let x = [10,20,30,40];
+let y = [100,200,30,40];
 
 // let setunion = [...x , ...y];
 // console.log(setunion);
 
 //? SET INTERSECTION
 
-let setintersion = new Set(
-    [...x].filter(val => y.has(val))
+// let setintersion = new Set(
+//     x.filter(val => y.has(val))
+// );
+// console.log(setintersion);
+
+
+
+let setdiffrence = new Set(
+    x.filter(val => !y.includes(val))
 );
-console.log(setintersion);
+console.log(setdiffrence);
 
-
-
-let setdiffrence = new 
