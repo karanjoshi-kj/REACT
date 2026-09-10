@@ -15,7 +15,7 @@ function x(){
 x();
 
 
-
+//!  BASIC LOGIC QUESTION 
 function inc(){
     var a = 10 ;
     function y(){
