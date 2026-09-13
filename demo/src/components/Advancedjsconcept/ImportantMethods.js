@@ -18,7 +18,6 @@ const user={
 // var b=20;
 // x(user,a,b);
 
-
 function x(a,b){
     console.log(this.course);
     console.log(a);
