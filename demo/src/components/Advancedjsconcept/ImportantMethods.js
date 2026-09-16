@@ -16,7 +16,7 @@ const user={
 // }
 // var a=10;
 // var b=20;
-// x(user,a,b);
+// x(user,a,b); 
 
 function x(a,b){
     console.log(this.course);
@@ -28,6 +28,7 @@ var b=20;
 // x(user,a,b);
 // x.call(user,a,b);
 // x.apply(user,[a,b])
-// x.bind(this obejct) bind returns the function to a new fucntion 
+// x.bind(this obejct) bind returns the function to a new fucntion
+ 
 const newfun=x.bind(user)
 newfun(a,b);
