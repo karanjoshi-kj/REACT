@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script >
+    const user={
+    name:"Karan",
+    age:22,
+    course:"Btech"
+}
+    const user1={
+    name:"Charan",
+    age:27
+}
+
+// user1.__proto__=user; // not to use this way
+Object.setPrototypeOf(user1,user);
+
+console.log(user1);
+console.log(user1.course)
+
+// const arr=[1,2,3,4,54,5,6]
+// console.log(user);
+// console.log(Object.getPrototypeOf(user))
+// console.log(user.__proto__);
+// console.log(arr.__proto__);
+// console.log(arr.__proto__.__proto__);
+// console.log("PROTOTYPE CHAINING",arr.__proto__.__proto__.__proto__);
+
+
+    </script>
+</body>
+</html>
