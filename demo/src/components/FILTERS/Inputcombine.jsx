@@ -1,13 +1,20 @@
 import React from 'react'
 
 const Inputcombine = ({search , setsearch , category , setcategory , minPrice , setMinPrice , maxPrice , setMaxPrice}) => {
+  console.log(setsearch);
+
+  const handlerequest = ((e)=>{
+    console.log(e.target.value);
+    setsearch(e.target.value);
+  })
+  
   return (
     <div>
       <input 
       type="text"
       placeholder="ENTER PRODUCT"
       value={search}
-      onChange={(e) => setsearch(e.target.value)}
+      onChange={handlerequest}
       />
 
 <select

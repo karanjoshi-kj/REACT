@@ -1,7 +1,7 @@
 import React from 'react'
 // import Country from './components/CHECKBOXES/Country';
 // import University from './components/CHECKBOXES/University';
-import Formvalidation from './components/FORMVALIDATION/Formvalidation';
+// import Formvalidation from './components/FORMVALIDATION/Formvalidation';
 // import Lexicascoping from './components/SCOPING/Lexicascoping';
 // import Dropdown1 from './components/FORMS/Dropdown1';
 // import Dropdown1 from './components/FORMS/Dropdown1';
@@ -19,6 +19,7 @@ import Formvalidation from './components/FORMVALIDATION/Formvalidation';
 // import Filter1 from './components/FILTERS/Filter1';
 // import Question1 from './components/FILTERS/Question1';
 // import Dropdown from './components/FILTERS/Dropdown';
+import Combined from './components/FILTERS/Combined';
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
@@ -30,8 +31,9 @@ import Formvalidation from './components/FORMVALIDATION/Formvalidation';
 const App = () => {
   return (
     <div>
+      <Combined/>
       {/* <Lexicascoping/> */}
-      <Formvalidation/>
+      {/* <Formvalidation/> */}
       {/* <University/> */}
       {/* <Country/> */}
       {/* <Dropdown1/> */}
