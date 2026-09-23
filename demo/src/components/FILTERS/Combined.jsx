@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Inputcombine from "./Inputcombine";
 import Data from "./Data.json"; 
 import './Combined.css'; 
@@ -10,6 +10,8 @@ const Combined = () => {
   const [category, setcategory] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+
+  
 
   const filteredproduct = Data.filter((product) => {
     const namematch = product.name.toLowerCase().includes(search.toLowerCase());
