@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Inputcombine from "./Inputcombine";
 import Data from "./Data.json"; 
-import useDebounce from "./useDebounce"; // 1. Custom hook import kiya
+import useDebounce from "./useDebounce";
 import './Combined.css'; 
 
 const Combined = () => {
@@ -10,11 +10,10 @@ const Combined = () => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
-  // 2. Bas ek single line me reusable debounced value mil gayi!
   const debouncedSearch = useDebounce(search, 300);
 
-  // 3. Filtering me debouncedSearch pass kar diya
   const filteredproduct = Data.filter((product) => {
+    // Ye tabhi chalega jab debouncedSearch change hoga
     const namematch = product.name.toLowerCase().includes(debouncedSearch.toLowerCase());
     const categorymatch = category === "" || product.category.toLowerCase() === category.toLowerCase();
     const minmatch = minPrice === "" || product.price >= Number(minPrice);

@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 
-// Custom Hook jo kisi bhi value aur delay ko accept karta hai
 const useDebounce = (value, delay = 300) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
-    // Timer set karo
+    // Console log to show when user stops typing and timer triggers
+    console.log(`⏱️ Timer started for: "${value}"`);
+
     const handler = setTimeout(() => {
+      console.log(`✅ Debounce executed! Value updated to: "${value}"`);
       setDebouncedValue(value);
     }, delay);
 
-    // Cleanup: Timer reset karne ke liye
     return () => {
+      console.log(`❌ Timer cancelled for: "${value}" (User typed again)`);
       clearTimeout(handler);
     };
   }, [value, delay]);
