@@ -1,19 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const useDebounce = (value, delay = 300) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
+  const executionCount = useRef(0); // Counter variable
 
   useEffect(() => {
-    // Console log to show when user stops typing and timer triggers
-    console.log(`⏱️ Timer started for: "${value}"`);
-
     const handler = setTimeout(() => {
-      console.log(`✅ Debounce executed! Value updated to: "${value}"`);
+      executionCount.current += 1;
+      console.log(`🔥 [Count: ${executionCount.current}] Debounce Executed for: "${value}"`);
       setDebouncedValue(value);
     }, delay);
 
     return () => {
-      console.log(`❌ Timer cancelled for: "${value}" (User typed again)`);
       clearTimeout(handler);
     };
   }, [value, delay]);

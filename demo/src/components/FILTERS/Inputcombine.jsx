@@ -1,25 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-const Inputcombine = ({search , setsearch , category , setcategory , minPrice , setMinPrice , maxPrice , setMaxPrice}) => {
-  console.log(setsearch);
-
-  const handlerequest = ((e)=>{
-    console.log(e.target.value);
-    setsearch(e.target.value);
-  })
-  
+const Inputcombine = ({ search, setsearch, category, setcategory, minPrice, setMinPrice, maxPrice, setMaxPrice }) => {
   return (
-    <div>
+    <div className="filter-inputs">
       <input 
-      type="text"
-      placeholder="ENTER PRODUCT"
-      value={search}
-      onChange={handlerequest}
+        type="text"
+        placeholder="ENTER PRODUCT"
+        value={search}
+        onChange={(e) => setsearch(e.target.value)}
       />
 
-<select
-      value={category}
-      onChange={(e) => setcategory(e.target.value)}>
+      <select value={category} onChange={(e) => setcategory(e.target.value)}>
         <option value="">ALL CATEGORIES</option>
         <option value="electronics">ELECTRONICS</option>
         <option value="clothes">CLOTHES</option>
@@ -27,20 +18,20 @@ const Inputcombine = ({search , setsearch , category , setcategory , minPrice , 
       </select>
 
       <input 
-      type="number"
-      placeholder="MINIMUMMM PRICE"
-      value={minPrice}
-      onChange={(e)=> setMinPrice(e.target.value)}
+        type="number"
+        placeholder="MINIMUM PRICE"
+        value={minPrice}
+        onChange={(e) => setMinPrice(e.target.value)}
       />
 
       <input 
-      type="number"
-      placeholder="MAXIMUMMM PRICE"
-      value={maxPrice}
-      onChange={(e)=> setMaxPrice(e.target.value)}
+        type="number"
+        placeholder="MAXIMUM PRICE"
+        value={maxPrice}
+        onChange={(e) => setMaxPrice(e.target.value)}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Inputcombine
+export default Inputcombine;     
