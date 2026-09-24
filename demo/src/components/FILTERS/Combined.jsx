@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Inputcombine from "./Inputcombine";
 import Data from "./Data.json"; 
+import useDebounce from "./useDebounce"; // 1. Custom hook import kiya
 import './Combined.css'; 
 
 const Combined = () => {
-  // const products = Data;
-
   const [search, setsearch] = useState("");
   const [category, setcategory] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
-  
+  // 2. Bas ek single line me reusable debounced value mil gayi!
+  const debouncedSearch = useDebounce(search, 300);
 
+  // 3. Filtering me debouncedSearch pass kar diya
   const filteredproduct = Data.filter((product) => {
-    const namematch = product.name.toLowerCase().includes(search.toLowerCase());
-    
+    const namematch = product.name.toLowerCase().includes(debouncedSearch.toLowerCase());
     const categorymatch = category === "" || product.category.toLowerCase() === category.toLowerCase();
-    
     const minmatch = minPrice === "" || product.price >= Number(minPrice);
     const maxmatch = maxPrice === "" || product.price <= Number(maxPrice);
 
@@ -46,8 +45,8 @@ const Combined = () => {
               <span className="category-badge">{product.category}</span>
               <h3 className="product-name">{product.name}</h3>
               <p className="price">₹{product.price.toLocaleString('en-IN')}</p> 
-              <h3 className="product-rating">{product.rating}</h3>
-              <h3 className="product-rating">{product.stock}</h3>
+              <p className="product-rating">Rating: {product.rating}</p>
+              <p className="product-stock">Stock: {product.stock}</p>
             </div>
           ))
         ) : (
