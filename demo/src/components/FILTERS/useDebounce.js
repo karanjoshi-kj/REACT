@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 
 const useDebounce = (value, delay = 300) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
-  const executionCount = useRef(0); // Counter variable
+  const Count = useRef(0); 
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      executionCount.current += 1;
-      console.log(`🔥 [Count: ${executionCount.current}] Debounce Executed for: "${value}"`);
+      Count.current += 1;
+      console.log(` [Counting: ${Count.current}] Debounce Executed for: "${value}"`);
       setDebouncedValue(value);
     }, delay);
 

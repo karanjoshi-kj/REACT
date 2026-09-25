@@ -13,7 +13,6 @@ const Combined = () => {
   const debouncedSearch = useDebounce(search, 300);
 
   const filteredproduct = Data.filter((product) => {
-    // Ye tabhi chalega jab debouncedSearch change hoga
     const namematch = product.name.toLowerCase().includes(debouncedSearch.toLowerCase());
     const categorymatch = category === "" || product.category.toLowerCase() === category.toLowerCase();
     const minmatch = minPrice === "" || product.price >= Number(minPrice);
