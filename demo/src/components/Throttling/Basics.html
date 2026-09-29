@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+function scrollevent() {
+    console.log("Page Scrolling...........");
+}
+
+// Throttle higher-order function: Control karega ki fn kitni frequency se chalega
+function throttle(fn, delay) {
+    let lastCall = 0; // Pichhli baar function kab chala tha (timestamp)
+
+    return function(...a) {
+        let now = Date.now(); // Abhi ka current timestamp (milliseconds)
+        console.log(now);
+
+        // Check karo ki pichhli baar chalne ke baad se delay jitna time beeta ya nahi
+        if (now - lastCall >= delay) {
+            lastCall = now; // Naye execution time ko update karo
+            fn.apply(this, a); // Original function ko call karo correct arguments ke sath
+        }
+    };
+}
+
+// Throttled version create karo (har 1 second mein maximum 1 baar chalega)
+const thh = throttle(scrollevent, 1000);
+
+// Scroll event par optimized function attach karo
+window.addEventListener("scroll", thh);
+</script>
+</body>
+</html>
