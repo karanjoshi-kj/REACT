@@ -12,6 +12,7 @@ const GetData = () => {
         alert(e);
       });
   }, []);
+  
   return(
     <div>
     {
