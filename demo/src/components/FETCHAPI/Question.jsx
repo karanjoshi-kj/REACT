@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const GetData = () => {
+const Question = () => {
   const [user, setUser] = useState([]);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -12,7 +12,6 @@ const GetData = () => {
         alert(e);
       });
   }, []);
-  
   return(
     <div>
     {
@@ -27,4 +26,4 @@ const GetData = () => {
   );
 };
 
-export default GetData;
+export default Question;

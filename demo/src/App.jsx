@@ -19,7 +19,8 @@ import React from 'react'
 // import Filter1 from './components/FILTERS/Filter1';
 // import Question1 from './components/FILTERS/Question1';
 // import Dropdown from './components/FILTERS/Dropdown';
-import Combined from './components/FILTERS/Combined';
+// import Combined from './components/FILTERS/Combined';
+import Question from './components/FETCHAPI/Question';
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
@@ -31,7 +32,8 @@ import Combined from './components/FILTERS/Combined';
 const App = () => {
   return (
     <div>
-      <Combined/>
+      <Question/>
+      {/* <Combined/> */}
       {/* <Lexicascoping/> */}
       {/* <Formvalidation/> */}
       {/* <University/> */}
