@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Atom} from "react-loading-indicators"
+import {LifeLine} from "react-loading-indicators"
 
 const Question = () => {
   const [user, setUser] = useState([]);
@@ -25,7 +25,7 @@ const Question = () => {
   }, []);
 
   if (loading) {
-    return <div><Atom color="#32cd32" size="medium" text="" textColor="" /></div>
+    return <div><LifeLine color="#32cd32" size="medium" text="" textColor="" /></div>
   }
   return(
     <div>
