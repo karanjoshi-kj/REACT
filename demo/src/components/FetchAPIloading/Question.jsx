@@ -15,7 +15,7 @@ const Question = () => {
       .then((response) => response.json())
       .then((data) => {
         setTimeout(() => {
-          setUser(data.results); 
+          setUser(data.results);
           setloading(false);
         }, 5000);
       })
@@ -29,19 +29,30 @@ const Question = () => {
 
   if (loading) {
     return (
-      <div>
+      <div style={{ textAlign: "center" }}>
         <LifeLine color="#32cd32" size="medium" text="" textColor="" />
-        <p>Loading time: {loadingtimer} seconds</p> 
+        <p>Loading time: {loadingtimer} seconds</p>
       </div>
     );
   }
 
   return (
     <div>
+      <h2>Total Users: {user.length}</h2>
       {user.map((u) => (
-        <div key={u.login.uuid}> 
-          <h3>{u.name.first} {u.name.last}</h3> 
-          <p>{u.email}</p>
+        <div 
+          key={u.login.uuid} 
+        >
+          <img 
+            src={u.picture.medium} 
+            alt="User"            
+          />
+
+          <h3>{u.name.title} {u.name.first} {u.name.last}</h3>
+
+          <p><strong>Email:</strong> {u.email}</p>
+
+          <p><strong>DOB:</strong> { new Date(u.dob.date).toLocaleDateString('en-US')}</p>
         </div>
       ))}
     </div>
