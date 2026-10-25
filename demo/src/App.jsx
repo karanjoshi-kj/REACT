@@ -20,7 +20,7 @@ import React from 'react'
 // import Question1 from './components/FILTERS/Question1';
 // import Dropdown from './components/FILTERS/Dropdown';
 // import Combined from './components/FILTERS/Combined';
-import Question from './components/FETCHAPI/Question';
+import Question from './components/FetchAPIloading/Question';
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
@@ -33,6 +33,7 @@ const App = () => {
   return (
     <div>
       <Question/>
+      {/* <Question/> */}
       {/* <Combined/> */}
       {/* <Lexicascoping/> */}
       {/* <Formvalidation/> */}
