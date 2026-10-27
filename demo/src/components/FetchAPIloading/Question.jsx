@@ -60,48 +60,40 @@ const Question = () => {
     <div>
       <h2>Total Users: {user.length}</h2>
 
-   
       {currentuser.map((u) => (
-        <div 
-          key={u.login.uuid} 
-        >
-          <img 
-            src={u.picture.medium} 
-            alt="User"            
+        <div key={u.login.uuid}>
+          <img
+            src={u.picture.medium}
+            alt="User"
             style={{ borderRadius: "50%" }}
           />
           <div>
-            <h3>{u.name.title} {u.name.first} {u.name.last}</h3>
-            <p><strong>Email:</strong> {u.email}</p>
-            <p><strong>DOB:</strong> {new Date(u.dob.date).toLocaleDateString('en-US')}</p>
+            <h3>
+              {u.name.title} {u.name.first} {u.name.last}
+            </h3>
+            <p>
+              <strong>Email:</strong> {u.email}
+            </p>
+            <p>
+              <strong>DOB:</strong>{" "}
+              {new Date(u.dob.date).toLocaleDateString("en-US")}
+            </p>
           </div>
         </div>
       ))}
-      
+
       <div>
-        <button
-          onClick={handleprev}
-          disabled={currentpage === 1}
-          
-        >
+        <button onClick={handleprev} disabled={currentpage === 1}>
           PREVIOUS
         </button>
-          
+
         {Array.from({ length: totalpages }, (_, index) => (
-          <button
-            key={index}
-            onClick={() => setcurrentpage(index + 1)}
-            
-          >
+          <button key={index} onClick={() => setcurrentpage(index + 1)}>
             {index + 1}
           </button>
         ))}
 
-        <button
-          onClick={handlenext}
-          disabled={currentpage === totalpages}
-          
-        >
+        <button onClick={handlenext} disabled={currentpage === totalpages}>
           NEXT
         </button>
       </div>
