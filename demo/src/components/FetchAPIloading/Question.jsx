@@ -75,6 +75,7 @@ const Question = () => {
           <p><strong>DOB:</strong> { new Date(u.dob.date).toLocaleDateString('en-US')}</p>
         </div>
       ))}
+      
       <div>
         <button
           onclick={handleprev}
