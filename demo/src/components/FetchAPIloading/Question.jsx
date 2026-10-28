@@ -5,7 +5,7 @@ const Question = () => {
   const [user, setUser] = useState([]);
   const [loading, setloading] = useState(true);
   const [loadingtimer, setloadingtimer] = useState(0);
-  const [search , setsearch] = useState("");
+  const [search, setsearch] = useState("");
 
   const [currentpage, setcurrentpage] = useState(1);
   const userPerpage = 10;
@@ -30,12 +30,18 @@ const Question = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const filteruser = user.filter((user) => user.name.toLowercase().includes(search.toLowerCase()));
+
+  const filteruser = user.filter((u) => {
+    const fullName = `${u.name.first} ${u.name.last}`;
+    return fullName.toLowerCase().includes(search.toLowerCase());
+  });
 
   const indexoflastuser = currentpage * userPerpage;
   const indexoffirstuser = indexoflastuser - userPerpage;
-  const currentuser = user.slice(indexoffirstuser, indexoflastuser);
-  const totalpages = Math.ceil(user.length / userPerpage);
+  const currentuser = filteruser.slice(indexoffirstuser, indexoflastuser);
+  const totalpages = Math.ceil(filteruser.length / userPerpage);
+
+
 
   const handlenext = () => {
     if (currentpage < totalpages) {
@@ -60,54 +66,61 @@ const Question = () => {
 
   return (
     <div>
-
       <h1>SEARCH USERS</h1>
       <input 
-      type="text"
-      placeholder="SEARCH BY NAME.."
-      value={search}
-      onChange={(e) => setsearch(e.target.value)}
+        type="text"
+        placeholder="SEARCH BY NAME.."
+        value={search}
+        onChange={(e) => {
+          setsearch(e.target.value);
+          setcurrentpage(1); // Reset page to 1 on search change
+        }}
       />
+
+      <h2>Total Users: {filteruser.length}</h2>
       
-      {filteruser.map((user)=>(
-        <p key={user.id}>{user.name}</p>
-      ))}
-
-      <h2>Total Users: {user.length}</h2>
-      {currentuser.map((u) => (
-        <div key={u.login.uuid}>
-          <img
-            src={u.picture.medium}
-            alt="User"
-            style={{ borderRadius: "50%" }}
-          />
-          <div>
-            <h3>
-              {u.name.title} {u.name.first} {u.name.last}
-            </h3>
-            <p>
-              <strong>Email:</strong> {u.email}
-            </p>
-            <p>
-              <strong>DOB:</strong>{" "}
-              {new Date(u.dob.date).toLocaleDateString("en-US")}
-            </p>
+      {currentuser.length === 0 ? (
+        <p>No users found.</p>
+      ) : (
+        currentuser.map((u) => (
+          <div key={u.login.uuid} style={{ margin: "20px 0" }}>
+            <img
+              src={u.picture.medium}
+              alt="User"
+              style={{ borderRadius: "50%" }}
+            />
+            <div>
+              <h3>
+                {u.name.title} {u.name.first} {u.name.last}
+              </h3>
+              <p>
+                <strong>Email:</strong> {u.email}
+              </p>
+              <p>
+                <strong>DOB:</strong>{" "}
+                {new Date(u.dob.date).toLocaleDateString("en-US")}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      )}
 
-      <div>
+      <div style={{ marginTop: "20px" }}>
         <button onClick={handleprev} disabled={currentpage === 1}>
           PREVIOUS
         </button>
 
         {Array.from({ length: totalpages }, (_, index) => (
-          <button key={index} onClick={() => setcurrentpage(index + 1)}>
+          <button 
+            key={index} 
+            onClick={() => setcurrentpage(index + 1)}
+            style={{ fontWeight: currentpage === index + 1 ? "bold" : "normal" }}
+          >
             {index + 1}
           </button>
         ))}
 
-        <button onClick={handlenext} disabled={currentpage === totalpages}>
+        <button onClick={handlenext} disabled={currentpage === totalpages || totalpages === 0}>
           NEXT
         </button>
       </div>
