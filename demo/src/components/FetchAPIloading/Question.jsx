@@ -5,6 +5,7 @@ const Question = () => {
   const [user, setUser] = useState([]);
   const [loading, setloading] = useState(true);
   const [loadingtimer, setloadingtimer] = useState(0);
+  const [search , setsearch] = useState("");
 
   const [currentpage, setcurrentpage] = useState(1);
   const userPerpage = 10;
@@ -28,6 +29,8 @@ const Question = () => {
       });
     return () => clearInterval(timer);
   }, []);
+
+  const filteruser = user.filter((user) => user.name.toLowercase().includes(search.toLowerCase()));
 
   const indexoflastuser = currentpage * userPerpage;
   const indexoffirstuser = indexoflastuser - userPerpage;
@@ -57,8 +60,20 @@ const Question = () => {
 
   return (
     <div>
-      <h2>Total Users: {user.length}</h2>
 
+      <h1>SEARCH USERS</h1>
+      <input 
+      type="text"
+      placeholder="SEARCH BY NAME.."
+      value={search}
+      onChange={(e) => setsearch(e.target.value)}
+      />
+      
+      {filteruser.map((user)=>(
+        <p key={user.id}>{user.name}</p>
+      ))}
+
+      <h2>Total Users: {user.length}</h2>
       {currentuser.map((u) => (
         <div key={u.login.uuid}>
           <img
