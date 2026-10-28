@@ -26,7 +26,6 @@ const Question = () => {
         alert(e);
         setloading(false);
       });
-
     return () => clearInterval(timer);
   }, []);
 
