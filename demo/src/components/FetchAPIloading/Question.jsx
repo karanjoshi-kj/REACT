@@ -10,7 +10,7 @@ const Question = () => {
   const [currentpage, setcurrentpage] = useState(1);
   const userPerpage = 10;
 
-  const [debouncedsearch , setdebouncedsearch] = useState("");
+  const [debouncedsearch, setdebouncedsearch] = useState("");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,15 +32,16 @@ const Question = () => {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     const handler = setTimeout(() => {
       setdebouncedsearch(search);
-      setcurrentpage=1;
-    }, 500);
+      setcurrentpage(1);
+      callingapi();
+    }, 10);
     return () => {
       clearTimeout(handler);
-    }
-  } , [search]);
+    };
+  }, [search]);
 
   const filteruser = user.filter((u) => {
     const fullName = `${u.name.first} ${u.name.last}`;
@@ -51,8 +52,6 @@ const Question = () => {
   const indexoffirstuser = indexoflastuser - userPerpage;
   const currentuser = filteruser.slice(indexoffirstuser, indexoflastuser);
   const totalpages = Math.ceil(filteruser.length / userPerpage);
-
-
 
   const handlenext = () => {
     if (currentpage < totalpages) {
@@ -75,21 +74,27 @@ const Question = () => {
     );
   }
 
+  const callingapi = () => {
+    console.log("CALLING API");
+  };
+  const handlechange = (e) => {
+    setsearch(e.target.value);
+
+    setcurrentpage(1);
+  };
+
   return (
     <div>
       <h1>SEARCH USERS</h1>
-      <input 
+      <input
         type="text"
         placeholder="SEARCH BY NAME.."
         value={search}
-        onChange={(e) => {
-          setsearch(e.target.value);
-          setcurrentpage(1); // Reset page to 1 on search change
-        }}
+        onChange={handlechange}
       />
 
       <h2>Total Users: {filteruser.length}</h2>
-      
+
       {currentuser.length === 0 ? (
         <p>No users found.</p>
       ) : (
@@ -122,16 +127,21 @@ const Question = () => {
         </button>
 
         {Array.from({ length: totalpages }, (_, index) => (
-          <button 
-            key={index} 
+          <button
+            key={index}
             onClick={() => setcurrentpage(index + 1)}
-            style={{ fontWeight: currentpage === index + 1 ? "bold" : "normal" }}
+            style={{
+              fontWeight: currentpage === index + 1 ? "bold" : "normal",
+            }}
           >
             {index + 1}
           </button>
         ))}
 
-        <button onClick={handlenext} disabled={currentpage === totalpages || totalpages === 0}>
+        <button
+          onClick={handlenext}
+          disabled={currentpage === totalpages || totalpages === 0}
+        >
           NEXT
         </button>
       </div>
