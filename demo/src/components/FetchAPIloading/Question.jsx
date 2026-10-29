@@ -10,6 +10,8 @@ const Question = () => {
   const [currentpage, setcurrentpage] = useState(1);
   const userPerpage = 10;
 
+  const [debouncedsearch , setdebouncedsearch] = useState("");
+
   useEffect(() => {
     const timer = setInterval(() => {
       setloadingtimer((x) => x + 1);
@@ -30,10 +32,19 @@ const Question = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(()=>{
+    const handler = setTimeout(() => {
+      setdebouncedsearch(search);
+      setcurrentpage=1;
+    }, 500);
+    return () => {
+      clearTimeout(handler);
+    }
+  } , [search]);
 
   const filteruser = user.filter((u) => {
     const fullName = `${u.name.first} ${u.name.last}`;
-    return fullName.toLowerCase().includes(search.toLowerCase());
+    return fullName.toLowerCase().includes(debouncedsearch.toLowerCase());
   });
 
   const indexoflastuser = currentpage * userPerpage;
