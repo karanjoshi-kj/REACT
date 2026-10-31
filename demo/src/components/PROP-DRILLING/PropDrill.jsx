@@ -1,33 +1,35 @@
-import { data } from "react-router-dom";
-
-const propdrilling = () =>{
+const PropDrilling = () => {
     return (
         <div>
-            <h1>HELLO PROP DEILLING</h1>
-            <parent data="karan" />
+            <h1>HELLO PROP DRILLING</h1>
+            <Parent data="karan" />
         </div>
-    )
-}
-export default propdrilling
+    );
+};
 
-function parent(data){
-    return(
+export default PropDrilling;
+
+function Parent({ data }) {
+    return (
         <>
-        <h1>HELLO FROM PARENT COMPONENT</h1>
-        <child data={data}/>
+            <h1>HELLO FROM PARENT COMPONENT</h1>
+            <Child data={data} />
         </>
-    )
+    );
 }
-function child(data){
-    return(
+
+function Child({ data }) {
+    return (
         <>
-        <h1>HELLO FROM PARENT COMPONENT</h1>
-        <subchild data={data}/>
+            <h1>HELLO FROM CHILD COMPONENT</h1>
+            <SubChild data={data} />
         </>
-    )
+    );
 }
-function child(data){
-    return(
-        <h1>HELLO FROM PARENT COMPONENT</h1>
-    )
+
+// Created the missing 'SubChild' component to receive the final prop
+function SubChild({ data }) {
+    return (
+        <h1>HELLO FROM SUBCHILD COMPONENT: {data}</h1>
+    );
 }
