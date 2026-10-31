@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { LifeLine } from "react-loading-indicators";
 
 const Question = () => {
@@ -11,7 +11,6 @@ const Question = () => {
   const userPerpage = 10;
 
   const [debouncedsearch, setdebouncedsearch] = useState("");
-  const isFirstRender = useRef(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,24 +32,12 @@ const Question = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // --- DEBOUNCING WITH STRICTMODE & FIRST RENDER CHECK ---
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-
     const handler = setTimeout(() => {
-      if (search.trim() === "") {
-        setdebouncedsearch("");
-        setcurrentpage(1);
-        return;
-      }
       setdebouncedsearch(search);
       setcurrentpage(1);
       callingapi();
-    }, 300); // Delay ko 10ms se badha kar 300ms kar diya hai taaki fast typing par bar bar hit na ho
-
+    }, 10);
     return () => {
       clearTimeout(handler);
     };
@@ -90,9 +77,9 @@ const Question = () => {
   const callingapi = () => {
     console.log("CALLING API");
   };
-
   const handlechange = (e) => {
     setsearch(e.target.value);
+
     setcurrentpage(1);
   };
 
@@ -163,3 +150,10 @@ const Question = () => {
 };
 
 export default Question;
+
+//  useEffect(() => {
+//     const timer = setTimeout(() => {
+//       if (search.trim() === "") {
+//         setUsers([]);
+//         return;
+//       }

@@ -20,7 +20,8 @@ import React from 'react'
 // import Question1 from './components/FILTERS/Question1';
 // import Dropdown from './components/FILTERS/Dropdown';
 // import Combined from './components/FILTERS/Combined';
-import Question from './components/FetchAPIloading/Question';
+// import Question from './components/FetchAPIloading/Question';
+import Propdrilling from './components/PROP-DRILLING/PropDrill';
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
@@ -32,7 +33,8 @@ import Question from './components/FetchAPIloading/Question';
 const App = () => {
   return (
     <div>
-      <Question/>
+      <Propdrilling/>
+      {/* <Question/> */}
       {/* <Question/> */}
       {/* <Combined/> */}
       {/* <Lexicascoping/> */}
