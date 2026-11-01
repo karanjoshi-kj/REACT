@@ -10,7 +10,14 @@ const Exportingconcept = () => {
 
 export default Exportingconcept
 
-function test(){
+export function Test(){   //? HERE WE USED EXPORT KEYWORD TO USE THIS COMPINENT ON THE OTHER FILE ..
+    return(
+        <>
+        <h2>HELLO FORM TEST COMPONENT</h2>
+        </>
+    )
+}
+export function Test1(){   //? HERE WE USED EXPORT KEYWORD TO USE THIS COMPINENT ON THE OTHER FILE ..
     return(
         <>
         <h2>HELLO FORM TEST COMPONENT</h2>

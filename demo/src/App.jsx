@@ -21,7 +21,9 @@ import React from 'react'
 // import Dropdown from './components/FILTERS/Dropdown';
 // import Combined from './components/FILTERS/Combined';
 // import Question from './components/FetchAPIloading/Question';
-import Propdrilling from './components/PROP-DRILLING/PropDrill';
+// import Propdrilling from './components/PROP-DRILLING/PropDrill';
+import Exportingconcept from './components/EXPORTING/Exportingconcept';
+import Usetesting from './components/EXPORTING/Usetesting';
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
@@ -33,7 +35,10 @@ import Propdrilling from './components/PROP-DRILLING/PropDrill';
 const App = () => {
   return (
     <div>
-      <Propdrilling/>
+      
+      <Exportingconcept/>
+      <Usetesting/>
+      {/* <Propdrilling/> */}
       {/* <Question/> */}
       {/* <Question/> */}
       {/* <Combined/> */}
