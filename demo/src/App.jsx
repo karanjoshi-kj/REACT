@@ -1,4 +1,5 @@
 import React from 'react'
+import Component1 from './components/EXPORTING/Question';
 // import Country from './components/CHECKBOXES/Country';
 // import University from './components/CHECKBOXES/University';
 // import Formvalidation from './components/FORMVALIDATION/Formvalidation';
@@ -22,8 +23,8 @@ import React from 'react'
 // import Combined from './components/FILTERS/Combined';
 // import Question from './components/FetchAPIloading/Question';
 // import Propdrilling from './components/PROP-DRILLING/PropDrill';
-import Exportingconcept from './components/EXPORTING/Exportingconcept';
-import Usetesting from './components/EXPORTING/Usetesting';
+// import Exportingconcept from './components/EXPORTING/Exportingconcept';
+// import Usetesting from './components/EXPORTING/Usetesting';
 // import Combined from './components/FILTERS/Combined';
 // import Pagenation2 from './components/PAGENATION/Pagenation2';
 // import Arraycls from './components/PAGENATION/Arraycls';
@@ -33,11 +34,11 @@ import Usetesting from './components/EXPORTING/Usetesting';
 // import Filtercard from './components/FILTERS/Filtercard';
 
 const App = () => {
-  return (
+  return ( 
     <div>
-      
-      <Exportingconcept/>
-      <Usetesting/>
+      <Component1/>
+      {/* <Exportingconcept/>
+      <Usetesting/> */}
       {/* <Propdrilling/> */}
       {/* <Question/> */}
       {/* <Question/> */}
