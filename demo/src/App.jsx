@@ -1,12 +1,13 @@
 import React from 'react';
-import { userdata } from './components/contextapi/Usercontext';
+import { UserContext , userdata } from './components/contextapi/Usercontext';
 import User from './components/contextapi/User';
 
 
-export default function App() {
+const App = () => {
   return (
    <Usercontext.Provider value={userdata}> 
    <User/>
    </Usercontext.Provider>
   );
 }
+export default App 
