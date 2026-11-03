@@ -1,0 +1,7 @@
+//CONTEXT API :
+
+// context api react ka ek in-built feature hai jo aapko props ko har component ke through manually pass kiya bina poore component tree mein data share karne ki permission deta hai 
+
+// context api sara data warehouse ko bejta hai aur ye with help of provider hmm access kar sakte hai .
+
+// provider provider in context api works as asn intermideator which diretly deals with the warehouse and end user . 
