@@ -17,7 +17,7 @@ const App = () => {
 //    </UserContext.Provider>
 //  </>
 
-   <QuestionContext.Provider value={quotesdata}>
+   <QuestionContext.Provider value={{quotesdata}}>
     <Question1/>
    </QuestionContext.Provider>
   );

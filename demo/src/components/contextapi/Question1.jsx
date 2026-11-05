@@ -1,13 +1,13 @@
-
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { QuestionContext } from './QuestionContext';
 
 const Question1 = () => {
+
     const usedata = useContext(QuestionContext);
 
     return (
         <div>
-            {usedata.quotes.map((e) => {
+            {usedata.quotesdata.quotes.map((e) => {
                 return (
                     <div key={e.id}>
                         <p>{e.author}</p>
