@@ -3,10 +3,10 @@ import React from 'react';
 // import User from './components/contextapi/User';
 // import Component from './components/contextapi/Component';
 // import Navbar from './components/contextapi/Navbar';
-import { QuestionContext } from './components/contextapi/QuestionContext';
+import { QuestionContext, quotesdata } from './components/contextapi/QuestionContext';
 import Question1 from './components/contextapi/Question1';
 
-import Question from '../src/components/contextapi/Question.json'
+
 const App = () => {
   return (
 //     <>
@@ -17,7 +17,7 @@ const App = () => {
 //    </UserContext.Provider>
 //  </>
 
-   <QuestionContext.Provider value={{Question}}>
+   <QuestionContext.Provider value={quotesdata}>
     <Question1/>
    </QuestionContext.Provider>
   );
