@@ -1,20 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Information from './components/ROUTES/Information';
-import About from './components/ROUTES/About';
-import Footer from './components/ROUTES/Footer';
-import Navbar from './components/ROUTES/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dynamicrouting from './components/ROUTES/Dynamicrouting';
+import Userprofile from './components/ROUTES/Userprofile'; // Agar alag file hai toh import kar, nahi toh niche wale code ki tarah
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Information />} />
-        <Route path="/about" element={<About />} />
+        {/* Yahan element={<Dynamicrouting />} hoga (JSX tag format me) */}
+        <Route path="/" element={<Dynamicrouting />} />
+        
+        {/* Yeh dynamic route hai user profile ke liye */}
+        <Route path="/user/:id" element={<Userprofile />} />
       </Routes>
-      <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
