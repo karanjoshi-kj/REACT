@@ -2,9 +2,11 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 const User1 = () => {
-  const { usercode } = useParams();
+  const { usercode , username} = useParams();
+console.log(username);
+console.log(usercode);
 
-  if (usercode === '001') {
+  if (usercode === '001' || username === 'charan') {
     return (
       <div>
         <Link to="/">Back</Link>
@@ -13,7 +15,7 @@ const User1 = () => {
       </div>
     );
   } 
-  else if (usercode === '002') {
+  else if (usercode === '002' && username === 'karan') {
     return (
       <div>
         <Link to="/">Back</Link>
