@@ -15,7 +15,7 @@ const Question4 = () => {
       
   return (
     <div>
-      <h1>HELLO</h1>
+      <h1>USER DETAIL'S</h1>
       {result.map((item)=>(
         <p>age : {item.age} | gender : {item.gender} | weight : {item.weight}</p>
       ))}
