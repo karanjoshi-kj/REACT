@@ -7,14 +7,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Usesearchparams from './components/ROUTES/Usesearchparams';
 // import Usesearchquestion from './components/ROUTES/Usesearchquestion';
 // import Question3 from './components/ROUTES/Question3';
-import Question4 from './components/ROUTES/Question4';
+// import Question4 from './components/ROUTES/Question4';
+import Setvaluesonhook from './components/ROUTES/Setvaluesonhook';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         {/* <Route path="/datafetch" element={<Usesearchquestion/>} /> */}
-        <Route path="/checkdetils" element={<Question4/>} />
+        {/* <Route path="/checkdetils" element={<Question4/>} /> */}
+        <Route path="/setvalues" element={<Setvaluesonhook/>} />
         {/* <Route path="/marksfetch" element={<Question3/>} /> */}
         {/* <Route path="/usesearchparams" element={<Usesearchparams />} /> */}
         // {/* <Route path="/question/:id" element={<Question />}/> */}
