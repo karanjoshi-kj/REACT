@@ -20,11 +20,29 @@ const Question6 = () => {
         });
     };
 
+    const productlist = Array.isArray(Product) ? Product : (Product.products || []);
+
+    const filterproducts = productlist.filter((item) => {
+        return(
+            (productcat === "" || item.category.toLowerCase().includes(productcat.toLowerCase())) && 
+            (productmoney === "" || Number(item.price) <= Number(productmoney)) && 
+            (productnamm === "" || item.title.toLowerCase().includes(productnamm.toLowerCase()))  
+        );
+    });
+    // console.log(filterproducts);
+    
   return (
     <div>
         <h1>PRODUCT CATEGORY : {productcategory}</h1>        
         <h1>PRODUCT PRICE : {productprice}</h1>        
         <h1>PRODUCT NAME : {productname}</h1>   
+
+        <select value={productcat} onChange={(e) => setproductcat(e.target.value)}>
+              <option value="">SELECT CATEGORY</option>
+              <option value="beauty">Beauty</option>
+              <option value="electronics">Electronics</option>
+              <option value="clothing">Clothing</option>
+        </select>
 
         <input 
         type="text"
@@ -45,7 +63,16 @@ const Question6 = () => {
         onChange={(e) => setproductnamm(e.target.value)}
         />
 
-        <button onClick={handlesubmit}>SETTING THE ID VALUE</button>     
+        <button onClick={handlesubmit}>SETTING THE ID VALUE</button>  
+
+
+        <ul>
+            {filterproducts.map((p , index) => (
+                <li key={index}>
+                    {p.title} - {p.category} - ${p.price}
+                </li>
+            ))}
+        </ul>
     </div>
   )
 }
