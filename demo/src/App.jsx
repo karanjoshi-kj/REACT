@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Question4 from './components/ROUTES/Question4';
 // import Setvaluesonhook from './components/ROUTES/Setvaluesonhook';
 // import Question5 from './components/ROUTES/Question5';
-import Question6 from './components/ROUTES/Question6';
+import Question6 from './components/ROUTES/Miniproject';
 
 const App = () => {
   return (
