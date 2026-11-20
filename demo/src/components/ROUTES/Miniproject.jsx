@@ -12,6 +12,9 @@ const Question6 = () => {
     const [productmoney, setproductmoney] = useState("")
     const [productnamm, setproductnamm] = useState("")
 
+    const [currentpage , setcurrentpage] = useState(1);
+    const itemPerPage = 5;
+
     const handlesubmit = () => {
         setusercode({
             category: productcat,
@@ -29,8 +32,14 @@ const Question6 = () => {
             (productnamm === "" || item.title.toLowerCase().includes(productnamm.toLowerCase()))  
         );
     });
-    // console.log(filterproducts);
     
+    //? PAGENATION CONSECPT
+
+    const totalpages = Math.ceil(filterproducts.length / itemPerPage);
+    const lastIndex = currentpage * itemPerPage ;
+    const firstindex = lastIndex - itemPerPage ;
+    const currentProducts = filterproducts.slice(firstindex , lastIndex);
+
   return (
     <div>
         <h1>PRODUCT CATEGORY : {productcategory}</h1>        
@@ -48,20 +57,27 @@ const Question6 = () => {
         type="text"
         placeholder="CHECK PRODUCT"
         value={productcat}
-        onChange={(e) => setproductcat(e.target.value)}
-        />
+        onChange={(e) => {
+            setproductcat(e.target.value);
+            setcurrentpage(1);
+        }}/>
         <input 
         type="text"
         placeholder="CHECK MONEY"
         value={productmoney}
-        onChange={(e) => setproductmoney(e.target.value)}
-        />
+        onChange={(e) => {
+            setproductcat(e.target.value);
+            setcurrentpage(1);
+        }}/>
         <input 
         type="text"
-        placeholder="ENTER NAME"
+        placeholder="CHECK NAME"
         value={productnamm}
-        onChange={(e) => setproductnamm(e.target.value)}
-        />
+        onChange={(e) => {
+            setproductcat(e.target.value);
+            setcurrentpage(1);
+        }}/>
+        
 
         <button onClick={handlesubmit}>SETTING THE ID VALUE</button>  
 
@@ -73,6 +89,23 @@ const Question6 = () => {
                 </li>
             ))}
         </ul>
+
+        <div>
+             <button 
+              onClick={() => setcurrentpage((prev) => Math.max(prev - 1 , 1))}
+              disabled={currentpage === 1}
+        >
+          Previous
+        </button>
+
+<span> PAGE {currentpage} of {totalpages}</span>
+        <button
+        onClick={() => setcurrentpage((prev) => Math.min(prev+1 , totalpages))}
+        disabled={currentpage === totalpages}
+        >
+            NEXT
+        </button>
+        </div>
     </div>
   )
 }
