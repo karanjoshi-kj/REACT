@@ -52,21 +52,21 @@ const Question6 = () => {
   const firstindex = lastIndex - itemPerPage
   const currentProducts = filterproducts.slice(firstindex, lastIndex)
 
+  const allPages = Array.from({ length: totalpages }, (_, index) => index + 1)
+
   const pageItems = []
-  if (totalpages <= 5) {
-    for (let i = 1; i <= totalpages; i++) {
-      pageItems.push(i)
-    }
+  if (allPages.length <= 5) {
+    pageItems.push(...allPages)
   } else {
-    const start = Math.max(1, Math.min(currentpage - 1, totalpages - 3))
-    const end = Math.min(totalpages - 1, start + 2)
+    const start = Math.max(1, Math.min(currentpage - 1, allPages.length - 3))
+    const end = Math.min(allPages.length - 1, start + 2)
     for (let i = start; i <= end; i++) {
       pageItems.push(i)
     }
-    if (end < totalpages - 1) {
+    if (end < allPages.length - 1) {
       pageItems.push("...")
     }
-    pageItems.push(totalpages)
+    pageItems.push(allPages.length)
   }
 
   return (
@@ -151,8 +151,8 @@ const Question6 = () => {
         )}
 
         <button
-          onClick={() => setcurrentpage((prev) => Math.min(prev + 1, totalpages))}
-          disabled={currentpage === totalpages}
+          onClick={() => setcurrentpage((prev) => Math.min(prev + 1, allPages.length))}
+          disabled={currentpage === allPages.length}
         >
           Next
         </button>
