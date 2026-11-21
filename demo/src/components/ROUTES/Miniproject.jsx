@@ -16,6 +16,7 @@ const Question6 = () => {
     const itemPerPage = 5;
 
     const handlesubmit = () => {
+        setcurrentpage(1);
         setusercode({
             category: productcat,
             price: productmoney,
@@ -23,19 +24,23 @@ const Question6 = () => {
         });
     };
 
-    const productlist = Array.isArray(Product) ? Product : (Product.products || []);
+    const productlist = Array.isArray(Product) ? Product : (Product?.products || []);
+
+    const categories = [...new Set(productlist.map((item) => item?.category).filter(Boolean))];
 
     const filterproducts = productlist.filter((item) => {
+        const itemCategory = (item?.category ?? "").toLowerCase();
+        const itemTitle = (item?.title ?? item?.name ?? "").toLowerCase();
         return(
-            (productcat === "" || item.category.toLowerCase().includes(productcat.toLowerCase())) && 
-            (productmoney === "" || Number(item.price) <= Number(productmoney)) && 
-            (productnamm === "" || item.title.toLowerCase().includes(productnamm.toLowerCase()))  
+            (productcat === "" || itemCategory.includes(productcat.toLowerCase())) && 
+            (productmoney === "" || Number(item?.price) <= Number(productmoney)) && 
+            (productnamm === "" || itemTitle.includes(productnamm.toLowerCase()))  
         );
     });
     
     //? PAGENATION CONSECPT
 
-    const totalpages = Math.ceil(filterproducts.length / itemPerPage);
+    const totalpages = Math.ceil(filterproducts.length / itemPerPage) || 1;
     const lastIndex = currentpage * itemPerPage ;
     const firstindex = lastIndex - itemPerPage ;
     const currentProducts = filterproducts.slice(firstindex , lastIndex);
@@ -46,11 +51,17 @@ const Question6 = () => {
         <h1>PRODUCT PRICE : {productprice}</h1>        
         <h1>PRODUCT NAME : {productname}</h1>   
 
-        <select value={productcat} onChange={(e) => setproductcat(e.target.value)}>
+        <select
+            value={productcat}
+            onChange={(e) => {
+                setproductcat(e.target.value);
+                setcurrentpage(1);
+            }}
+        >
               <option value="">SELECT CATEGORY</option>
-              <option value="beauty">Beauty</option>
-              <option value="electronics">Electronics</option>
-              <option value="clothing">Clothing</option>
+              {categories.map((cat) => (
+                  <option key={cat} value={cat}>{cat}</option>
+              ))}
         </select>
 
         <input 
@@ -66,7 +77,7 @@ const Question6 = () => {
         placeholder="CHECK MONEY"
         value={productmoney}
         onChange={(e) => {
-            setproductcat(e.target.value);
+            setproductmoney(e.target.value);
             setcurrentpage(1);
         }}/>
         <input 
@@ -74,7 +85,7 @@ const Question6 = () => {
         placeholder="CHECK NAME"
         value={productnamm}
         onChange={(e) => {
-            setproductcat(e.target.value);
+            setproductnamm(e.target.value);
             setcurrentpage(1);
         }}/>
         
@@ -83,9 +94,9 @@ const Question6 = () => {
 
 
         <ul>
-            {filterproducts.map((p , index) => (
-                <li key={index}>
-                    {p.title} - {p.category} - ${p.price}
+            {currentProducts.map((p , index) => (
+                <li key={p?._id || p?.id || index}>
+                    {p?.title || p?.name} - {p?.category} - ${p?.price}
                 </li>
             ))}
         </ul>
