@@ -10,16 +10,30 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Question4 from './components/ROUTES/Question4';
 // import Setvaluesonhook from './components/ROUTES/Setvaluesonhook';
 // import Question5 from './components/ROUTES/Question5';
-import Question6 from './components/ROUTES/Miniproject';
+// import Question6 from './components/ROUTES/Miniproject';
+import Login from './components/NESTEDROUTES/Login';
+import Dashboard from './components/NESTEDROUTES/Dashboard';
+import Admin from './components/NESTEDROUTES/Admin';
+import Signin from './components/NESTEDROUTES/Signin';
+import Userprofile from './components/NESTEDROUTES/Userprofile';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         {/* <Route path="/datafetch" element={<Usesearchquestion/>} /> */}
+
+        //? NESTED ROUTING....
+        <Route path="/admin" element={<Admin/>}>
+        {/* CHILD OF ADMIN ROUTES */}
+            <Route path="userlogin" element={<Login/>} />
+            <Route path="userdashboard" element={<Dashboard/>} />
+            <Route path="sign" element={<Signin/>} />
+            <Route path="profile" element={<Userprofile/>} />
+        </Route>
         {/* <Route path="/checkdetils" element={<Question4/>} /> */}
         {/* <Route path="/setvalues" element={<Setvaluesonhook/>} /> */}
-        <Route path="/productdetails" element={<Question6/>} />
+        {/* <Route path="/productdetails" element={<Question6/>} /> */}
         {/* <Route path="/marksfetch" element={<Question3/>} /> */}
         {/* <Route path="/usesearchparams" element={<Usesearchparams />} /> */}
         // {/* <Route path="/question/:id" element={<Question />}/> */}
