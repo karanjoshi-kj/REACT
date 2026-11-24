@@ -37,10 +37,11 @@ const App = () => {
         </Route> */}
 
         <Route>
-            <Route path="/admin" element={<Adminlayout/>} />
+            <Route path="/admin" element={<Adminlayout/>} >
                 <Route path="studentdashboard" element={< Dashboard1/>}/>
                 <Route path="userdetails" element={< Studentdetails/>}/>
                 <Route path="coursedetails" element={< Courses/>}/>
+              </Route>
         </Route>
         {/* <Route path="/checkdetils" element={<Question4/>} /> */}
         {/* <Route path="/setvalues" element={<Setvaluesonhook/>} /> */}
