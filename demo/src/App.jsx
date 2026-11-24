@@ -11,11 +11,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Setvaluesonhook from './components/ROUTES/Setvaluesonhook';
 // import Question5 from './components/ROUTES/Question5';
 // import Question6 from './components/ROUTES/Miniproject';
-import Login from './components/NESTEDROUTES/Login';
-import Dashboard from './components/NESTEDROUTES/Dashboard';
-import Admin from './components/NESTEDROUTES/Admin';
-import Signin from './components/NESTEDROUTES/Signin';
-import Userprofile from './components/NESTEDROUTES/Userprofile';
+// import Login from './components/NESTEDROUTES/Login';
+// import Dashboard from './components/NESTEDROUTES/Dashboard';
+// import Admin from './components/NESTEDROUTES/Admin';
+// import Signin from './components/NESTEDROUTES/Signin';
+// import Userprofile from './components/NESTEDROUTES/Userprofile';
+import Adminlayout from './components/NESTEDROUTES/Adminlayout';
+import Studentdetails from './components/NESTEDROUTES/Studentdetails';
+import Courses from './components/NESTEDROUTES/Courses';
+import Dashboard1 from './components/NESTEDROUTES/Dashboard1';
 
 const App = () => {
   return (
@@ -24,12 +28,19 @@ const App = () => {
         {/* <Route path="/datafetch" element={<Usesearchquestion/>} /> */}
 
         //? NESTED ROUTING....
-        <Route path="/admin" element={<Admin/>}>
         {/* CHILD OF ADMIN ROUTES */}
+        {/* <Route path="/admin" element={<Admin/>}>
             <Route path="userlogin" element={<Login/>} />
             <Route path="userdashboard" element={<Dashboard/>} />
             <Route path="sign" element={<Signin/>} />
             <Route path="profile" element={<Userprofile/>} />
+        </Route> */}
+
+        <Route>
+            <Route path="/admin" element={<Adminlayout/>} />
+                <Route path="studentdashboard" element={< Dashboard1/>}/>
+                <Route path="userdetails" element={< Studentdetails/>}/>
+                <Route path="coursedetails" element={< Courses/>}/>
         </Route>
         {/* <Route path="/checkdetils" element={<Question4/>} /> */}
         {/* <Route path="/setvalues" element={<Setvaluesonhook/>} /> */}
