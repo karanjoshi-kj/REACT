@@ -39,7 +39,7 @@ const App = () => {
         <Route>
             <Route path="/admin" element={<Adminlayout/>} >
                 <Route path="studentdashboard" element={< Dashboard1/>}/>
-                <Route path="userdetails" element={< Studentdetails/>}/>
+                <Route index path="userdetails" element={< Studentdetails/>}/>   //? TO KEEP A PAGE BY DEFAULT ACTIVE WE USE INDEX 
                 <Route path="coursedetails" element={< Courses/>}/>
               </Route>
         </Route>
