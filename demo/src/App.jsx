@@ -63,12 +63,14 @@
 // export default App;
 
 import React from 'react'
-import Axiosget from './components/AXIOS/Axiosget';
+// import Axiosget from './components/AXIOS/Axiosget';
+import Question1 from './components/AXIOS/Question1';
 
 const App = () => {
   return (
     <div>
-      <Axiosget/>
+      {/* <Axiosget/> */}
+      <Question1/>
     </div>
   )
 }
